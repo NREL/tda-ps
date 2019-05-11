@@ -1,6 +1,9 @@
 SHELL=bash
 
 
+TIME=`which time` --verbose
+
+
 deps=$(shell ls -1 setup*.jl environments/*/*.toml)
 logs=$(shell ls -1 *.jl | sed -e '/setup.*/d' -e 's/\.jl$$/.log/')
 
@@ -12,7 +15,7 @@ clean:
 
 
 %.log: %.jl $(deps)
-	julia --color=no $< 2>&1 | tee $@
+	$(TIME) julia --color=no $< 2>&1 | tee $@
 #	sed -i '1s/^\(\xef\xbb\xbf\)\?/\xef\xbb\xbf/' $@
 	git diff --stat $@
 
