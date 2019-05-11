@@ -458,6 +458,12 @@ git-tree-sha1 = "cdbbe0f350581296f3a2e3e7a91b214121934407"
 uuid = "c84ed2f1-dad5-54f0-aa8e-dbefe2724439"
 version = "0.3.1"
 
+[[RecipesBase]]
+deps = ["Random", "Test"]
+git-tree-sha1 = "0b3cb370ee4dc00f47f1193101600949f3dcf884"
+uuid = "3cdcf5f2-1ef4-517c-9805-6587b60abb01"
+version = "0.6.0"
+
 [[Reexport]]
 deps = ["Pkg"]
 git-tree-sha1 = "7b1d07f411bc8ddb7977ec7f377b97b158514fe0"
@@ -564,6 +570,12 @@ version = "0.2.1"
 [[Test]]
 deps = ["Distributed", "InteractiveUtils", "Logging", "Random"]
 uuid = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[[TimeSeries]]
+deps = ["Dates", "DelimitedFiles", "Random", "RecipesBase", "Reexport", "Statistics", "Test"]
+git-tree-sha1 = "4bcd2713b71a46f1a0d708fd13eed367893c2403"
+uuid = "9e3dc215-6440-5c97-bce1-76c03772f85e"
+version = "0.14.1"
 
 [[TimeZones]]
 deps = ["Dates", "EzXML", "Mocking", "Printf", "Serialization", "Test", "Unicode"]
