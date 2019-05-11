@@ -135,4 +135,4 @@ PSI.build_op_model!(rts_ed_dc; optimizer = the_optimizer, parameters=false)
 rts_soln_dc = solve_op_model!(rts_ed_dc)
 
 @info "Lossless DC-flow solution:"
-print(rts_soln_dc)
+println(rts_soln_dc)

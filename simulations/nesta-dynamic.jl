@@ -48,8 +48,8 @@ for case_data in NESTA_MODELS
 
         case_ed = PSI.EconomicDispatch(case_sys, alg; optimizer = the_optimizer)
         case_soln = solve_op_model!(case_ed)
-
         @info string(" . . . ", String(Symbol(alg)), " ", Symbol(case_soln.optimizer_log[:termination_status]))
+
         push!(nesta_summary, (
             case_data,
             basename(case_data)[1:(end-2)],
@@ -67,6 +67,6 @@ end
 
 # Record the results.
 
-print(nesta_summary)
+println(nesta_summary)
 
 CSV.write("nesta-dynamic.tsv", nesta_summary, delim="\t")
