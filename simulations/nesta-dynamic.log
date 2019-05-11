@@ -13,22 +13,22 @@
   [e690365d] PowerSimulations v0.1.0 #54b40c0 (https://github.com/nrel/powersimulations.jl)
   [bcd98974] PowerSystems v0.3.0 #fc479d1 (https://github.com/NREL/PowerSystems.jl.git)
   [9e3dc215] TimeSeries v0.14.1
-┌ Warning: Module Tables with build ID 16516812907487605 is missing from the cache.
-│ This may mean Tables [bd369af6-aec1-5ad0-b16a-f7cc5008161c] does not support precompilation but is imported by a module that does.
-└ @ Base loading.jl:947
+┌ Warning: The call to compilecache failed to create a usable precompiled cache file for TableTraits [3783bdb8-4a98-5b6b-af9a-565f29a5fe9c]
+│   exception = Required dependency IteratorInterfaceExtensions [82899510-4779-5014-852e-03e436cf321d] failed to load from a cache file.
+└ @ Base loading.jl:969
+┌ Warning: The call to compilecache failed to create a usable precompiled cache file for CSV [336ed68f-0bac-5ca0-87d4-7b16caf5d00b]
+│   exception = Required dependency TableTraits [3783bdb8-4a98-5b6b-af9a-565f29a5fe9c] failed to load from a cache file.
+└ @ Base loading.jl:969
 ┌ Warning: Replacing module `TableTraits`
 └ @ Base loading.jl:878
-┌ Warning: The call to compilecache failed to create a usable precompiled cache file for CSV [336ed68f-0bac-5ca0-87d4-7b16caf5d00b]
-│   exception = Required dependency Tables [bd369af6-aec1-5ad0-b16a-f7cc5008161c] failed to load from a cache file.
-└ @ Base loading.jl:969
-┌ Warning: Module DataFrames with build ID 16516815786635141 is missing from the cache.
+┌ Warning: Module DataFrames with build ID 16523233332661575 is missing from the cache.
 │ This may mean DataFrames [a93c6f00-e57d-5684-b7b6-d8193f3e46c0] does not support precompilation but is imported by a module that does.
 └ @ Base loading.jl:947
 [ Info: Loading DataFrames support into Gadfly.jl
-┌ Warning: Module DataFrames with build ID 16516815786635141 is missing from the cache.
+┌ Warning: Module DataFrames with build ID 16523233332661575 is missing from the cache.
 │ This may mean DataFrames [a93c6f00-e57d-5684-b7b6-d8193f3e46c0] does not support precompilation but is imported by a module that does.
 └ @ Base loading.jl:947
-┌ Warning: Module PowerSystems with build ID 16516868787843717 is missing from the cache.
+┌ Warning: Module PowerSystems with build ID 16523295081023621 is missing from the cache.
 │ This may mean PowerSystems [bcd98974-b02a-5e2f-9ee0-a103f5c450dd] does not support precompilation but is imported by a module that does.
 └ @ Base loading.jl:947
 [ Info: Solving ../models/nesta-mirror/opf/nesta_case118_ieee.m . . .
@@ -7299,24 +7299,25 @@ This program contains Ipopt, a library for large-scale nonlinear optimization.
 │ 67  │ ../models/nesta-mirror/opf/nesta_case9241_pegase.m  │ nesta_case9241_pegase  │ 9241  │ 16049    │ CopperPlatePowerModel │ Ipopt  │ LOCALLY_SOLVED     │
 │ 68  │ ../models/nesta-mirror/opf/nesta_case9241_pegase.m  │ nesta_case9241_pegase  │ 9241  │ 16049    │ DCPlosslessForm       │ Ipopt  │ LOCALLY_SOLVED     │
 │ 69  │ ../models/nesta-mirror/opf/nesta_case9_wscc.m       │ nesta_case9_wscc       │ 9     │ 9        │ CopperPlatePowerModel │ Ipopt  │ LOCALLY_SOLVED     │
-│ 70  │ ../models/nesta-mirror/opf/nesta_case9_wscc.m       │ nesta_case9_wscc       │ 9     │ 9        │ DCPlosslessForm       │ Ipopt  │ LOCALLY_SOLVED     │	Command being timed: "julia --color=no nesta-dynamic.jl"
-	User time (seconds): 204.68
-	System time (seconds): 6.87
-	Percent of CPU this job got: 103%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:25.07
+│ 70  │ ../models/nesta-mirror/opf/nesta_case9_wscc.m       │ nesta_case9_wscc       │ 9     │ 9        │ DCPlosslessForm       │ Ipopt  │ LOCALLY_SOLVED     │
+	Command being timed: "julia --color=no nesta-dynamic.jl"
+	User time (seconds): 241.55
+	System time (seconds): 6.35
+	Percent of CPU this job got: 102%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:03.03
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 834800
+	Maximum resident set size (kbytes): 813688
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 1283387
-	Voluntary context switches: 448
-	Involuntary context switches: 671805
+	Minor (reclaiming a frame) page faults: 1281233
+	Voluntary context switches: 355
+	Involuntary context switches: 1085601
 	Swaps: 0
 	File system inputs: 0
-	File system outputs: 13336
+	File system outputs: 13576
 	Socket messages sent: 0
 	Socket messages received: 0
 	Signals delivered: 0

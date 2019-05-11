@@ -13,20 +13,34 @@
   [e690365d] PowerSimulations v0.1.0 #54b40c0 (https://github.com/nrel/powersimulations.jl)
   [bcd98974] PowerSystems v0.3.0 #fc479d1 (https://github.com/NREL/PowerSystems.jl.git)
   [9e3dc215] TimeSeries v0.14.1
+┌ Warning: The call to compilecache failed to create a usable precompiled cache file for TableTraits [3783bdb8-4a98-5b6b-af9a-565f29a5fe9c]
+│   exception = Required dependency IteratorInterfaceExtensions [82899510-4779-5014-852e-03e436cf321d] failed to load from a cache file.
+└ @ Base loading.jl:969
+┌ Warning: The call to compilecache failed to create a usable precompiled cache file for CSV [336ed68f-0bac-5ca0-87d4-7b16caf5d00b]
+│   exception = Required dependency TableTraits [3783bdb8-4a98-5b6b-af9a-565f29a5fe9c] failed to load from a cache file.
+└ @ Base loading.jl:969
+┌ Warning: Replacing module `TableTraits`
+└ @ Base loading.jl:878
+┌ Warning: Module DataFrames with build ID 16523233332661575 is missing from the cache.
+│ This may mean DataFrames [a93c6f00-e57d-5684-b7b6-d8193f3e46c0] does not support precompilation but is imported by a module that does.
+└ @ Base loading.jl:947
 [ Info: Loading DataFrames support into Gadfly.jl
-┌ Warning: Module JuMP with build ID 16516716755030191 is missing from the cache.
+┌ Warning: Module JuMP with build ID 16523260235753498 is missing from the cache.
 │ This may mean JuMP [4076af6c-e467-56ae-b986-b466b2749572] does not support precompilation but is imported by a module that does.
 └ @ Base loading.jl:947
-┌ Warning: Module JuMP with build ID 16516716755030191 is missing from the cache.
+┌ Warning: Module JuMP with build ID 16523260235753498 is missing from the cache.
 │ This may mean JuMP [4076af6c-e467-56ae-b986-b466b2749572] does not support precompilation but is imported by a module that does.
 └ @ Base loading.jl:947
-┌ Warning: Module JuMP with build ID 16516716755030191 is missing from the cache.
+┌ Warning: Module JuMP with build ID 16523260235753498 is missing from the cache.
 │ This may mean JuMP [4076af6c-e467-56ae-b986-b466b2749572] does not support precompilation but is imported by a module that does.
 └ @ Base loading.jl:947
-┌ Warning: Module JuMP with build ID 16516716755030191 is missing from the cache.
+┌ Warning: Module DataFrames with build ID 16523233332661575 is missing from the cache.
+│ This may mean DataFrames [a93c6f00-e57d-5684-b7b6-d8193f3e46c0] does not support precompilation but is imported by a module that does.
+└ @ Base loading.jl:947
+┌ Warning: Module JuMP with build ID 16523260235753498 is missing from the cache.
 │ This may mean JuMP [4076af6c-e467-56ae-b986-b466b2749572] does not support precompilation but is imported by a module that does.
 └ @ Base loading.jl:947
-┌ Warning: Module JuMP with build ID 16516716755030191 is missing from the cache.
+┌ Warning: Module JuMP with build ID 16523260235753498 is missing from the cache.
 │ This may mean JuMP [4076af6c-e467-56ae-b986-b466b2749572] does not support precompilation but is imported by a module that does.
 └ @ Base loading.jl:947
 [ Info: Reading RTS-GMLC model from ../models/RTS-GMLC/RTS_Data/SourceData . . .
@@ -651,24 +665,25 @@ PowerSimulations.OpertationModelResults(Dict(:Pre=>6×29 DataFrame
 │ 3   │ 0.11     │ 0.62     │ 0.15        │ -0.0        │ 0.11     │ 0.11     │ 1.23     │ 0.62        │ 0.11     │ 0.0      │ 0.46        │ -0.0     │ 0.11     │ 0.11     │ 0.11     │ 0.11     │ 0.46        │ 0.11     │ 0.0      │ 0.11     │ 0.62     │ 0.11     │ 0.11     │ 0.11     │ 0.0      │ 0.46        │ 0.11     │ 1.4         │ 0.62     │ 0.11     │ 0.11     │ 0.11     │ -0.0        │ 0.62     │ 0.11     │ -0.0     │ 0.62     │ 0.62     │ 0.4         │ 0.0      │ -0.0     │ -0.0        │ -0.0     │ 0.11     │ -0.0        │ 0.11     │ 2.1         │ 0.93        │ 0.11     │ -0.0     │ 0.93        │ 0.15        │ 0.93        │ -0.0        │ -0.0        │ -0.0        │ 0.03          │ -0.0     │ 0.11     │ 0.11     │ 0.11     │ 0.31        │ -0.0     │ 0.62        │ 0.11     │ 0.04     │ 0.15        │ 0.04     │ -0.0     │ 0.11     │ 0.11     │ 0.46        │ 0.62     │
 │ 4   │ 0.11     │ 0.62     │ 0.16        │ -0.0        │ 0.11     │ 0.11     │ 1.23     │ 0.62        │ 0.11     │ 0.0      │ 0.46        │ -0.0     │ 0.11     │ 0.11     │ 0.11     │ 0.11     │ 0.46        │ 0.11     │ 0.0      │ 0.11     │ 0.62     │ 0.11     │ 0.11     │ 0.11     │ 0.0      │ 0.46        │ 0.11     │ 1.4         │ 0.62     │ 0.11     │ 0.11     │ 0.11     │ -0.0        │ 0.62     │ 0.11     │ -0.0     │ 0.62     │ 0.62     │ 0.62        │ 0.0      │ -0.0     │ -0.0        │ -0.0     │ 0.11     │ -0.0        │ 0.11     │ 2.1         │ 0.93        │ 0.11     │ -0.0     │ 0.93        │ 0.16        │ 0.93        │ -0.0        │ -0.0        │ -0.0        │ 0.03          │ -0.0     │ 0.11     │ 0.11     │ 0.11     │ 0.31        │ -0.0     │ 0.62        │ 0.11     │ 0.04     │ 0.31        │ 0.04     │ -0.0     │ 0.11     │ 0.11     │ 0.46        │ 0.62     │
 │ 5   │ 0.11     │ 0.62     │ 0.31        │ -0.0        │ 0.11     │ 0.11     │ 1.23     │ 0.62        │ 0.11     │ 0.0      │ 0.46        │ -0.0     │ 0.11     │ 0.11     │ 0.11     │ 0.11     │ 0.46        │ 0.11     │ 0.0      │ 0.11     │ 0.62     │ 0.11     │ 0.11     │ 0.11     │ 0.0      │ 0.46        │ 0.11     │ 1.4         │ 0.62     │ 0.11     │ 0.11     │ 0.11     │ -0.0        │ 0.62     │ 0.11     │ -0.0     │ 0.62     │ 0.62     │ 0.62        │ 0.0      │ -0.0     │ -0.0        │ -0.0     │ 0.11     │ -0.0        │ 0.11     │ 2.1         │ 0.93        │ 0.11     │ -0.0     │ 0.93        │ 0.31        │ 0.93        │ -0.0        │ -0.0        │ -0.0        │ 0.03          │ -0.0     │ 0.11     │ 0.11     │ 0.11     │ 0.55        │ -0.0     │ 0.93        │ 0.11     │ 0.04     │ 0.31        │ 0.04     │ -0.0     │ 0.11     │ 0.11     │ 0.46        │ 0.62     │
-│ 6   │ 0.33     │ 0.62     │ 0.46        │ -0.0        │ 0.11     │ 0.11     │ 1.23     │ 0.62        │ 0.22     │ 0.04     │ 0.46        │ -0.0     │ 0.11     │ 0.22     │ 0.11     │ 0.11     │ 0.46        │ 0.11     │ 0.04     │ 0.22     │ 0.62     │ 0.11     │ 0.11     │ 0.11     │ 0.62     │ 0.46        │ 0.22     │ 2.1         │ 0.62     │ 0.11     │ 0.22     │ 0.22     │ -0.0        │ 0.62     │ 0.11     │ -0.0     │ 0.62     │ 0.62     │ 0.62        │ 0.62     │ -0.0     │ -0.0        │ -0.0     │ 0.33     │ -0.0        │ 0.11     │ 2.1         │ 0.93        │ 0.11     │ -0.0     │ 0.93        │ 0.46        │ 0.93        │ -0.0        │ -0.0        │ -0.0        │ 0.03          │ 0.0      │ 0.11     │ 0.11     │ 0.11     │ 0.92        │ 0.0      │ 0.93        │ 0.11     │ 0.04     │ 0.46        │ 0.04     │ -0.0     │ 0.11     │ 0.11     │ 0.46        │ 0.62     │), Dict(:ED=>485308.0), Dict{Symbol,Any}(:dual_status=>FEASIBLE_POINT,:primal_status=>FEASIBLE_POINT,:termination_status=>LOCALLY_SOLVED))	Command being timed: "julia --color=no rts-gmlc.jl"
-	User time (seconds): 151.06
-	System time (seconds): 12.98
-	Percent of CPU this job got: 107%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:32.43
+│ 6   │ 0.33     │ 0.62     │ 0.46        │ -0.0        │ 0.11     │ 0.11     │ 1.23     │ 0.62        │ 0.22     │ 0.04     │ 0.46        │ -0.0     │ 0.11     │ 0.22     │ 0.11     │ 0.11     │ 0.46        │ 0.11     │ 0.04     │ 0.22     │ 0.62     │ 0.11     │ 0.11     │ 0.11     │ 0.62     │ 0.46        │ 0.22     │ 2.1         │ 0.62     │ 0.11     │ 0.22     │ 0.22     │ -0.0        │ 0.62     │ 0.11     │ -0.0     │ 0.62     │ 0.62     │ 0.62        │ 0.62     │ -0.0     │ -0.0        │ -0.0     │ 0.33     │ -0.0        │ 0.11     │ 2.1         │ 0.93        │ 0.11     │ -0.0     │ 0.93        │ 0.46        │ 0.93        │ -0.0        │ -0.0        │ -0.0        │ 0.03          │ 0.0      │ 0.11     │ 0.11     │ 0.11     │ 0.92        │ 0.0      │ 0.93        │ 0.11     │ 0.04     │ 0.46        │ 0.04     │ -0.0     │ 0.11     │ 0.11     │ 0.46        │ 0.62     │), Dict(:ED=>485308.0), Dict{Symbol,Any}(:dual_status=>FEASIBLE_POINT,:primal_status=>FEASIBLE_POINT,:termination_status=>LOCALLY_SOLVED))
+	Command being timed: "julia --color=no rts-gmlc.jl"
+	User time (seconds): 164.78
+	System time (seconds): 8.73
+	Percent of CPU this job got: 102%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:48.86
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 947104
+	Maximum resident set size (kbytes): 914160
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 3061552
-	Voluntary context switches: 596
-	Involuntary context switches: 23776
+	Minor (reclaiming a frame) page faults: 2697152
+	Voluntary context switches: 426
+	Involuntary context switches: 1613471
 	Swaps: 0
 	File system inputs: 0
-	File system outputs: 22776
+	File system outputs: 8072
 	Socket messages sent: 0
 	Socket messages received: 0
 	Signals delivered: 0

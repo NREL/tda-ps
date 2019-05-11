@@ -32,4 +32,4 @@ case_ed = PSI.EconomicDispatch(case_sys, PM.DCPlosslessForm; optimizer = the_opt
 case_soln = solve_op_model!(case_ed)
 
 @info "DC Flow"
-print(case_soln)
+println(case_soln)

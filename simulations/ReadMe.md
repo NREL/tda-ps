@@ -1,4 +1,4 @@
-# Power System Simulations
+# Power-System Simulations
 
 
 ## Setup
