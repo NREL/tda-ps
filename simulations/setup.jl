@@ -10,8 +10,10 @@ Pkg.status()
 
 # Use common packages.
 
+using CSV
 using DataFrames
 using DataFramesMeta
+using Gadfly
 using JuMP
 using Ipopt
 
