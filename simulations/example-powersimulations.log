@@ -1,0 +1,91 @@
+    Status `~/Projects/Active/SIIP/tda-ps/simulations/environments/powersimulations.env/Project.toml`
+  [5ae59095] Colors v0.9.5
+  [41994980] D3TypeTrees v0.1.1
+  [a93c6f00] DataFrames v0.18.0
+  [e2685f51] ECOS v0.9.4
+  [60bf3e95] GLPK v0.9.1
+  [2030c09a] InfrastructureModels v0.2.0 #900f4e8 (https://github.com/lanl-ansi/InfrastructureModels.jl.git)
+  [b6b21f68] Ipopt v0.5.4
+  [4076af6c] JuMP v0.19.0+ #94e2cbb (https://github.com/JuliaOpt/JuMP.jl.git)
+  [51fcb6bd] NamedColors v0.2.0
+  [774612a8] ParameterJuMP v0.0.1 #dfb1e3c (https://github.com/JuliaStochOpt/ParameterJuMP.jl.git)
+  [f0f68f2c] PlotlyJS v0.12.3
+  [91a5bcdd] Plots v0.24.0
+  [c36e90e8] PowerModels v0.10.0 #ba38acd (https://github.com/lanl-ansi/PowerModels.jl.git)
+  [e690365d] PowerSimulations v0.1.0 #54b40c0 (https://github.com/nrel/powersimulations.jl)
+  [bcd98974] PowerSystems v0.3.0 #fc479d1 (https://github.com/NREL/PowerSystems.jl.git)
+  [9e3dc215] TimeSeries v0.14.1
+WARNING: Method definition #isapprox(Any, typeof(Base.isapprox), Any, Any) in module PowerSystems overwritten in module InfrastructureModels.
+WARNING: Method definition isapprox(Any, Any) in module PowerSystems at /home/bbush/.julia/packages/PowerSystems/Biewz/src/parsers/im_io/data.jl:365 overwritten in module InfrastructureModels at /home/bbush/.julia/packages/InfrastructureModels/m87js/src/core/data.jl:365.
+[ Info: reversing the orientation of branch 6 (4, 3) to be consistent with other parallel branches
+[ Info: the voltage setpoint on generator 4 does not match the value at bus 4
+[ Info: the voltage setpoint on generator 1 does not match the value at bus 1
+[ Info: the voltage setpoint on generator 5 does not match the value at bus 10
+[ Info: the voltage setpoint on generator 2 does not match the value at bus 1
+[ Info: the voltage setpoint on generator 3 does not match the value at bus 3
+[ Info: removing 1 cost terms from generator 4: [4000.0, 0.0]
+[ Info: removing 1 cost terms from generator 1: [1400.0, 0.0]
+[ Info: removing 1 cost terms from generator 5: [1000.0, 0.0]
+[ Info: removing 1 cost terms from generator 2: [1500.0, 0.0]
+[ Info: removing 1 cost terms from generator 3: [3000.0, 0.0]
+[ Info: Reading bus data
+[ Info: Reading load data
+[ Info: Reading generator data
+[ Info: Reading branch data
+[ Info: There are no Load Zones data in this file
+┌ Warning: key 'loadzone' not found in PowerSystems dictionary, this will result in an empty LoadZones array
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/parsers/dict_to_struct.jl:42
+┌ Warning: key 'services' not found in PowerSystems dictionary, this will result in an empty services array
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/parsers/dict_to_struct.jl:57
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+
+******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit http://projects.coin-or.org/Ipopt
+******************************************************************************
+
+[ Info: DC Flow
+PowerSimulations.OpertationModelResults(Dict(:Pth=>25×5 DataFrames.DataFrame
+│ Row │ 4       │ 1       │ 5       │ 2       │ 3       │
+│     │ Float64 │ Float64 │ Float64 │ Float64 │ Float64 │
+├─────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+│ 1   │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 2   │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 3   │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 4   │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 5   │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 6   │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 7   │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 8   │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 9   │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 10  │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 11  │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 12  │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 13  │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 14  │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 15  │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 16  │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 17  │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 18  │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 19  │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 20  │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 21  │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 22  │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 23  │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 24  │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
+│ 25  │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │), Dict(:ED=>4.4033e5), Dict{Symbol,Any}(:dual_status=>FEASIBLE_POINT,:primal_status=>FEASIBLE_POINT,:termination_status=>LOCALLY_SOLVED))
