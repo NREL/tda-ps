@@ -1,0 +1,676 @@
+    Status `~/Projects/Active/SIIP/tda-ps/simulations/environments/powersimulations.env/Project.toml`
+  [336ed68f] CSV v0.5.2
+  [a93c6f00] DataFrames v0.18.0
+  [1313f7d8] DataFramesMeta v0.4.1
+  [e2685f51] ECOS v0.9.4
+  [60bf3e95] GLPK v0.9.1
+  [c91e804a] Gadfly v1.0.1
+  [2030c09a] InfrastructureModels v0.2.0 #900f4e8 (https://github.com/lanl-ansi/InfrastructureModels.jl.git)
+  [b6b21f68] Ipopt v0.5.4
+  [4076af6c] JuMP v0.19.0+ #94e2cbb (https://github.com/JuliaOpt/JuMP.jl.git)
+  [774612a8] ParameterJuMP v0.0.1 #dfb1e3c (https://github.com/JuliaStochOpt/ParameterJuMP.jl.git)
+  [c36e90e8] PowerModels v0.10.0 #ba38acd (https://github.com/lanl-ansi/PowerModels.jl.git)
+  [e690365d] PowerSimulations v0.1.0 #54b40c0 (https://github.com/nrel/powersimulations.jl)
+  [bcd98974] PowerSystems v0.3.0 #fc479d1 (https://github.com/NREL/PowerSystems.jl.git)
+  [9e3dc215] TimeSeries v0.14.1
+[ Info: Loading DataFrames support into Gadfly.jl
+┌ Warning: Module JuMP with build ID 16516716755030191 is missing from the cache.
+│ This may mean JuMP [4076af6c-e467-56ae-b986-b466b2749572] does not support precompilation but is imported by a module that does.
+└ @ Base loading.jl:947
+┌ Warning: Module JuMP with build ID 16516716755030191 is missing from the cache.
+│ This may mean JuMP [4076af6c-e467-56ae-b986-b466b2749572] does not support precompilation but is imported by a module that does.
+└ @ Base loading.jl:947
+┌ Warning: Module JuMP with build ID 16516716755030191 is missing from the cache.
+│ This may mean JuMP [4076af6c-e467-56ae-b986-b466b2749572] does not support precompilation but is imported by a module that does.
+└ @ Base loading.jl:947
+┌ Warning: Module JuMP with build ID 16516716755030191 is missing from the cache.
+│ This may mean JuMP [4076af6c-e467-56ae-b986-b466b2749572] does not support precompilation but is imported by a module that does.
+└ @ Base loading.jl:947
+┌ Warning: Module JuMP with build ID 16516716755030191 is missing from the cache.
+│ This may mean JuMP [4076af6c-e467-56ae-b986-b466b2749572] does not support precompilation but is imported by a module that does.
+└ @ Base loading.jl:947
+[ Info: Reading RTS-GMLC model from ../models/RTS-GMLC/RTS_Data/SourceData . . .
+[ Info: Parsing csv data in branch.csv ...
+[ Info: Successfully parsed branch.csv
+[ Info: Parsing csv data in bus.csv ...
+[ Info: Successfully parsed bus.csv
+[ Info: Parsing csv data in dc_branch.csv ...
+[ Info: Successfully parsed dc_branch.csv
+[ Info: Parsing csv data in gen.csv ...
+[ Info: Successfully parsed gen.csv
+[ Info: Parsing csv data in reserves.csv ...
+[ Info: Successfully parsed reserves.csv
+[ Info: Parsing csv data in simulation_objects.csv ...
+[ Info: Successfully parsed simulation_objects.csv
+[ Info: Parsing csv data in storage.csv ...
+[ Info: Successfully parsed storage.csv
+[ Info: Parsing csv data in timeseries_pointers.csv ...
+[ Info: Successfully parsed timeseries_pointers.csv
+[ Info: parsing timeseries data
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 122_HYDRO_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 122_HYDRO_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 122_HYDRO_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 122_HYDRO_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 122_HYDRO_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 122_HYDRO_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 201_HYDRO_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 215_HYDRO_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 215_HYDRO_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 215_HYDRO_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 222_HYDRO_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 222_HYDRO_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 222_HYDRO_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 222_HYDRO_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 222_HYDRO_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 222_HYDRO_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 322_HYDRO_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 322_HYDRO_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 322_HYDRO_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 322_HYDRO_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 320_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 314_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 314_PV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 313_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 314_PV_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 314_PV_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 313_PV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 310_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 324_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 312_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 310_PV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 324_PV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 324_PV_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 113_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 319_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 215_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 102_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 101_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 102_PV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 104_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 101_PV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 101_PV_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 101_PV_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 103_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/DAY_AHEAD_pv.csv for 119_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 308_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_7
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_8
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_9
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_10
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_11
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_12
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 320_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 320_RTPV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 320_RTPV_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_13
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 320_RTPV_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 320_RTPV_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 320_RTPV_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_7
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_8
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_9
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_10
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 213_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/WIND/DAY_AHEAD_wind.csv for 309_WIND_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/WIND/DAY_AHEAD_wind.csv for 317_WIND_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/WIND/DAY_AHEAD_wind.csv for 303_WIND_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/WIND/DAY_AHEAD_wind.csv for 122_WIND_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 122_HYDRO_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 122_HYDRO_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 122_HYDRO_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 122_HYDRO_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 122_HYDRO_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 122_HYDRO_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 201_HYDRO_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 215_HYDRO_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 215_HYDRO_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 215_HYDRO_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 222_HYDRO_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 222_HYDRO_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 222_HYDRO_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 222_HYDRO_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 222_HYDRO_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 222_HYDRO_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 322_HYDRO_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 322_HYDRO_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 322_HYDRO_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/DAY_AHEAD_hydro.csv for 322_HYDRO_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 308_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_7
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_8
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_9
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_10
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_11
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_12
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 320_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 320_RTPV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 320_RTPV_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 313_RTPV_13
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 320_RTPV_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 320_RTPV_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 320_RTPV_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_7
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_8
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_9
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 118_RTPV_10
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/DAY_AHEAD_rtpv.csv for 213_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/Reserves/DAY_AHEAD_regional_Flex_Down.csv for Flex_Down
+┌ Warning: No reference date given, assuming today
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/parsers/dict_to_struct.jl:158
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/Reserves/DAY_AHEAD_regional_Flex_Up.csv for Flex_Up
+┌ Warning: No reference date given, assuming today
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/parsers/dict_to_struct.jl:158
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/Reserves/DAY_AHEAD_regional_Reg_Down.csv for Reg_Down
+┌ Warning: No reference date given, assuming today
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/parsers/dict_to_struct.jl:158
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/Reserves/DAY_AHEAD_regional_Reg_Up.csv for Reg_Up
+┌ Warning: No reference date given, assuming today
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/parsers/dict_to_struct.jl:158
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/Reserves/DAY_AHEAD_regional_Spin_Up_R1.csv for Spin_Up_R1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/Reserves/DAY_AHEAD_regional_Spin_Up_R2.csv for Spin_Up_R2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/Reserves/DAY_AHEAD_regional_Spin_Up_R3.csv for Spin_Up_R3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/Load/DAY_AHEAD_regional_Load.csv for Load
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/CSP/DAY_AHEAD_Natural_Inflow.csv for 212_CSP_HEAD_STORAGE
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/CSP/REAL_TIME_Natural_Inflow.csv for 212_CSP_HEAD_STORAGE
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 122_HYDRO_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 122_HYDRO_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 122_HYDRO_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 122_HYDRO_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 122_HYDRO_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 122_HYDRO_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 201_HYDRO_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 215_HYDRO_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 215_HYDRO_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 215_HYDRO_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 222_HYDRO_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 222_HYDRO_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 222_HYDRO_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 222_HYDRO_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 222_HYDRO_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 222_HYDRO_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 322_HYDRO_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 322_HYDRO_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 322_HYDRO_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 322_HYDRO_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 320_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 314_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 314_PV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 313_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 314_PV_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 314_PV_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 313_PV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 310_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 324_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 312_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 310_PV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 324_PV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 324_PV_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 113_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 319_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 215_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 102_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 101_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 102_PV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 104_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 101_PV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 101_PV_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 101_PV_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 103_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/PV/REAL_TIME_pv.csv for 119_PV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 308_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_7
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_8
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_9
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_10
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_11
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_12
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 320_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 320_RTPV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 320_RTPV_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_13
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 320_RTPV_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 320_RTPV_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 320_RTPV_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_7
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_8
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_9
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_10
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 213_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/WIND/REAL_TIME_wind.csv for 309_WIND_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/WIND/REAL_TIME_wind.csv for 317_WIND_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/WIND/REAL_TIME_wind.csv for 303_WIND_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/WIND/REAL_TIME_wind.csv for 122_WIND_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 122_HYDRO_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 122_HYDRO_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 122_HYDRO_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 122_HYDRO_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 122_HYDRO_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 122_HYDRO_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 201_HYDRO_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 215_HYDRO_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 215_HYDRO_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 215_HYDRO_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 222_HYDRO_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 222_HYDRO_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 222_HYDRO_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 222_HYDRO_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 222_HYDRO_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 222_HYDRO_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 322_HYDRO_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 322_HYDRO_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 322_HYDRO_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/HYDRO/REAL_TIME_hydro.csv for 322_HYDRO_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 308_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_7
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_8
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_9
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_10
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_11
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_12
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 320_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 320_RTPV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 320_RTPV_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 313_RTPV_13
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 320_RTPV_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 320_RTPV_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_4
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_5
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 320_RTPV_6
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_7
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_8
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_9
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 118_RTPV_10
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/RTPV/REAL_TIME_rtpv.csv for 213_RTPV_1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/Reserves/REAL_TIME_regional_Reg_Down.csv for Reg_Down
+┌ Warning: No reference date given, assuming today
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/parsers/dict_to_struct.jl:158
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/Reserves/REAL_TIME_regional_Reg_Up.csv for Reg_Up
+┌ Warning: No reference date given, assuming today
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/parsers/dict_to_struct.jl:158
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/Reserves/REAL_TIME_regional_Spin_Up_R1.csv for Spin_Up_R1
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/Reserves/REAL_TIME_regional_Spin_Up_R2.csv for Spin_Up_R2
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/Reserves/REAL_TIME_regional_Spin_Up_R3.csv for Spin_Up_R3
+[ Info: parsing timeseries data in ../models/RTS-GMLC/RTS_Data/SourceData/../timeseries_data_files/Load/REAL_TIME_regional_load.csv for Load
+[ Info: adding DAY-AHEAD generator forcasats
+[ Info: adding DAY-AHEAD load forcasats
+[ Info: adding REAL-TIME generator forcasats
+[ Info: adding REAL-TIME load forcasats
+[ Info: Number of time slices: 6
+[ Info: Earliest time: 2020-01-01T09:00:00
+[ Info: Latest time: 2020-01-01T14:00:00
+[ Info: assigning load scaling factors by load_zone
+[ Info: assumed time series is MW for 215_HYDRO_3
+[ Info: assumed time series is MW for 101_PV_1
+[ Info: assumed time series is MW for 213_RTPV_1
+[ Info: assumed time series is MW for 215_HYDRO_2
+[ Info: assumed time series is MW for 313_RTPV_2
+[ Info: assumed time series is MW for 309_WIND_1
+[ Info: assumed time series is MW for 122_HYDRO_2
+[ Info: assumed time series is MW for 322_HYDRO_2
+[ Info: assumed time series is MW for 313_RTPV_5
+[ Info: assumed time series is MW for 324_PV_1
+[ Info: assumed time series is MW for 322_HYDRO_4
+[ Info: assumed time series is MW for 313_RTPV_11
+[ Info: assumed time series is MW for 118_RTPV_7
+[ Info: assumed time series is MW for 314_PV_3
+[ Info: assumed time series is MW for 118_RTPV_5
+[ Info: assumed time series is MW for 118_RTPV_9
+[ Info: assumed time series is MW for 222_HYDRO_1
+[ Info: assumed time series is MW for 313_RTPV_8
+[ Info: assumed time series is MW for 122_HYDRO_5
+[ Info: assumed time series is MW for 122_HYDRO_3
+[ Info: assumed time series is MW for 313_PV_1
+[ Info: assumed time series is MW for 118_RTPV_4
+[ Info: assumed time series is MW for 122_WIND_1
+[ Info: assumed time series is MW for 313_RTPV_1
+[ Info: assumed time series is MW for 312_PV_1
+[ Info: assumed time series is MW for 320_RTPV_3
+[ Info: assumed time series is MW for 113_PV_1
+[ Info: assumed time series is MW for 308_RTPV_1
+[ Info: assumed time series is MW for 313_RTPV_4
+[ Info: assumed time series is MW for 320_RTPV_1
+[ Info: assumed time series is MW for 314_PV_1
+[ Info: assumed time series is MW for 122_HYDRO_6
+[ Info: assumed time series is MW for 322_HYDRO_3
+[ Info: assumed time series is MW for 103_PV_1
+[ Info: assumed time series is MW for 222_HYDRO_6
+[ Info: assumed time series is MW for 314_PV_2
+[ Info: assumed time series is MW for 222_HYDRO_4
+[ Info: assumed time series is MW for 122_HYDRO_1
+[ Info: assumed time series is MW for 313_RTPV_3
+[ Info: assumed time series is MW for 314_PV_4
+[ Info: assumed time series is MW for 310_PV_1
+[ Info: assumed time series is MW for 101_PV_4
+[ Info: assumed time series is MW for 119_PV_1
+[ Info: assumed time series is MW for 222_HYDRO_3
+[ Info: assumed time series is MW for 324_PV_3
+[ Info: assumed time series is MW for 313_RTPV_9
+[ Info: assumed time series is MW for 313_PV_2
+[ Info: assumed time series is MW for 101_PV_2
+[ Info: assumed time series is MW for 222_HYDRO_5
+[ Info: assumed time series is MW for 310_PV_2
+[ Info: assumed time series is MW for 222_HYDRO_2
+[ Info: assumed time series is MW for 313_RTPV_6
+[ Info: assumed time series is MW for 320_RTPV_5
+[ Info: assumed time series is MW for 118_RTPV_2
+[ Info: assumed time series is MW for 320_RTPV_4
+[ Info: assumed time series is MW for 215_HYDRO_1
+[ Info: assumed time series is MW for 313_RTPV_13
+[ Info: assumed time series is MW for 118_RTPV_8
+[ Info: assumed time series is MW for 122_HYDRO_4
+[ Info: assumed time series is MW for 102_PV_2
+[ Info: assumed time series is MW for 320_PV_1
+[ Info: assumed time series is MW for 101_PV_3
+[ Info: assumed time series is MW for 322_HYDRO_1
+[ Info: assumed time series is MW for 319_PV_1
+[ Info: assumed time series is MW for 102_PV_1
+[ Info: assumed time series is MW for 320_RTPV_2
+[ Info: assumed time series is MW for 324_PV_2
+[ Info: assumed time series is MW for 104_PV_1
+[ Info: assumed time series is MW for 313_RTPV_7
+[ Info: assumed time series is MW for 317_WIND_1
+[ Info: assumed time series is MW for 320_RTPV_6
+[ Info: assumed time series is MW for 118_RTPV_3
+[ Info: assumed time series is MW for 313_RTPV_12
+[ Info: assumed time series is MW for 303_WIND_1
+[ Info: assumed time series is MW for 201_HYDRO_4
+[ Info: assumed time series is MW for 118_RTPV_10
+[ Info: assumed time series is MW for 313_RTPV_10
+[ Info: assumed time series is MW for 118_RTPV_1
+[ Info: assumed time series is MW for 118_RTPV_6
+[ Info: assumed time series is MW for 215_PV_1
+┌ Warning: key 'shunt' not found in PowerSystems dictionary, this will result in an empty Shunts array
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/parsers/dict_to_struct.jl:47
+┌ Warning: key 'dcline' not found in PowerSystems dictionary, this will result in an empty DCLines array
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/parsers/dict_to_struct.jl:52
+┌ Error: Model doesn't contain a slack bus
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:51
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The generator 121_NUCLEAR_1 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 121_NUCLEAR_1 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+[ Info: The generator 215_HYDRO_3 has a nonbinding ramp up limit.
+[ Info: The generator 215_HYDRO_3 has a nonbinding ramp down limit.
+[ Info: The generator 215_HYDRO_2 has a nonbinding ramp up limit.
+[ Info: The generator 215_HYDRO_2 has a nonbinding ramp down limit.
+[ Info: The generator 222_HYDRO_5 has a nonbinding ramp up limit.
+[ Info: The generator 222_HYDRO_5 has a nonbinding ramp down limit.
+[ Info: The generator 122_HYDRO_2 has a nonbinding ramp up limit.
+[ Info: The generator 122_HYDRO_2 has a nonbinding ramp down limit.
+[ Info: The generator 322_HYDRO_2 has a nonbinding ramp up limit.
+[ Info: The generator 322_HYDRO_2 has a nonbinding ramp down limit.
+[ Info: The generator 222_HYDRO_2 has a nonbinding ramp up limit.
+[ Info: The generator 222_HYDRO_2 has a nonbinding ramp down limit.
+[ Info: The generator 122_HYDRO_6 has a nonbinding ramp up limit.
+[ Info: The generator 122_HYDRO_6 has a nonbinding ramp down limit.
+[ Info: The generator 322_HYDRO_3 has a nonbinding ramp up limit.
+[ Info: The generator 322_HYDRO_3 has a nonbinding ramp down limit.
+[ Info: The generator 322_HYDRO_4 has a nonbinding ramp up limit.
+[ Info: The generator 322_HYDRO_4 has a nonbinding ramp down limit.
+[ Info: The generator 222_HYDRO_6 has a nonbinding ramp up limit.
+[ Info: The generator 222_HYDRO_6 has a nonbinding ramp down limit.
+[ Info: The generator 215_HYDRO_1 has a nonbinding ramp up limit.
+[ Info: The generator 215_HYDRO_1 has a nonbinding ramp down limit.
+[ Info: The generator 201_HYDRO_4 has a nonbinding ramp up limit.
+[ Info: The generator 201_HYDRO_4 has a nonbinding ramp down limit.
+[ Info: The generator 222_HYDRO_4 has a nonbinding ramp up limit.
+[ Info: The generator 222_HYDRO_4 has a nonbinding ramp down limit.
+[ Info: The generator 122_HYDRO_1 has a nonbinding ramp up limit.
+[ Info: The generator 122_HYDRO_1 has a nonbinding ramp down limit.
+[ Info: The generator 122_HYDRO_4 has a nonbinding ramp up limit.
+[ Info: The generator 122_HYDRO_4 has a nonbinding ramp down limit.
+[ Info: The generator 322_HYDRO_1 has a nonbinding ramp up limit.
+[ Info: The generator 322_HYDRO_1 has a nonbinding ramp down limit.
+[ Info: The generator 222_HYDRO_1 has a nonbinding ramp up limit.
+[ Info: The generator 222_HYDRO_1 has a nonbinding ramp down limit.
+[ Info: The generator 122_HYDRO_5 has a nonbinding ramp up limit.
+[ Info: The generator 122_HYDRO_5 has a nonbinding ramp down limit.
+[ Info: The generator 122_HYDRO_3 has a nonbinding ramp up limit.
+[ Info: The generator 122_HYDRO_3 has a nonbinding ramp down limit.
+[ Info: The generator 222_HYDRO_3 has a nonbinding ramp up limit.
+[ Info: The generator 222_HYDRO_3 has a nonbinding ramp down limit.
+
+******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit http://projects.coin-or.org/Ipopt
+******************************************************************************
+
+[ Info: Lossless DC-flow solution:
+PowerSimulations.OpertationModelResults(Dict(:Pre=>6×29 DataFrame
+│ Row │ 324_PV_3 │ 312_PV_1 │ 102_PV_1 │ 101_PV_1 │ 324_PV_2 │ 313_PV_2 │ 104_PV_1 │ 101_PV_2 │ 310_PV_2 │ 113_PV_1 │ 314_PV_1 │ 324_PV_1 │ 103_PV_1 │ 314_PV_2 │ 102_PV_2 │ 314_PV_3 │ 320_PV_1 │ 101_PV_3 │ 319_PV_1 │ 314_PV_4 │ 310_PV_1 │ 215_PV_1 │ 313_PV_1 │ 101_PV_4 │ 119_PV_1 │ 122_WIND_1 │ 303_WIND_1 │ 317_WIND_1 │ 309_WIND_1 │
+│     │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64    │ Float64    │ Float64    │ Float64    │
+├─────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼────────────┼────────────┼────────────┼────────────┤
+│ 1   │ 0.36     │ 0.59     │ 0.19     │ 0.18     │ 0.36     │ 0.59     │ 0.18     │ 0.19     │ 0.33     │ 0.67     │ 0.35     │ 0.34     │ 0.38     │ 0.35     │ 0.19     │ 0.61     │ 0.35     │ 0.19     │ 1.37     │ 0.35     │ 0.33     │ 0.86     │ 0.58     │ 0.18     │ 0.37     │ 2.74       │ 0.04       │ 4.67       │ 0.31       │
+│ 2   │ 0.36     │ 0.66     │ 0.19     │ 0.18     │ 0.36     │ 0.65     │ 0.18     │ 0.19     │ 0.35     │ 0.67     │ 0.35     │ 0.35     │ 0.45     │ 0.36     │ 0.19     │ 0.65     │ 0.35     │ 0.19     │ 1.39     │ 0.36     │ 0.35     │ 0.87     │ 0.64     │ 0.19     │ 0.44     │ 0.93       │ 0.02       │ 3.01       │ 0.27       │
+│ 3   │ 0.35     │ 0.68     │ 0.19     │ 0.18     │ 0.35     │ 0.67     │ 0.18     │ 0.19     │ 0.35     │ 0.68     │ 0.34     │ 0.35     │ 0.49     │ 0.36     │ 0.18     │ 0.64     │ 0.34     │ 0.19     │ 1.32     │ 0.36     │ 0.35     │ 0.85     │ 0.67     │ 0.19     │ 0.46     │ 0.06       │ 0.56       │ 1.11       │ 0.61       │
+│ 4   │ 0.34     │ 0.66     │ 0.18     │ 0.18     │ 0.34     │ 0.65     │ 0.18     │ 0.18     │ 0.34     │ 0.67     │ 0.34     │ 0.34     │ 0.47     │ 0.35     │ 0.18     │ 0.64     │ 0.34     │ 0.19     │ 1.34     │ 0.35     │ 0.34     │ 0.85     │ 0.64     │ 0.19     │ 0.45     │ 0.04       │ 0.92       │ 0.79       │ 0.2        │
+│ 5   │ 0.33     │ 0.63     │ 0.18     │ 0.18     │ 0.33     │ 0.62     │ 0.18     │ 0.18     │ 0.34     │ 0.63     │ 0.34     │ 0.33     │ 0.41     │ 0.34     │ 0.17     │ 0.6      │ 0.34     │ 0.18     │ 1.29     │ 0.34     │ 0.34     │ 0.81     │ 0.61     │ 0.18     │ 0.4      │ 0.01       │ 1.03       │ 1.08       │ 0.02       │
+│ 6   │ 0.3      │ 0.55     │ 0.16     │ 0.16     │ 0.3      │ 0.54     │ 0.16     │ 0.16     │ 0.32     │ 0.55     │ 0.3      │ 0.31     │ 0.3      │ 0.32     │ 0.15     │ 0.54     │ 0.3      │ 0.16     │ 1.14     │ 0.32     │ 0.31     │ 0.72     │ 0.53     │ 0.16     │ 0.3      │ 0.0        │ 0.4        │ 0.22       │ 0.0        │,:Pth=>6×73 DataFrame
+│ Row │ 322_CT_6 │ 321_CC_1 │ 202_STEAM_3 │ 315_STEAM_1 │ 223_CT_4 │ 223_CT_6 │ 313_CC_1 │ 123_STEAM_2 │ 213_CT_1 │ 202_CT_2 │ 101_STEAM_3 │ 302_CT_1 │ 123_CT_1 │ 113_CT_3 │ 302_CT_3 │ 215_CT_4 │ 102_STEAM_3 │ 301_CT_4 │ 202_CT_1 │ 113_CT_2 │ 221_CC_1 │ 223_CT_5 │ 315_CT_7 │ 215_CT_5 │ 323_CC_1 │ 101_STEAM_4 │ 113_CT_1 │ 223_STEAM_3 │ 318_CC_1 │ 307_CT_2 │ 213_CT_2 │ 113_CT_4 │ 315_STEAM_3 │ 118_CC_1 │ 315_CT_8 │ 302_CT_2 │ 218_CC_1 │ 213_CC_3 │ 115_STEAM_3 │ 323_CC_2 │ 101_CT_1 │ 115_STEAM_2 │ 101_CT_2 │ 322_CT_5 │ 315_STEAM_5 │ 207_CT_2 │ 123_STEAM_3 │ 223_STEAM_1 │ 123_CT_5 │ 301_CT_1 │ 223_STEAM_2 │ 202_STEAM_4 │ 116_STEAM_1 │ 315_STEAM_4 │ 115_STEAM_1 │ 315_STEAM_2 │ 121_NUCLEAR_1 │ 102_CT_2 │ 123_CT_4 │ 207_CT_1 │ 301_CT_3 │ 316_STEAM_1 │ 102_CT_1 │ 216_STEAM_1 │ 315_CT_6 │ 201_CT_2 │ 201_STEAM_3 │ 201_CT_1 │ 301_CT_2 │ 302_CT_4 │ 307_CT_1 │ 102_STEAM_4 │ 107_CC_1 │
+│     │ Float64  │ Float64  │ Float64     │ Float64     │ Float64  │ Float64  │ Float64  │ Float64     │ Float64  │ Float64  │ Float64     │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64     │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64     │ Float64  │ Float64     │ Float64  │ Float64  │ Float64  │ Float64  │ Float64     │ Float64  │ Float64  │ Float64  │ Float64  │ Float64  │ Float64     │ Float64  │ Float64  │ Float64     │ Float64  │ Float64  │ Float64     │ Float64  │ Float64     │ Float64     │ Float64  │ Float64  │ Float64     │ Float64     │ Float64     │ Float64     │ Float64     │ Float64     │ Float64       │ Float64  │ Float64  │ Float64  │ Float64  │ Float64     │ Float64  │ Float64     │ Float64  │ Float64  │ Float64     │ Float64  │ Float64  │ Float64  │ Float64  │ Float64     │ Float64  │
+├─────┼──────────┼──────────┼─────────────┼─────────────┼──────────┼──────────┼──────────┼─────────────┼──────────┼──────────┼─────────────┼──────────┼──────────┼──────────┼──────────┼──────────┼─────────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼──────────┼─────────────┼──────────┼─────────────┼──────────┼──────────┼──────────┼──────────┼─────────────┼──────────┼──────────┼──────────┼──────────┼──────────┼─────────────┼──────────┼──────────┼─────────────┼──────────┼──────────┼─────────────┼──────────┼─────────────┼─────────────┼──────────┼──────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼───────────────┼──────────┼──────────┼──────────┼──────────┼─────────────┼──────────┼─────────────┼──────────┼──────────┼─────────────┼──────────┼──────────┼──────────┼──────────┼─────────────┼──────────┤
+│ 1   │ 0.11     │ 0.62     │ 0.15        │ -0.0        │ 0.11     │ 0.11     │ 0.62     │ 0.31        │ 0.11     │ -0.0     │ 0.46        │ -0.0     │ 0.11     │ 0.11     │ 0.11     │ 0.11     │ 0.46        │ 0.11     │ -0.0     │ 0.11     │ 0.62     │ 0.11     │ 0.11     │ 0.11     │ 0.0      │ 0.46        │ 0.11     │ 1.4         │ 0.62     │ 0.11     │ 0.11     │ 0.11     │ -0.0        │ 0.62     │ 0.11     │ -0.0     │ 0.62     │ 0.62     │ 0.31        │ 0.0      │ -0.0     │ -0.0        │ -0.0     │ 0.11     │ -0.0        │ 0.11     │ 0.7         │ 0.84        │ 0.11     │ -0.0     │ 0.84        │ 0.15        │ 0.31        │ -0.0        │ -0.0        │ -0.0        │ 0.03          │ -0.0     │ 0.11     │ 0.11     │ 0.11     │ 0.31        │ -0.0     │ 0.62        │ 0.11     │ 0.04     │ 0.15        │ 0.04     │ -0.0     │ 0.11     │ 0.11     │ 0.46        │ 0.62     │
+│ 2   │ 0.11     │ 0.62     │ 0.15        │ -0.0        │ 0.11     │ 0.11     │ 0.84     │ 0.62        │ 0.11     │ 0.0      │ 0.46        │ -0.0     │ 0.11     │ 0.11     │ 0.11     │ 0.11     │ 0.46        │ 0.11     │ 0.0      │ 0.11     │ 0.62     │ 0.11     │ 0.11     │ 0.11     │ 0.0      │ 0.46        │ 0.11     │ 1.4         │ 0.62     │ 0.11     │ 0.11     │ 0.11     │ -0.0        │ 0.62     │ 0.11     │ -0.0     │ 0.62     │ 0.62     │ 0.31        │ 0.0      │ -0.0     │ -0.0        │ -0.0     │ 0.11     │ -0.0        │ 0.11     │ 1.4         │ 0.93        │ 0.11     │ -0.0     │ 0.93        │ 0.15        │ 0.62        │ -0.0        │ -0.0        │ -0.0        │ 0.03          │ -0.0     │ 0.11     │ 0.11     │ 0.11     │ 0.31        │ -0.0     │ 0.62        │ 0.11     │ 0.04     │ 0.15        │ 0.04     │ -0.0     │ 0.11     │ 0.11     │ 0.46        │ 0.62     │
+│ 3   │ 0.11     │ 0.62     │ 0.15        │ -0.0        │ 0.11     │ 0.11     │ 1.23     │ 0.62        │ 0.11     │ 0.0      │ 0.46        │ -0.0     │ 0.11     │ 0.11     │ 0.11     │ 0.11     │ 0.46        │ 0.11     │ 0.0      │ 0.11     │ 0.62     │ 0.11     │ 0.11     │ 0.11     │ 0.0      │ 0.46        │ 0.11     │ 1.4         │ 0.62     │ 0.11     │ 0.11     │ 0.11     │ -0.0        │ 0.62     │ 0.11     │ -0.0     │ 0.62     │ 0.62     │ 0.4         │ 0.0      │ -0.0     │ -0.0        │ -0.0     │ 0.11     │ -0.0        │ 0.11     │ 2.1         │ 0.93        │ 0.11     │ -0.0     │ 0.93        │ 0.15        │ 0.93        │ -0.0        │ -0.0        │ -0.0        │ 0.03          │ -0.0     │ 0.11     │ 0.11     │ 0.11     │ 0.31        │ -0.0     │ 0.62        │ 0.11     │ 0.04     │ 0.15        │ 0.04     │ -0.0     │ 0.11     │ 0.11     │ 0.46        │ 0.62     │
+│ 4   │ 0.11     │ 0.62     │ 0.16        │ -0.0        │ 0.11     │ 0.11     │ 1.23     │ 0.62        │ 0.11     │ 0.0      │ 0.46        │ -0.0     │ 0.11     │ 0.11     │ 0.11     │ 0.11     │ 0.46        │ 0.11     │ 0.0      │ 0.11     │ 0.62     │ 0.11     │ 0.11     │ 0.11     │ 0.0      │ 0.46        │ 0.11     │ 1.4         │ 0.62     │ 0.11     │ 0.11     │ 0.11     │ -0.0        │ 0.62     │ 0.11     │ -0.0     │ 0.62     │ 0.62     │ 0.62        │ 0.0      │ -0.0     │ -0.0        │ -0.0     │ 0.11     │ -0.0        │ 0.11     │ 2.1         │ 0.93        │ 0.11     │ -0.0     │ 0.93        │ 0.16        │ 0.93        │ -0.0        │ -0.0        │ -0.0        │ 0.03          │ -0.0     │ 0.11     │ 0.11     │ 0.11     │ 0.31        │ -0.0     │ 0.62        │ 0.11     │ 0.04     │ 0.31        │ 0.04     │ -0.0     │ 0.11     │ 0.11     │ 0.46        │ 0.62     │
+│ 5   │ 0.11     │ 0.62     │ 0.31        │ -0.0        │ 0.11     │ 0.11     │ 1.23     │ 0.62        │ 0.11     │ 0.0      │ 0.46        │ -0.0     │ 0.11     │ 0.11     │ 0.11     │ 0.11     │ 0.46        │ 0.11     │ 0.0      │ 0.11     │ 0.62     │ 0.11     │ 0.11     │ 0.11     │ 0.0      │ 0.46        │ 0.11     │ 1.4         │ 0.62     │ 0.11     │ 0.11     │ 0.11     │ -0.0        │ 0.62     │ 0.11     │ -0.0     │ 0.62     │ 0.62     │ 0.62        │ 0.0      │ -0.0     │ -0.0        │ -0.0     │ 0.11     │ -0.0        │ 0.11     │ 2.1         │ 0.93        │ 0.11     │ -0.0     │ 0.93        │ 0.31        │ 0.93        │ -0.0        │ -0.0        │ -0.0        │ 0.03          │ -0.0     │ 0.11     │ 0.11     │ 0.11     │ 0.55        │ -0.0     │ 0.93        │ 0.11     │ 0.04     │ 0.31        │ 0.04     │ -0.0     │ 0.11     │ 0.11     │ 0.46        │ 0.62     │
+│ 6   │ 0.33     │ 0.62     │ 0.46        │ -0.0        │ 0.11     │ 0.11     │ 1.23     │ 0.62        │ 0.22     │ 0.04     │ 0.46        │ -0.0     │ 0.11     │ 0.22     │ 0.11     │ 0.11     │ 0.46        │ 0.11     │ 0.04     │ 0.22     │ 0.62     │ 0.11     │ 0.11     │ 0.11     │ 0.62     │ 0.46        │ 0.22     │ 2.1         │ 0.62     │ 0.11     │ 0.22     │ 0.22     │ -0.0        │ 0.62     │ 0.11     │ -0.0     │ 0.62     │ 0.62     │ 0.62        │ 0.62     │ -0.0     │ -0.0        │ -0.0     │ 0.33     │ -0.0        │ 0.11     │ 2.1         │ 0.93        │ 0.11     │ -0.0     │ 0.93        │ 0.46        │ 0.93        │ -0.0        │ -0.0        │ -0.0        │ 0.03          │ 0.0      │ 0.11     │ 0.11     │ 0.11     │ 0.92        │ 0.0      │ 0.93        │ 0.11     │ 0.04     │ 0.46        │ 0.04     │ -0.0     │ 0.11     │ 0.11     │ 0.46        │ 0.62     │), Dict(:ED=>485308.0), Dict{Symbol,Any}(:dual_status=>FEASIBLE_POINT,:primal_status=>FEASIBLE_POINT,:termination_status=>LOCALLY_SOLVED))	Command being timed: "julia --color=no rts-gmlc.jl"
+	User time (seconds): 151.06
+	System time (seconds): 12.98
+	Percent of CPU this job got: 107%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:32.43
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 947104
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3061552
+	Voluntary context switches: 596
+	Involuntary context switches: 23776
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 22776
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
