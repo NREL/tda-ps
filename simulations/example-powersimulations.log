@@ -1,4 +1,5 @@
     Status `~/Projects/Active/SIIP/tda-ps/simulations/environments/powersimulations.env/Project.toml`
+  [336ed68f] CSV v0.5.2
   [a93c6f00] DataFrames v0.18.0
   [1313f7d8] DataFramesMeta v0.4.1
   [e2685f51] ECOS v0.9.4
@@ -12,8 +13,9 @@
   [e690365d] PowerSimulations v0.1.0 #54b40c0 (https://github.com/nrel/powersimulations.jl)
   [bcd98974] PowerSystems v0.3.0 #fc479d1 (https://github.com/NREL/PowerSystems.jl.git)
   [9e3dc215] TimeSeries v0.14.1
-WARNING: Method definition #isapprox(Any, typeof(Base.isapprox), Any, Any) in module PowerSystems overwritten in module InfrastructureModels.
+[ Info: Loading DataFrames support into Gadfly.jl
 WARNING: Method definition isapprox(Any, Any) in module PowerSystems at /home/bbush/.julia/packages/PowerSystems/Biewz/src/parsers/im_io/data.jl:365 overwritten in module InfrastructureModels at /home/bbush/.julia/packages/InfrastructureModels/m87js/src/core/data.jl:365.
+WARNING: Method definition #isapprox(Any, typeof(Base.isapprox), Any, Any) in module PowerSystems overwritten in module InfrastructureModels.
 [ Info: reversing the orientation of branch 6 (4, 3) to be consistent with other parallel branches
 [ Info: the voltage setpoint on generator 4 does not match the value at bus 4
 [ Info: the voltage setpoint on generator 1 does not match the value at bus 1

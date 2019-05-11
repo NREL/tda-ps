@@ -1,9 +1,12 @@
     Status `~/Projects/Active/SIIP/tda-ps/simulations/environments/powermodels.env/Project.toml`
+  [336ed68f] CSV v0.5.2
   [a93c6f00] DataFrames v0.18.2
   [1313f7d8] DataFramesMeta v0.4.1
+  [c91e804a] Gadfly v1.0.1
   [b6b21f68] Ipopt v0.5.4
   [4076af6c] JuMP v0.18.5
   [c36e90e8] PowerModels v0.9.7
+[ Info: Loading DataFrames support into Gadfly.jl
 [warn | PowerModels]: reversing the orientation of branch 6 (4, 3) to be consistent with other parallel branches
 [warn | PowerModels]: the voltage setpoint on generator 4 does not match the value at bus 4
 [warn | PowerModels]: the voltage setpoint on generator 1 does not match the value at bus 1
@@ -74,13 +77,13 @@ Number of inequality constraint evaluations          = 15
 Number of equality constraint Jacobian evaluations   = 15
 Number of inequality constraint Jacobian evaluations = 15
 Number of Lagrangian Hessian evaluations             = 14
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.111
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.118
 Total CPU secs in NLP function evaluations           =      0.108
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
 [ Info: DC Flow
-Dict{String,Any}("solve_time"=>1.71009,"status"=>:LocalOptimal,"objective"=>17613.2,"solver"=>"IpoptSolver","solution"=>Dict{String,Any}("baseMVA"=>100.0,"gen"=>Dict{String,Any}("4"=>Dict{String,Any}("qg"=>NaN,"pg"=>0.0),"1"=>Dict{String,Any}("qg"=>NaN,"pg"=>0.4),"5"=>Dict{String,Any}("qg"=>NaN,"pg"=>4.59839),"2"=>Dict{String,Any}("qg"=>NaN,"pg"=>1.7),"3"=>Dict{String,Any}("qg"=>NaN,"pg"=>3.30161)),"bus"=>Dict{String,Any}("4"=>Dict{String,Any}("va"=>0.0,"vm"=>1),"1"=>Dict{String,Any}("va"=>0.0577824,"vm"=>1),"10"=>Dict{String,Any}("va"=>0.0719928,"vm"=>1),"2"=>Dict{String,Any}("va"=>-0.0107996,"vm"=>1),"3"=>Dict{String,Any}("va"=>-0.00443448,"vm"=>1)),"per_unit"=>true),"data"=>Dict{String,Any}("name"=>"case5","bus_count"=>5,"branch_count"=>7),"machine"=>Dict("cpu"=>"Intel(R) Xeon(R) CPU E5-1650 v3 @ 3.50GHz","memory"=>"31.338275909423828 Gb"),"objective_lb"=>-Inf)4	Dict{String,Any}("va"=>0.0,"vm"=>1)
+Dict{String,Any}("solve_time"=>1.7356,"status"=>:LocalOptimal,"objective"=>17613.2,"solver"=>"IpoptSolver","solution"=>Dict{String,Any}("baseMVA"=>100.0,"gen"=>Dict{String,Any}("4"=>Dict{String,Any}("qg"=>NaN,"pg"=>0.0),"1"=>Dict{String,Any}("qg"=>NaN,"pg"=>0.4),"5"=>Dict{String,Any}("qg"=>NaN,"pg"=>4.59839),"2"=>Dict{String,Any}("qg"=>NaN,"pg"=>1.7),"3"=>Dict{String,Any}("qg"=>NaN,"pg"=>3.30161)),"bus"=>Dict{String,Any}("4"=>Dict{String,Any}("va"=>0.0,"vm"=>1),"1"=>Dict{String,Any}("va"=>0.0577824,"vm"=>1),"10"=>Dict{String,Any}("va"=>0.0719928,"vm"=>1),"2"=>Dict{String,Any}("va"=>-0.0107996,"vm"=>1),"3"=>Dict{String,Any}("va"=>-0.00443448,"vm"=>1)),"per_unit"=>true),"data"=>Dict{String,Any}("name"=>"case5","bus_count"=>5,"branch_count"=>7),"machine"=>Dict("cpu"=>"Intel(R) Xeon(R) CPU E5-1650 v3 @ 3.50GHz","memory"=>"31.338275909423828 Gb"),"objective_lb"=>-Inf)4	Dict{String,Any}("va"=>0.0,"vm"=>1)
 1	Dict{String,Any}("va"=>0.0577824,"vm"=>1)
 10	Dict{String,Any}("va"=>0.0719928,"vm"=>1)
 2	Dict{String,Any}("va"=>-0.0107996,"vm"=>1)
@@ -159,12 +162,12 @@ Number of inequality constraint evaluations          = 24
 Number of equality constraint Jacobian evaluations   = 24
 Number of inequality constraint Jacobian evaluations = 24
 Number of Lagrangian Hessian evaluations             = 23
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.135
-Total CPU secs in NLP function evaluations           =      0.025
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.140
+Total CPU secs in NLP function evaluations           =      0.026
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
-Dict{String,Any}("solve_time"=>3.26648,"status"=>:LocalOptimal,"objective"=>18269.1,"solver"=>"IpoptSolver","solution"=>Dict{String,Any}("baseMVA"=>100.0,"gen"=>Dict{String,Any}("4"=>Dict{String,Any}("qg"=>-0.12663,"pg"=>0.0),"1"=>Dict{String,Any}("qg"=>0.3,"pg"=>0.4),"5"=>Dict{String,Any}("qg"=>-1.37743,"pg"=>4.38349),"2"=>Dict{String,Any}("qg"=>1.275,"pg"=>1.7),"3"=>Dict{String,Any}("qg"=>3.9,"pg"=>3.59187)),"bus"=>Dict{String,Any}("4"=>Dict{String,Any}("va"=>0.0,"vm"=>0.9),"1"=>Dict{String,Any}("va"=>0.0712169,"vm"=>0.912979),"10"=>Dict{String,Any}("va"=>0.0876477,"vm"=>0.904588),"2"=>Dict{String,Any}("va"=>-0.00103676,"vm"=>0.911321),"3"=>Dict{String,Any}("va"=>0.00874518,"vm"=>0.926759)),"per_unit"=>true),"data"=>Dict{String,Any}("name"=>"case5","bus_count"=>5,"branch_count"=>7),"machine"=>Dict("cpu"=>"Intel(R) Xeon(R) CPU E5-1650 v3 @ 3.50GHz","memory"=>"31.338275909423828 Gb"),"objective_lb"=>-Inf)4	Dict{String,Any}("va"=>0.0,"vm"=>0.9)
+Dict{String,Any}("solve_time"=>3.32635,"status"=>:LocalOptimal,"objective"=>18269.1,"solver"=>"IpoptSolver","solution"=>Dict{String,Any}("baseMVA"=>100.0,"gen"=>Dict{String,Any}("4"=>Dict{String,Any}("qg"=>-0.12663,"pg"=>0.0),"1"=>Dict{String,Any}("qg"=>0.3,"pg"=>0.4),"5"=>Dict{String,Any}("qg"=>-1.37743,"pg"=>4.38349),"2"=>Dict{String,Any}("qg"=>1.275,"pg"=>1.7),"3"=>Dict{String,Any}("qg"=>3.9,"pg"=>3.59187)),"bus"=>Dict{String,Any}("4"=>Dict{String,Any}("va"=>0.0,"vm"=>0.9),"1"=>Dict{String,Any}("va"=>0.0712169,"vm"=>0.912979),"10"=>Dict{String,Any}("va"=>0.0876477,"vm"=>0.904588),"2"=>Dict{String,Any}("va"=>-0.00103676,"vm"=>0.911321),"3"=>Dict{String,Any}("va"=>0.00874518,"vm"=>0.926759)),"per_unit"=>true),"data"=>Dict{String,Any}("name"=>"case5","bus_count"=>5,"branch_count"=>7),"machine"=>Dict("cpu"=>"Intel(R) Xeon(R) CPU E5-1650 v3 @ 3.50GHz","memory"=>"31.338275909423828 Gb"),"objective_lb"=>-Inf)4	Dict{String,Any}("va"=>0.0,"vm"=>0.9)
 1	Dict{String,Any}("va"=>0.0712169,"vm"=>0.912979)
 10	Dict{String,Any}("va"=>0.0876477,"vm"=>0.904588)
 2	Dict{String,Any}("va"=>-0.00103676,"vm"=>0.911321)
