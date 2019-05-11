@@ -1,0 +1,12 @@
+[submodule "models/eg-tamu"]
+	path = models/eg-tamu
+	url = git@github.com:bwbush/eg-tamu.git
+	branch = master
+[submodule "models/nesta-mirror"]
+	path = models/nesta-mirror
+	url = git@github.com:bwbush/nesta-mirror.git
+	branch = master
+[submodule "models/RTS-GMLC"]
+	path = models/RTS-GMLC
+	url = git@github.com:bwbush/RTS-GMLC.git
+	branch = master
