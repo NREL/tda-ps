@@ -5,7 +5,7 @@
 
 The code in this repository requires Julia 1.1.
 
-See [the main read-me file](../ReadMe.md) for instructions on setup up the power-system model data submodules.  These are required before running simulations.
+See [the main read-me file](../ReadMe.md) for instructions on setting up the power-system model data submodules.  These are required before running simulations.
 
 
 ## Simulations
