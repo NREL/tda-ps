@@ -6,7 +6,7 @@
 See [the main read-me file](../ReadMe.md) for instructions on setup up the power-system model data submodules.  These are required before running simulations.
 
 
-# Simulations
+## Simulations
 
 Log files for all of the simulations below are archived in this folder.
 
