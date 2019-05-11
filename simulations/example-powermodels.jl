@@ -17,7 +17,7 @@ using JuMP
 using Ipopt
 
 
-# Create and solve the model using PowerSimulations.
+# Create and solve the model using PowerModels.
 
 case_data = joinpath(PM_DIR,"test/data/matpower/case5.m")
 
