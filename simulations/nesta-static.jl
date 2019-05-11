@@ -20,7 +20,6 @@ nesta_summary = DataFrame(
     Branches=Int64[],
     Algorithm=String[],
     Solver=String[],
-    Time=Float64[],
     Status=Symbol[],
 )
 
@@ -37,7 +36,6 @@ for case_data in NESTA_MODELS
         case_soln["data"]["branch_count"],
         "DCPF",
         case_soln["solver"],
-        case_soln["solve_time"],
         case_soln["status"],
     ))
 
@@ -50,11 +48,11 @@ for case_data in NESTA_MODELS
         case_soln["data"]["branch_count"],
         "ACPF",
         case_soln["solver"],
-        case_soln["solve_time"],
         case_soln["status"],
     ))
 
 end
+
 
 # Record the results.
 

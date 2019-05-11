@@ -126,8 +126,8 @@ Number of inequality constraint evaluations          = 20
 Number of equality constraint Jacobian evaluations   = 20
 Number of inequality constraint Jacobian evaluations = 20
 Number of Lagrangian Hessian evaluations             = 19
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.141
-Total CPU secs in NLP function evaluations           =      0.111
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.146
+Total CPU secs in NLP function evaluations           =      0.114
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -560,7 +560,7 @@ Number of inequality constraint evaluations          = 13
 Number of equality constraint Jacobian evaluations   = 13
 Number of inequality constraint Jacobian evaluations = 13
 Number of Lagrangian Hessian evaluations             = 12
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.237
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.258
 Total CPU secs in NLP function evaluations           =      0.002
 
 EXIT: Optimal Solution Found.
@@ -876,7 +876,7 @@ Number of inequality constraint evaluations          = 13
 Number of equality constraint Jacobian evaluations   = 13
 Number of inequality constraint Jacobian evaluations = 13
 Number of Lagrangian Hessian evaluations             = 12
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.236
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.246
 Total CPU secs in NLP function evaluations           =      0.002
 
 EXIT: Optimal Solution Found.
@@ -1348,7 +1348,7 @@ Number of inequality constraint evaluations          = 21
 Number of equality constraint Jacobian evaluations   = 21
 Number of inequality constraint Jacobian evaluations = 21
 Number of Lagrangian Hessian evaluations             = 20
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.344
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.362
 Total CPU secs in NLP function evaluations           =      0.003
 
 EXIT: Optimal Solution Found.
@@ -1819,8 +1819,8 @@ Number of inequality constraint evaluations          = 21
 Number of equality constraint Jacobian evaluations   = 21
 Number of inequality constraint Jacobian evaluations = 21
 Number of Lagrangian Hessian evaluations             = 20
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.340
-Total CPU secs in NLP function evaluations           =      0.011
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.346
+Total CPU secs in NLP function evaluations           =      0.003
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -2290,8 +2290,8 @@ Number of inequality constraint evaluations          = 25
 Number of equality constraint Jacobian evaluations   = 25
 Number of inequality constraint Jacobian evaluations = 25
 Number of Lagrangian Hessian evaluations             = 24
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.405
-Total CPU secs in NLP function evaluations           =      0.003
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.417
+Total CPU secs in NLP function evaluations           =      0.004
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -2760,8 +2760,8 @@ Number of inequality constraint evaluations          = 25
 Number of equality constraint Jacobian evaluations   = 25
 Number of inequality constraint Jacobian evaluations = 25
 Number of Lagrangian Hessian evaluations             = 24
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.406
-Total CPU secs in NLP function evaluations           =      0.004
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.428
+Total CPU secs in NLP function evaluations           =      0.014
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -3250,8 +3250,8 @@ Number of inequality constraint evaluations          = 25
 Number of equality constraint Jacobian evaluations   = 25
 Number of inequality constraint Jacobian evaluations = 25
 Number of Lagrangian Hessian evaluations             = 24
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.416
-Total CPU secs in NLP function evaluations           =      0.003
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.455
+Total CPU secs in NLP function evaluations           =      0.005
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -3739,7 +3739,7 @@ Number of inequality constraint evaluations          = 25
 Number of equality constraint Jacobian evaluations   = 25
 Number of inequality constraint Jacobian evaluations = 25
 Number of Lagrangian Hessian evaluations             = 24
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.416
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.432
 Total CPU secs in NLP function evaluations           =      0.004
 
 EXIT: Optimal Solution Found.
@@ -3852,7 +3852,7 @@ Number of inequality constraint evaluations          = 9
 Number of equality constraint Jacobian evaluations   = 9
 Number of inequality constraint Jacobian evaluations = 9
 Number of Lagrangian Hessian evaluations             = 8
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.003
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.004
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -3939,7 +3939,7 @@ Number of inequality constraint evaluations          = 30
 Number of equality constraint Jacobian evaluations   = 30
 Number of inequality constraint Jacobian evaluations = 30
 Number of Lagrangian Hessian evaluations             = 29
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.076
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.080
 Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
@@ -4025,7 +4025,7 @@ Number of inequality constraint evaluations          = 30
 Number of equality constraint Jacobian evaluations   = 30
 Number of inequality constraint Jacobian evaluations = 30
 Number of Lagrangian Hessian evaluations             = 29
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.082
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.078
 Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
@@ -4230,7 +4230,7 @@ Number of inequality constraint evaluations          = 22
 Number of equality constraint Jacobian evaluations   = 22
 Number of inequality constraint Jacobian evaluations = 22
 Number of Lagrangian Hessian evaluations             = 21
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.045
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.048
 Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
@@ -4708,7 +4708,7 @@ Number of inequality constraint evaluations          = 35
 Number of equality constraint Jacobian evaluations   = 35
 Number of inequality constraint Jacobian evaluations = 35
 Number of Lagrangian Hessian evaluations             = 34
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.965
+Total CPU secs in IPOPT (w/o function evaluations)   =      1.054
 Total CPU secs in NLP function evaluations           =      0.020
 
 EXIT: Optimal Solution Found.
@@ -5185,7 +5185,7 @@ Number of inequality constraint evaluations          = 35
 Number of equality constraint Jacobian evaluations   = 35
 Number of inequality constraint Jacobian evaluations = 35
 Number of Lagrangian Hessian evaluations             = 34
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.984
+Total CPU secs in IPOPT (w/o function evaluations)   =      1.033
 Total CPU secs in NLP function evaluations           =      0.009
 
 EXIT: Optimal Solution Found.
@@ -5619,8 +5619,8 @@ Number of inequality constraint evaluations          = 57
 Number of equality constraint Jacobian evaluations   = 57
 Number of inequality constraint Jacobian evaluations = 57
 Number of Lagrangian Hessian evaluations             = 56
-Total CPU secs in IPOPT (w/o function evaluations)   =      1.573
-Total CPU secs in NLP function evaluations           =      0.013
+Total CPU secs in IPOPT (w/o function evaluations)   =      1.686
+Total CPU secs in NLP function evaluations           =      0.014
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -6052,8 +6052,8 @@ Number of inequality constraint evaluations          = 57
 Number of equality constraint Jacobian evaluations   = 57
 Number of inequality constraint Jacobian evaluations = 57
 Number of Lagrangian Hessian evaluations             = 56
-Total CPU secs in IPOPT (w/o function evaluations)   =      1.555
-Total CPU secs in NLP function evaluations           =      0.013
+Total CPU secs in IPOPT (w/o function evaluations)   =      1.680
+Total CPU secs in NLP function evaluations           =      0.014
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -6125,7 +6125,7 @@ Number of inequality constraint evaluations          = 17
 Number of equality constraint Jacobian evaluations   = 17
 Number of inequality constraint Jacobian evaluations = 17
 Number of Lagrangian Hessian evaluations             = 16
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.010
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.006
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -6197,7 +6197,7 @@ Number of inequality constraint evaluations          = 17
 Number of equality constraint Jacobian evaluations   = 17
 Number of inequality constraint Jacobian evaluations = 17
 Number of Lagrangian Hessian evaluations             = 16
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.010
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.011
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -6727,7 +6727,7 @@ Number of inequality constraint evaluations          = 21
 Number of equality constraint Jacobian evaluations   = 19
 Number of inequality constraint Jacobian evaluations = 19
 Number of Lagrangian Hessian evaluations             = 18
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.644
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.695
 Total CPU secs in NLP function evaluations           =      0.005
 
 EXIT: Optimal Solution Found.
@@ -7256,8 +7256,8 @@ Number of inequality constraint evaluations          = 21
 Number of equality constraint Jacobian evaluations   = 19
 Number of inequality constraint Jacobian evaluations = 19
 Number of Lagrangian Hessian evaluations             = 18
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.648
-Total CPU secs in NLP function evaluations           =      0.005
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.696
+Total CPU secs in NLP function evaluations           =      0.006
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -7721,7 +7721,7 @@ Number of inequality constraint evaluations          = 15
 Number of equality constraint Jacobian evaluations   = 15
 Number of inequality constraint Jacobian evaluations = 15
 Number of Lagrangian Hessian evaluations             = 14
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.537
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.562
 Total CPU secs in NLP function evaluations           =      0.004
 
 EXIT: Optimal Solution Found.
@@ -8185,7 +8185,7 @@ Number of inequality constraint evaluations          = 15
 Number of equality constraint Jacobian evaluations   = 15
 Number of inequality constraint Jacobian evaluations = 15
 Number of Lagrangian Hessian evaluations             = 14
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.546
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.559
 Total CPU secs in NLP function evaluations           =      0.004
 
 EXIT: Optimal Solution Found.
@@ -8785,7 +8785,7 @@ Number of inequality constraint evaluations          = 12
 Number of equality constraint Jacobian evaluations   = 12
 Number of inequality constraint Jacobian evaluations = 12
 Number of Lagrangian Hessian evaluations             = 11
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.443
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.461
 Total CPU secs in NLP function evaluations           =      0.003
 
 EXIT: Optimal Solution Found.
@@ -9384,7 +9384,7 @@ Number of inequality constraint evaluations          = 12
 Number of equality constraint Jacobian evaluations   = 12
 Number of inequality constraint Jacobian evaluations = 12
 Number of Lagrangian Hessian evaluations             = 11
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.440
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.473
 Total CPU secs in NLP function evaluations           =      0.003
 
 EXIT: Optimal Solution Found.
@@ -9992,7 +9992,7 @@ Number of inequality constraint evaluations          = 19
 Number of equality constraint Jacobian evaluations   = 19
 Number of inequality constraint Jacobian evaluations = 19
 Number of Lagrangian Hessian evaluations             = 18
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.639
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.659
 Total CPU secs in NLP function evaluations           =      0.005
 
 EXIT: Optimal Solution Found.
@@ -10599,7 +10599,7 @@ Number of inequality constraint evaluations          = 19
 Number of equality constraint Jacobian evaluations   = 19
 Number of inequality constraint Jacobian evaluations = 19
 Number of Lagrangian Hessian evaluations             = 18
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.640
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.673
 Total CPU secs in NLP function evaluations           =      0.005
 
 EXIT: Optimal Solution Found.
@@ -11170,7 +11170,7 @@ Number of inequality constraint evaluations          = 15
 Number of equality constraint Jacobian evaluations   = 15
 Number of inequality constraint Jacobian evaluations = 15
 Number of Lagrangian Hessian evaluations             = 14
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.762
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.802
 Total CPU secs in NLP function evaluations           =      0.005
 
 EXIT: Optimal Solution Found.
@@ -11740,7 +11740,7 @@ Number of inequality constraint evaluations          = 15
 Number of equality constraint Jacobian evaluations   = 15
 Number of inequality constraint Jacobian evaluations = 15
 Number of Lagrangian Hessian evaluations             = 14
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.759
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.798
 Total CPU secs in NLP function evaluations           =      0.005
 
 EXIT: Optimal Solution Found.
@@ -11881,8 +11881,8 @@ Number of inequality constraint evaluations          = 29
 Number of equality constraint Jacobian evaluations   = 29
 Number of inequality constraint Jacobian evaluations = 29
 Number of Lagrangian Hessian evaluations             = 28
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.020
-Total CPU secs in NLP function evaluations           =      0.000
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.025
+Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -12021,7 +12021,7 @@ Number of inequality constraint evaluations          = 29
 Number of equality constraint Jacobian evaluations   = 29
 Number of inequality constraint Jacobian evaluations = 29
 Number of Lagrangian Hessian evaluations             = 28
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.020
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.024
 Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
@@ -12160,8 +12160,8 @@ Number of inequality constraint evaluations          = 25
 Number of equality constraint Jacobian evaluations   = 25
 Number of inequality constraint Jacobian evaluations = 25
 Number of Lagrangian Hessian evaluations             = 24
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.095
-Total CPU secs in NLP function evaluations           =      0.001
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.093
+Total CPU secs in NLP function evaluations           =      0.002
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -12298,7 +12298,7 @@ Number of inequality constraint evaluations          = 25
 Number of equality constraint Jacobian evaluations   = 25
 Number of inequality constraint Jacobian evaluations = 25
 Number of Lagrangian Hessian evaluations             = 24
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.094
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.093
 Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
@@ -12946,8 +12946,8 @@ Number of inequality constraint evaluations          = 49
 Number of equality constraint Jacobian evaluations   = 49
 Number of inequality constraint Jacobian evaluations = 49
 Number of Lagrangian Hessian evaluations             = 48
-Total CPU secs in IPOPT (w/o function evaluations)   =      1.711
-Total CPU secs in NLP function evaluations           =      0.014
+Total CPU secs in IPOPT (w/o function evaluations)   =      1.866
+Total CPU secs in NLP function evaluations           =      0.015
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -13593,7 +13593,7 @@ Number of inequality constraint evaluations          = 49
 Number of equality constraint Jacobian evaluations   = 49
 Number of inequality constraint Jacobian evaluations = 49
 Number of Lagrangian Hessian evaluations             = 48
-Total CPU secs in IPOPT (w/o function evaluations)   =      1.701
+Total CPU secs in IPOPT (w/o function evaluations)   =      1.855
 Total CPU secs in NLP function evaluations           =      0.015
 
 EXIT: Optimal Solution Found.
@@ -13767,7 +13767,7 @@ Number of inequality constraint evaluations          = 7
 Number of equality constraint Jacobian evaluations   = 7
 Number of inequality constraint Jacobian evaluations = 7
 Number of Lagrangian Hessian evaluations             = 6
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.002
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.004
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -13817,7 +13817,7 @@ Number of inequality constraint evaluations          = 7
 Number of equality constraint Jacobian evaluations   = 7
 Number of inequality constraint Jacobian evaluations = 7
 Number of Lagrangian Hessian evaluations             = 6
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.002
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.004
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -13875,7 +13875,7 @@ Number of inequality constraint evaluations          = 9
 Number of equality constraint Jacobian evaluations   = 9
 Number of inequality constraint Jacobian evaluations = 9
 Number of Lagrangian Hessian evaluations             = 8
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.002
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.005
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -14624,7 +14624,7 @@ Number of inequality constraint evaluations          = 39
 Number of equality constraint Jacobian evaluations   = 39
 Number of inequality constraint Jacobian evaluations = 39
 Number of Lagrangian Hessian evaluations             = 38
-Total CPU secs in IPOPT (w/o function evaluations)   =      1.438
+Total CPU secs in IPOPT (w/o function evaluations)   =      1.577
 Total CPU secs in NLP function evaluations           =      0.012
 
 EXIT: Optimal Solution Found.
@@ -15315,8 +15315,8 @@ Number of inequality constraint evaluations          = 39
 Number of equality constraint Jacobian evaluations   = 39
 Number of inequality constraint Jacobian evaluations = 39
 Number of Lagrangian Hessian evaluations             = 38
-Total CPU secs in IPOPT (w/o function evaluations)   =      1.410
-Total CPU secs in NLP function evaluations           =      0.012
+Total CPU secs in IPOPT (w/o function evaluations)   =      1.532
+Total CPU secs in NLP function evaluations           =      0.024
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -16056,8 +16056,8 @@ Number of inequality constraint evaluations          = 48
 Number of equality constraint Jacobian evaluations   = 48
 Number of inequality constraint Jacobian evaluations = 48
 Number of Lagrangian Hessian evaluations             = 47
-Total CPU secs in IPOPT (w/o function evaluations)   =      2.051
-Total CPU secs in NLP function evaluations           =      0.016
+Total CPU secs in IPOPT (w/o function evaluations)   =      2.356
+Total CPU secs in NLP function evaluations           =      0.017
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -16796,8 +16796,8 @@ Number of inequality constraint evaluations          = 48
 Number of equality constraint Jacobian evaluations   = 48
 Number of inequality constraint Jacobian evaluations = 48
 Number of Lagrangian Hessian evaluations             = 47
-Total CPU secs in IPOPT (w/o function evaluations)   =      2.085
-Total CPU secs in NLP function evaluations           =      0.016
+Total CPU secs in IPOPT (w/o function evaluations)   =      2.334
+Total CPU secs in NLP function evaluations           =      0.030
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -16853,7 +16853,7 @@ Number of inequality constraint evaluations          = 13
 Number of equality constraint Jacobian evaluations   = 13
 Number of inequality constraint Jacobian evaluations = 13
 Number of Lagrangian Hessian evaluations             = 12
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.009
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.008
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -16909,7 +16909,7 @@ Number of inequality constraint evaluations          = 13
 Number of equality constraint Jacobian evaluations   = 13
 Number of inequality constraint Jacobian evaluations = 13
 Number of Lagrangian Hessian evaluations             = 12
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.008
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.009
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -17383,7 +17383,7 @@ Number of inequality constraint evaluations          = 17
 Number of equality constraint Jacobian evaluations   = 17
 Number of inequality constraint Jacobian evaluations = 17
 Number of Lagrangian Hessian evaluations             = 16
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.004
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.000
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -17540,7 +17540,7 @@ Number of inequality constraint evaluations          = 9
 Number of equality constraint Jacobian evaluations   = 9
 Number of inequality constraint Jacobian evaluations = 9
 Number of Lagrangian Hessian evaluations             = 8
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.003
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.002
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -17687,7 +17687,7 @@ Number of inequality constraint evaluations          = 18
 Number of equality constraint Jacobian evaluations   = 18
 Number of inequality constraint Jacobian evaluations = 18
 Number of Lagrangian Hessian evaluations             = 17
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.020
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.024
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -17782,8 +17782,8 @@ Number of inequality constraint evaluations          = 18
 Number of equality constraint Jacobian evaluations   = 18
 Number of inequality constraint Jacobian evaluations = 18
 Number of Lagrangian Hessian evaluations             = 17
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.024
-Total CPU secs in NLP function evaluations           =      0.000
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.025
+Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -17850,7 +17850,7 @@ Number of inequality constraint evaluations          = 12
 Number of equality constraint Jacobian evaluations   = 12
 Number of inequality constraint Jacobian evaluations = 12
 Number of Lagrangian Hessian evaluations             = 11
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.025
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.026
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -17917,7 +17917,7 @@ Number of inequality constraint evaluations          = 12
 Number of equality constraint Jacobian evaluations   = 12
 Number of inequality constraint Jacobian evaluations = 12
 Number of Lagrangian Hessian evaluations             = 11
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.025
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.026
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -19447,8 +19447,8 @@ Number of inequality constraint evaluations          = 16
 Number of equality constraint Jacobian evaluations   = 16
 Number of inequality constraint Jacobian evaluations = 16
 Number of Lagrangian Hessian evaluations             = 15
-Total CPU secs in IPOPT (w/o function evaluations)   =      6.355
-Total CPU secs in NLP function evaluations           =      0.087
+Total CPU secs in IPOPT (w/o function evaluations)   =      6.884
+Total CPU secs in NLP function evaluations           =      0.075
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -20976,8 +20976,8 @@ Number of inequality constraint evaluations          = 16
 Number of equality constraint Jacobian evaluations   = 16
 Number of inequality constraint Jacobian evaluations = 16
 Number of Lagrangian Hessian evaluations             = 15
-Total CPU secs in IPOPT (w/o function evaluations)   =      6.293
-Total CPU secs in NLP function evaluations           =      0.092
+Total CPU secs in IPOPT (w/o function evaluations)   =      6.672
+Total CPU secs in NLP function evaluations           =      0.096
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -21027,7 +21027,7 @@ Number of inequality constraint evaluations          = 7
 Number of equality constraint Jacobian evaluations   = 7
 Number of inequality constraint Jacobian evaluations = 7
 Number of Lagrangian Hessian evaluations             = 6
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.002
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.004
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -21077,83 +21077,105 @@ Number of inequality constraint evaluations          = 7
 Number of equality constraint Jacobian evaluations   = 7
 Number of inequality constraint Jacobian evaluations = 7
 Number of Lagrangian Hessian evaluations             = 6
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.002
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.003
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
 [ Info:  . . . DC LocalOptimal
-70×8 DataFrame
-│ Row │ File                                                │ Model                  │ Buses │ Branches │ Algorithm │ Solver      │ Time       │ Status       │
-│     │ String                                              │ String                 │ Int64 │ Int64    │ String    │ String      │ Float64    │ Symbol       │
-├─────┼─────────────────────────────────────────────────────┼────────────────────────┼───────┼──────────┼───────────┼─────────────┼────────────┼──────────────┤
-│ 1   │ ../models/nesta-mirror/opf/nesta_case118_ieee.m     │ nesta_case118_ieee     │ 118   │ 186      │ DCPF      │ IpoptSolver │ 1.71651    │ LocalOptimal │
-│ 2   │ ../models/nesta-mirror/opf/nesta_case118_ieee.m     │ nesta_case118_ieee     │ 118   │ 186      │ ACPF      │ IpoptSolver │ 0.0362894  │ LocalOptimal │
-│ 3   │ ../models/nesta-mirror/opf/nesta_case1354_pegase.m  │ nesta_case1354_pegase  │ 1354  │ 1991     │ DCPF      │ IpoptSolver │ 0.244756   │ LocalOptimal │
-│ 4   │ ../models/nesta-mirror/opf/nesta_case1354_pegase.m  │ nesta_case1354_pegase  │ 1354  │ 1991     │ ACPF      │ IpoptSolver │ 0.239666   │ LocalOptimal │
-│ 5   │ ../models/nesta-mirror/opf/nesta_case1394sop_eir.m  │ nesta_case1394sop_eir  │ 1418  │ 1920     │ DCPF      │ IpoptSolver │ 0.349069   │ LocalOptimal │
-│ 6   │ ../models/nesta-mirror/opf/nesta_case1394sop_eir.m  │ nesta_case1394sop_eir  │ 1418  │ 1920     │ ACPF      │ IpoptSolver │ 0.352991   │ LocalOptimal │
-│ 7   │ ../models/nesta-mirror/opf/nesta_case1397sp_eir.m   │ nesta_case1397sp_eir   │ 1418  │ 1919     │ DCPF      │ IpoptSolver │ 0.410311   │ LocalOptimal │
-│ 8   │ ../models/nesta-mirror/opf/nesta_case1397sp_eir.m   │ nesta_case1397sp_eir   │ 1418  │ 1919     │ ACPF      │ IpoptSolver │ 0.415498   │ LocalOptimal │
-│ 9   │ ../models/nesta-mirror/opf/nesta_case1460wp_eir.m   │ nesta_case1460wp_eir   │ 1481  │ 1988     │ DCPF      │ IpoptSolver │ 0.425626   │ LocalOptimal │
-│ 10  │ ../models/nesta-mirror/opf/nesta_case1460wp_eir.m   │ nesta_case1460wp_eir   │ 1481  │ 1988     │ ACPF      │ IpoptSolver │ 0.4219     │ LocalOptimal │
-│ 11  │ ../models/nesta-mirror/opf/nesta_case14_ieee.m      │ nesta_case14_ieee      │ 14    │ 20       │ DCPF      │ IpoptSolver │ 0.00555297 │ LocalOptimal │
-│ 12  │ ../models/nesta-mirror/opf/nesta_case14_ieee.m      │ nesta_case14_ieee      │ 14    │ 20       │ ACPF      │ IpoptSolver │ 0.00424112 │ LocalOptimal │
-│ 13  │ ../models/nesta-mirror/opf/nesta_case162_ieee_dtc.m │ nesta_case162_ieee_dtc │ 162   │ 284      │ DCPF      │ IpoptSolver │ 0.0814516  │ LocalOptimal │
-│ 14  │ ../models/nesta-mirror/opf/nesta_case162_ieee_dtc.m │ nesta_case162_ieee_dtc │ 162   │ 284      │ ACPF      │ IpoptSolver │ 0.0836271  │ LocalOptimal │
-│ 15  │ ../models/nesta-mirror/opf/nesta_case189_edin.m     │ nesta_case189_edin     │ 189   │ 206      │ DCPF      │ IpoptSolver │ 0.0491294  │ LocalOptimal │
-│ 16  │ ../models/nesta-mirror/opf/nesta_case189_edin.m     │ nesta_case189_edin     │ 189   │ 206      │ ACPF      │ IpoptSolver │ 0.0461678  │ LocalOptimal │
-│ 17  │ ../models/nesta-mirror/opf/nesta_case2224_edin.m    │ nesta_case2224_edin    │ 2224  │ 3207     │ DCPF      │ IpoptSolver │ 0.992227   │ LocalOptimal │
-│ 18  │ ../models/nesta-mirror/opf/nesta_case2224_edin.m    │ nesta_case2224_edin    │ 2224  │ 3207     │ ACPF      │ IpoptSolver │ 1.00386    │ LocalOptimal │
-│ 19  │ ../models/nesta-mirror/opf/nesta_case2383wp_mp.m    │ nesta_case2383wp_mp    │ 2383  │ 2896     │ DCPF      │ IpoptSolver │ 1.58859    │ LocalOptimal │
-│ 20  │ ../models/nesta-mirror/opf/nesta_case2383wp_mp.m    │ nesta_case2383wp_mp    │ 2383  │ 2896     │ ACPF      │ IpoptSolver │ 1.60605    │ LocalOptimal │
-│ 21  │ ../models/nesta-mirror/opf/nesta_case24_ieee_rts.m  │ nesta_case24_ieee_rts  │ 24    │ 38       │ DCPF      │ IpoptSolver │ 0.0390052  │ LocalOptimal │
-│ 22  │ ../models/nesta-mirror/opf/nesta_case24_ieee_rts.m  │ nesta_case24_ieee_rts  │ 24    │ 38       │ ACPF      │ IpoptSolver │ 0.010947   │ LocalOptimal │
-│ 23  │ ../models/nesta-mirror/opf/nesta_case2736sp_mp.m    │ nesta_case2736sp_mp    │ 2736  │ 3504     │ DCPF      │ IpoptSolver │ 0.656467   │ LocalOptimal │
-│ 24  │ ../models/nesta-mirror/opf/nesta_case2736sp_mp.m    │ nesta_case2736sp_mp    │ 2736  │ 3504     │ ACPF      │ IpoptSolver │ 0.655745   │ LocalOptimal │
-│ 25  │ ../models/nesta-mirror/opf/nesta_case2737sop_mp.m   │ nesta_case2737sop_mp   │ 2737  │ 3506     │ DCPF      │ IpoptSolver │ 0.543302   │ LocalOptimal │
-│ 26  │ ../models/nesta-mirror/opf/nesta_case2737sop_mp.m   │ nesta_case2737sop_mp   │ 2737  │ 3506     │ ACPF      │ IpoptSolver │ 0.552423   │ LocalOptimal │
-│ 27  │ ../models/nesta-mirror/opf/nesta_case2746wop_mp.m   │ nesta_case2746wop_mp   │ 2746  │ 3514     │ DCPF      │ IpoptSolver │ 0.449259   │ LocalOptimal │
-│ 28  │ ../models/nesta-mirror/opf/nesta_case2746wop_mp.m   │ nesta_case2746wop_mp   │ 2746  │ 3514     │ ACPF      │ IpoptSolver │ 0.458445   │ LocalOptimal │
-│ 29  │ ../models/nesta-mirror/opf/nesta_case2746wp_mp.m    │ nesta_case2746wp_mp    │ 2746  │ 3514     │ DCPF      │ IpoptSolver │ 0.659154   │ LocalOptimal │
-│ 30  │ ../models/nesta-mirror/opf/nesta_case2746wp_mp.m    │ nesta_case2746wp_mp    │ 2746  │ 3514     │ ACPF      │ IpoptSolver │ 0.647415   │ LocalOptimal │
-│ 31  │ ../models/nesta-mirror/opf/nesta_case2869_pegase.m  │ nesta_case2869_pegase  │ 2869  │ 4582     │ DCPF      │ IpoptSolver │ 0.773917   │ LocalOptimal │
-│ 32  │ ../models/nesta-mirror/opf/nesta_case2869_pegase.m  │ nesta_case2869_pegase  │ 2869  │ 4582     │ ACPF      │ IpoptSolver │ 0.780479   │ LocalOptimal │
-│ 33  │ ../models/nesta-mirror/opf/nesta_case29_edin.m      │ nesta_case29_edin      │ 29    │ 99       │ DCPF      │ IpoptSolver │ 0.0258251  │ LocalOptimal │
-│ 34  │ ../models/nesta-mirror/opf/nesta_case29_edin.m      │ nesta_case29_edin      │ 29    │ 99       │ ACPF      │ IpoptSolver │ 0.0257935  │ LocalOptimal │
-│ 35  │ ../models/nesta-mirror/opf/nesta_case300_ieee.m     │ nesta_case300_ieee     │ 300   │ 411      │ DCPF      │ IpoptSolver │ 0.0971395  │ LocalOptimal │
-│ 36  │ ../models/nesta-mirror/opf/nesta_case300_ieee.m     │ nesta_case300_ieee     │ 300   │ 411      │ ACPF      │ IpoptSolver │ 0.0963579  │ LocalOptimal │
-│ 37  │ ../models/nesta-mirror/opf/nesta_case3012wp_mp.m    │ nesta_case3012wp_mp    │ 3012  │ 3572     │ DCPF      │ IpoptSolver │ 1.72856    │ LocalOptimal │
-│ 38  │ ../models/nesta-mirror/opf/nesta_case3012wp_mp.m    │ nesta_case3012wp_mp    │ 3012  │ 3572     │ ACPF      │ IpoptSolver │ 1.71842    │ LocalOptimal │
-│ 39  │ ../models/nesta-mirror/opf/nesta_case30_as.m        │ nesta_case30_as        │ 30    │ 41       │ DCPF      │ IpoptSolver │ 0.0086699  │ LocalOptimal │
-│ 40  │ ../models/nesta-mirror/opf/nesta_case30_as.m        │ nesta_case30_as        │ 30    │ 41       │ ACPF      │ IpoptSolver │ 0.00764837 │ LocalOptimal │
-│ 41  │ ../models/nesta-mirror/opf/nesta_case30_fsr.m       │ nesta_case30_fsr       │ 30    │ 41       │ DCPF      │ IpoptSolver │ 0.0050768  │ LocalOptimal │
-│ 42  │ ../models/nesta-mirror/opf/nesta_case30_fsr.m       │ nesta_case30_fsr       │ 30    │ 41       │ ACPF      │ IpoptSolver │ 0.00549862 │ LocalOptimal │
-│ 43  │ ../models/nesta-mirror/opf/nesta_case30_ieee.m      │ nesta_case30_ieee      │ 30    │ 41       │ DCPF      │ IpoptSolver │ 0.00613395 │ LocalOptimal │
-│ 44  │ ../models/nesta-mirror/opf/nesta_case30_ieee.m      │ nesta_case30_ieee      │ 30    │ 41       │ ACPF      │ IpoptSolver │ 0.00600561 │ LocalOptimal │
-│ 45  │ ../models/nesta-mirror/opf/nesta_case3120sp_mp.m    │ nesta_case3120sp_mp    │ 3120  │ 3693     │ DCPF      │ IpoptSolver │ 1.45344    │ LocalOptimal │
-│ 46  │ ../models/nesta-mirror/opf/nesta_case3120sp_mp.m    │ nesta_case3120sp_mp    │ 3120  │ 3693     │ ACPF      │ IpoptSolver │ 1.43628    │ LocalOptimal │
-│ 47  │ ../models/nesta-mirror/opf/nesta_case3375wp_mp.m    │ nesta_case3375wp_mp    │ 3375  │ 4161     │ DCPF      │ IpoptSolver │ 2.08725    │ LocalOptimal │
-│ 48  │ ../models/nesta-mirror/opf/nesta_case3375wp_mp.m    │ nesta_case3375wp_mp    │ 3375  │ 4161     │ ACPF      │ IpoptSolver │ 2.10431    │ LocalOptimal │
-│ 49  │ ../models/nesta-mirror/opf/nesta_case39_epri.m      │ nesta_case39_epri      │ 39    │ 46       │ DCPF      │ IpoptSolver │ 0.00960911 │ LocalOptimal │
-│ 50  │ ../models/nesta-mirror/opf/nesta_case39_epri.m      │ nesta_case39_epri      │ 39    │ 46       │ ACPF      │ IpoptSolver │ 0.00917639 │ LocalOptimal │
-│ 51  │ ../models/nesta-mirror/opf/nesta_case3_lmbd.m       │ nesta_case3_lmbd       │ 3     │ 3        │ DCPF      │ IpoptSolver │ 0.00279708 │ LocalOptimal │
-│ 52  │ ../models/nesta-mirror/opf/nesta_case3_lmbd.m       │ nesta_case3_lmbd       │ 3     │ 3        │ ACPF      │ IpoptSolver │ 0.00276866 │ LocalOptimal │
-│ 53  │ ../models/nesta-mirror/opf/nesta_case4_gs.m         │ nesta_case4_gs         │ 4     │ 4        │ DCPF      │ IpoptSolver │ 0.00287728 │ LocalOptimal │
-│ 54  │ ../models/nesta-mirror/opf/nesta_case4_gs.m         │ nesta_case4_gs         │ 4     │ 4        │ ACPF      │ IpoptSolver │ 0.00281302 │ LocalOptimal │
-│ 55  │ ../models/nesta-mirror/opf/nesta_case57_ieee.m      │ nesta_case57_ieee      │ 57    │ 80       │ DCPF      │ IpoptSolver │ 0.0134573  │ LocalOptimal │
-│ 56  │ ../models/nesta-mirror/opf/nesta_case57_ieee.m      │ nesta_case57_ieee      │ 57    │ 80       │ ACPF      │ IpoptSolver │ 0.0135479  │ LocalOptimal │
-│ 57  │ ../models/nesta-mirror/opf/nesta_case5_pjm.m        │ nesta_case5_pjm        │ 5     │ 6        │ DCPF      │ IpoptSolver │ 0.00534562 │ LocalOptimal │
-│ 58  │ ../models/nesta-mirror/opf/nesta_case5_pjm.m        │ nesta_case5_pjm        │ 5     │ 6        │ ACPF      │ IpoptSolver │ 0.00522416 │ LocalOptimal │
-│ 59  │ ../models/nesta-mirror/opf/nesta_case6_c.m          │ nesta_case6_c          │ 6     │ 7        │ DCPF      │ IpoptSolver │ 0.00283425 │ LocalOptimal │
-│ 60  │ ../models/nesta-mirror/opf/nesta_case6_c.m          │ nesta_case6_c          │ 6     │ 7        │ ACPF      │ IpoptSolver │ 0.00287698 │ LocalOptimal │
-│ 61  │ ../models/nesta-mirror/opf/nesta_case6_ww.m         │ nesta_case6_ww         │ 6     │ 11       │ DCPF      │ IpoptSolver │ 0.00341566 │ LocalOptimal │
-│ 62  │ ../models/nesta-mirror/opf/nesta_case6_ww.m         │ nesta_case6_ww         │ 6     │ 11       │ ACPF      │ IpoptSolver │ 0.00335205 │ LocalOptimal │
-│ 63  │ ../models/nesta-mirror/opf/nesta_case73_ieee_rts.m  │ nesta_case73_ieee_rts  │ 73    │ 120      │ DCPF      │ IpoptSolver │ 0.0256916  │ LocalOptimal │
-│ 64  │ ../models/nesta-mirror/opf/nesta_case73_ieee_rts.m  │ nesta_case73_ieee_rts  │ 73    │ 120      │ ACPF      │ IpoptSolver │ 0.0255001  │ LocalOptimal │
-│ 65  │ ../models/nesta-mirror/opf/nesta_case89_pegase.m    │ nesta_case89_pegase    │ 89    │ 210      │ DCPF      │ IpoptSolver │ 0.0331225  │ LocalOptimal │
-│ 66  │ ../models/nesta-mirror/opf/nesta_case89_pegase.m    │ nesta_case89_pegase    │ 89    │ 210      │ ACPF      │ IpoptSolver │ 0.025861   │ LocalOptimal │
-│ 67  │ ../models/nesta-mirror/opf/nesta_case9241_pegase.m  │ nesta_case9241_pegase  │ 9241  │ 16049    │ DCPF      │ IpoptSolver │ 4.1983     │ LocalOptimal │
-│ 68  │ ../models/nesta-mirror/opf/nesta_case9241_pegase.m  │ nesta_case9241_pegase  │ 9241  │ 16049    │ ACPF      │ IpoptSolver │ 4.20467    │ LocalOptimal │
-│ 69  │ ../models/nesta-mirror/opf/nesta_case9_wscc.m       │ nesta_case9_wscc       │ 9     │ 9        │ DCPF      │ IpoptSolver │ 0.00308203 │ LocalOptimal │
-│ 70  │ ../models/nesta-mirror/opf/nesta_case9_wscc.m       │ nesta_case9_wscc       │ 9     │ 9        │ ACPF      │ IpoptSolver │ 0.0030423  │ LocalOptimal │
+70×7 DataFrame
+│ Row │ File                                                │ Model                  │ Buses │ Branches │ Algorithm │ Solver      │ Status       │
+│     │ String                                              │ String                 │ Int64 │ Int64    │ String    │ String      │ Symbol       │
+├─────┼─────────────────────────────────────────────────────┼────────────────────────┼───────┼──────────┼───────────┼─────────────┼──────────────┤
+│ 1   │ ../models/nesta-mirror/opf/nesta_case118_ieee.m     │ nesta_case118_ieee     │ 118   │ 186      │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 2   │ ../models/nesta-mirror/opf/nesta_case118_ieee.m     │ nesta_case118_ieee     │ 118   │ 186      │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 3   │ ../models/nesta-mirror/opf/nesta_case1354_pegase.m  │ nesta_case1354_pegase  │ 1354  │ 1991     │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 4   │ ../models/nesta-mirror/opf/nesta_case1354_pegase.m  │ nesta_case1354_pegase  │ 1354  │ 1991     │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 5   │ ../models/nesta-mirror/opf/nesta_case1394sop_eir.m  │ nesta_case1394sop_eir  │ 1418  │ 1920     │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 6   │ ../models/nesta-mirror/opf/nesta_case1394sop_eir.m  │ nesta_case1394sop_eir  │ 1418  │ 1920     │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 7   │ ../models/nesta-mirror/opf/nesta_case1397sp_eir.m   │ nesta_case1397sp_eir   │ 1418  │ 1919     │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 8   │ ../models/nesta-mirror/opf/nesta_case1397sp_eir.m   │ nesta_case1397sp_eir   │ 1418  │ 1919     │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 9   │ ../models/nesta-mirror/opf/nesta_case1460wp_eir.m   │ nesta_case1460wp_eir   │ 1481  │ 1988     │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 10  │ ../models/nesta-mirror/opf/nesta_case1460wp_eir.m   │ nesta_case1460wp_eir   │ 1481  │ 1988     │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 11  │ ../models/nesta-mirror/opf/nesta_case14_ieee.m      │ nesta_case14_ieee      │ 14    │ 20       │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 12  │ ../models/nesta-mirror/opf/nesta_case14_ieee.m      │ nesta_case14_ieee      │ 14    │ 20       │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 13  │ ../models/nesta-mirror/opf/nesta_case162_ieee_dtc.m │ nesta_case162_ieee_dtc │ 162   │ 284      │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 14  │ ../models/nesta-mirror/opf/nesta_case162_ieee_dtc.m │ nesta_case162_ieee_dtc │ 162   │ 284      │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 15  │ ../models/nesta-mirror/opf/nesta_case189_edin.m     │ nesta_case189_edin     │ 189   │ 206      │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 16  │ ../models/nesta-mirror/opf/nesta_case189_edin.m     │ nesta_case189_edin     │ 189   │ 206      │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 17  │ ../models/nesta-mirror/opf/nesta_case2224_edin.m    │ nesta_case2224_edin    │ 2224  │ 3207     │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 18  │ ../models/nesta-mirror/opf/nesta_case2224_edin.m    │ nesta_case2224_edin    │ 2224  │ 3207     │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 19  │ ../models/nesta-mirror/opf/nesta_case2383wp_mp.m    │ nesta_case2383wp_mp    │ 2383  │ 2896     │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 20  │ ../models/nesta-mirror/opf/nesta_case2383wp_mp.m    │ nesta_case2383wp_mp    │ 2383  │ 2896     │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 21  │ ../models/nesta-mirror/opf/nesta_case24_ieee_rts.m  │ nesta_case24_ieee_rts  │ 24    │ 38       │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 22  │ ../models/nesta-mirror/opf/nesta_case24_ieee_rts.m  │ nesta_case24_ieee_rts  │ 24    │ 38       │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 23  │ ../models/nesta-mirror/opf/nesta_case2736sp_mp.m    │ nesta_case2736sp_mp    │ 2736  │ 3504     │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 24  │ ../models/nesta-mirror/opf/nesta_case2736sp_mp.m    │ nesta_case2736sp_mp    │ 2736  │ 3504     │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 25  │ ../models/nesta-mirror/opf/nesta_case2737sop_mp.m   │ nesta_case2737sop_mp   │ 2737  │ 3506     │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 26  │ ../models/nesta-mirror/opf/nesta_case2737sop_mp.m   │ nesta_case2737sop_mp   │ 2737  │ 3506     │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 27  │ ../models/nesta-mirror/opf/nesta_case2746wop_mp.m   │ nesta_case2746wop_mp   │ 2746  │ 3514     │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 28  │ ../models/nesta-mirror/opf/nesta_case2746wop_mp.m   │ nesta_case2746wop_mp   │ 2746  │ 3514     │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 29  │ ../models/nesta-mirror/opf/nesta_case2746wp_mp.m    │ nesta_case2746wp_mp    │ 2746  │ 3514     │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 30  │ ../models/nesta-mirror/opf/nesta_case2746wp_mp.m    │ nesta_case2746wp_mp    │ 2746  │ 3514     │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 31  │ ../models/nesta-mirror/opf/nesta_case2869_pegase.m  │ nesta_case2869_pegase  │ 2869  │ 4582     │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 32  │ ../models/nesta-mirror/opf/nesta_case2869_pegase.m  │ nesta_case2869_pegase  │ 2869  │ 4582     │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 33  │ ../models/nesta-mirror/opf/nesta_case29_edin.m      │ nesta_case29_edin      │ 29    │ 99       │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 34  │ ../models/nesta-mirror/opf/nesta_case29_edin.m      │ nesta_case29_edin      │ 29    │ 99       │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 35  │ ../models/nesta-mirror/opf/nesta_case300_ieee.m     │ nesta_case300_ieee     │ 300   │ 411      │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 36  │ ../models/nesta-mirror/opf/nesta_case300_ieee.m     │ nesta_case300_ieee     │ 300   │ 411      │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 37  │ ../models/nesta-mirror/opf/nesta_case3012wp_mp.m    │ nesta_case3012wp_mp    │ 3012  │ 3572     │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 38  │ ../models/nesta-mirror/opf/nesta_case3012wp_mp.m    │ nesta_case3012wp_mp    │ 3012  │ 3572     │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 39  │ ../models/nesta-mirror/opf/nesta_case30_as.m        │ nesta_case30_as        │ 30    │ 41       │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 40  │ ../models/nesta-mirror/opf/nesta_case30_as.m        │ nesta_case30_as        │ 30    │ 41       │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 41  │ ../models/nesta-mirror/opf/nesta_case30_fsr.m       │ nesta_case30_fsr       │ 30    │ 41       │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 42  │ ../models/nesta-mirror/opf/nesta_case30_fsr.m       │ nesta_case30_fsr       │ 30    │ 41       │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 43  │ ../models/nesta-mirror/opf/nesta_case30_ieee.m      │ nesta_case30_ieee      │ 30    │ 41       │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 44  │ ../models/nesta-mirror/opf/nesta_case30_ieee.m      │ nesta_case30_ieee      │ 30    │ 41       │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 45  │ ../models/nesta-mirror/opf/nesta_case3120sp_mp.m    │ nesta_case3120sp_mp    │ 3120  │ 3693     │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 46  │ ../models/nesta-mirror/opf/nesta_case3120sp_mp.m    │ nesta_case3120sp_mp    │ 3120  │ 3693     │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 47  │ ../models/nesta-mirror/opf/nesta_case3375wp_mp.m    │ nesta_case3375wp_mp    │ 3375  │ 4161     │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 48  │ ../models/nesta-mirror/opf/nesta_case3375wp_mp.m    │ nesta_case3375wp_mp    │ 3375  │ 4161     │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 49  │ ../models/nesta-mirror/opf/nesta_case39_epri.m      │ nesta_case39_epri      │ 39    │ 46       │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 50  │ ../models/nesta-mirror/opf/nesta_case39_epri.m      │ nesta_case39_epri      │ 39    │ 46       │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 51  │ ../models/nesta-mirror/opf/nesta_case3_lmbd.m       │ nesta_case3_lmbd       │ 3     │ 3        │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 52  │ ../models/nesta-mirror/opf/nesta_case3_lmbd.m       │ nesta_case3_lmbd       │ 3     │ 3        │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 53  │ ../models/nesta-mirror/opf/nesta_case4_gs.m         │ nesta_case4_gs         │ 4     │ 4        │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 54  │ ../models/nesta-mirror/opf/nesta_case4_gs.m         │ nesta_case4_gs         │ 4     │ 4        │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 55  │ ../models/nesta-mirror/opf/nesta_case57_ieee.m      │ nesta_case57_ieee      │ 57    │ 80       │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 56  │ ../models/nesta-mirror/opf/nesta_case57_ieee.m      │ nesta_case57_ieee      │ 57    │ 80       │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 57  │ ../models/nesta-mirror/opf/nesta_case5_pjm.m        │ nesta_case5_pjm        │ 5     │ 6        │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 58  │ ../models/nesta-mirror/opf/nesta_case5_pjm.m        │ nesta_case5_pjm        │ 5     │ 6        │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 59  │ ../models/nesta-mirror/opf/nesta_case6_c.m          │ nesta_case6_c          │ 6     │ 7        │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 60  │ ../models/nesta-mirror/opf/nesta_case6_c.m          │ nesta_case6_c          │ 6     │ 7        │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 61  │ ../models/nesta-mirror/opf/nesta_case6_ww.m         │ nesta_case6_ww         │ 6     │ 11       │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 62  │ ../models/nesta-mirror/opf/nesta_case6_ww.m         │ nesta_case6_ww         │ 6     │ 11       │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 63  │ ../models/nesta-mirror/opf/nesta_case73_ieee_rts.m  │ nesta_case73_ieee_rts  │ 73    │ 120      │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 64  │ ../models/nesta-mirror/opf/nesta_case73_ieee_rts.m  │ nesta_case73_ieee_rts  │ 73    │ 120      │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 65  │ ../models/nesta-mirror/opf/nesta_case89_pegase.m    │ nesta_case89_pegase    │ 89    │ 210      │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 66  │ ../models/nesta-mirror/opf/nesta_case89_pegase.m    │ nesta_case89_pegase    │ 89    │ 210      │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 67  │ ../models/nesta-mirror/opf/nesta_case9241_pegase.m  │ nesta_case9241_pegase  │ 9241  │ 16049    │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 68  │ ../models/nesta-mirror/opf/nesta_case9241_pegase.m  │ nesta_case9241_pegase  │ 9241  │ 16049    │ ACPF      │ IpoptSolver │ LocalOptimal │
+│ 69  │ ../models/nesta-mirror/opf/nesta_case9_wscc.m       │ nesta_case9_wscc       │ 9     │ 9        │ DCPF      │ IpoptSolver │ LocalOptimal │
+│ 70  │ ../models/nesta-mirror/opf/nesta_case9_wscc.m       │ nesta_case9_wscc       │ 9     │ 9        │ ACPF      │ IpoptSolver │ LocalOptimal │	Command being timed: "julia --color=no nesta-static.jl"
+	User time (seconds): 143.09
+	System time (seconds): 13.82
+	Percent of CPU this job got: 112%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:19.73
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1035104
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 499970
+	Voluntary context switches: 287
+	Involuntary context switches: 595
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
