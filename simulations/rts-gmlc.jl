@@ -1,3 +1,6 @@
+# Run the RTS-GMLC base case using `PowerSimulations.jl`.
+
+
 # Set working directory.
 
 if isdefined(Main, :SIIP_TDAPS_DIR)

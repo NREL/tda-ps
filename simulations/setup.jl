@@ -1,3 +1,6 @@
+# Set up packages and directories for common use.
+
+
 # Activate the environment.
 
 using Pkg
