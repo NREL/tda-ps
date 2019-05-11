@@ -1,16 +1,13 @@
     Status `~/Projects/Active/SIIP/tda-ps/simulations/environments/powersimulations.env/Project.toml`
-  [5ae59095] Colors v0.9.5
-  [41994980] D3TypeTrees v0.1.1
   [a93c6f00] DataFrames v0.18.0
+  [1313f7d8] DataFramesMeta v0.4.1
   [e2685f51] ECOS v0.9.4
   [60bf3e95] GLPK v0.9.1
+  [c91e804a] Gadfly v1.0.1
   [2030c09a] InfrastructureModels v0.2.0 #900f4e8 (https://github.com/lanl-ansi/InfrastructureModels.jl.git)
   [b6b21f68] Ipopt v0.5.4
   [4076af6c] JuMP v0.19.0+ #94e2cbb (https://github.com/JuliaOpt/JuMP.jl.git)
-  [51fcb6bd] NamedColors v0.2.0
   [774612a8] ParameterJuMP v0.0.1 #dfb1e3c (https://github.com/JuliaStochOpt/ParameterJuMP.jl.git)
-  [f0f68f2c] PlotlyJS v0.12.3
-  [91a5bcdd] Plots v0.24.0
   [c36e90e8] PowerModels v0.10.0 #ba38acd (https://github.com/lanl-ansi/PowerModels.jl.git)
   [e690365d] PowerSimulations v0.1.0 #54b40c0 (https://github.com/nrel/powersimulations.jl)
   [bcd98974] PowerSystems v0.3.0 #fc479d1 (https://github.com/NREL/PowerSystems.jl.git)
@@ -60,7 +57,7 @@ This program contains Ipopt, a library for large-scale nonlinear optimization.
 ******************************************************************************
 
 [ Info: DC Flow
-PowerSimulations.OpertationModelResults(Dict(:Pth=>25×5 DataFrames.DataFrame
+PowerSimulations.OpertationModelResults(Dict(:Pth=>25×5 DataFrame
 │ Row │ 4       │ 1       │ 5       │ 2       │ 3       │
 │     │ Float64 │ Float64 │ Float64 │ Float64 │ Float64 │
 ├─────┼─────────┼─────────┼─────────┼─────────┼─────────┤

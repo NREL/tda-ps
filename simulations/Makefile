@@ -2,7 +2,7 @@ SHELL=bash
 
 
 deps=$(shell ls -1 setup*.jl environments/*/*.toml)
-logs=$(shell ls -1 *.jl | sed -e '/setup-.*/d' -e 's/\.jl$$/.log/')
+logs=$(shell ls -1 *.jl | sed -e '/setup.*/d' -e 's/\.jl$$/.log/')
 
 
 all: $(logs)

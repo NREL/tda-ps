@@ -13,8 +13,6 @@ include("setup-powersimulations.jl")
 
 # Select the optimizer.
 
-using JuMP
-using Ipopt
 the_optimizer = with_optimizer(Ipopt.Optimizer, print_level = 0)
 
 
