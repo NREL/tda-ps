@@ -14,8 +14,9 @@ using CSV
 using DataFrames
 using DataFramesMeta
 using Gadfly
-using JuMP
 using Ipopt
+using JuMP
+using TimeSeries
 
 
 # NESTA models.
