@@ -14,7 +14,7 @@ Log files for all of the simulations below are archived in this folder.
 ### Examples
 
 *   [example-powermodels.jl](example-powermodels.jl) uses `PowerModels.jl` for a static powerflow simulation.
-*   [exmaple-powersimulations.jl](example-powersimulations.jl) uses `PowerSimulations.jl` for a multi-timestep powerflow simulation.
+*   [example-powersimulations.jl](example-powersimulations.jl) uses `PowerSimulations.jl` for a multi-timestep powerflow simulation.
 
 
 ### NESTA Cases
