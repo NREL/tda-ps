@@ -22,3 +22,8 @@ using Ipopt
 
 NESTA_DIR = "../models/nesta-mirror/opf/"
 NESTA_MODELS = map(x -> joinpath(NESTA_DIR, x), filter(x -> endswith(x, ".m"), readdir(NESTA_DIR)))
+
+
+# The RTS-GMLC model.
+
+RTS_GMLC_DIR = "../models/RTS-GMLC/RTS_Data/SourceData"
