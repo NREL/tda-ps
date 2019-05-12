@@ -6,8 +6,8 @@
 using Pkg
 
 Pkg.activate(joinpath("environments", THE_ENV))
-#Pkg.instantiate()
-#Pkg.build()
+Pkg.instantiate()
+Pkg.build()
 Pkg.status()
 
 
