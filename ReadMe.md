@@ -9,3 +9,4 @@ This repository uses a submodules containing power-system models. Initialize the
 ```bash
 git submodule init
 git submodule update
+```
