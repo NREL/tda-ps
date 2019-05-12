@@ -7,8 +7,17 @@
   [4076af6c] JuMP v0.18.5
   [c36e90e8] PowerModels v0.9.7
   [9e3dc215] TimeSeries v0.14.1
-┌ Warning: Module Tables with build ID 16521936308317436 is missing from the cache.
+┌ Warning: Module Tables with build ID 407710452741369 is missing from the cache.
 │ This may mean Tables [bd369af6-aec1-5ad0-b16a-f7cc5008161c] does not support precompilation but is imported by a module that does.
+└ @ Base loading.jl:947
+┌ Warning: The call to compilecache failed to create a usable precompiled cache file for CSV [336ed68f-0bac-5ca0-87d4-7b16caf5d00b]
+│   exception = Required dependency Tables [bd369af6-aec1-5ad0-b16a-f7cc5008161c] failed to load from a cache file.
+└ @ Base loading.jl:969
+┌ Warning: Module Tables with build ID 407722063595582 is missing from the cache.
+│ This may mean Tables [bd369af6-aec1-5ad0-b16a-f7cc5008161c] does not support precompilation but is imported by a module that does.
+└ @ Base loading.jl:947
+┌ Warning: Module DataFrames with build ID 407726916895863 is missing from the cache.
+│ This may mean DataFrames [a93c6f00-e57d-5684-b7b6-d8193f3e46c0] does not support precompilation but is imported by a module that does.
 └ @ Base loading.jl:947
 [ Info: Loading DataFrames support into Gadfly.jl
 [warn | PowerModels]: reversing the orientation of branch 6 (4, 3) to be consistent with other parallel branches
@@ -67,7 +76,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 14
 
                                    (scaled)                 (unscaled)
-Objective...............:   4.4033039345167094e+02    1.7613215738066836e+04
+Objective...............:   4.4033039345167100e+02    1.7613215738066840e+04
 Dual infeasibility......:   4.3217907322597279e-13    1.7287162929038912e-11
 Constraint violation....:   8.8817841970012523e-16    8.8817841970012523e-16
 Complementarity.........:   2.5076941906708529e-09    1.0030776762683411e-07
@@ -81,13 +90,13 @@ Number of inequality constraint evaluations          = 15
 Number of equality constraint Jacobian evaluations   = 15
 Number of inequality constraint Jacobian evaluations = 15
 Number of Lagrangian Hessian evaluations             = 14
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.163
-Total CPU secs in NLP function evaluations           =      0.133
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.102
+Total CPU secs in NLP function evaluations           =      0.118
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
 [ Info: DC Flow
-Dict{String,Any}("solve_time"=>2.04934,"status"=>:LocalOptimal,"objective"=>17613.2,"solver"=>"IpoptSolver","solution"=>Dict{String,Any}("baseMVA"=>100.0,"gen"=>Dict{String,Any}("4"=>Dict{String,Any}("qg"=>NaN,"pg"=>0.0),"1"=>Dict{String,Any}("qg"=>NaN,"pg"=>0.4),"5"=>Dict{String,Any}("qg"=>NaN,"pg"=>4.59839),"2"=>Dict{String,Any}("qg"=>NaN,"pg"=>1.7),"3"=>Dict{String,Any}("qg"=>NaN,"pg"=>3.30161)),"bus"=>Dict{String,Any}("4"=>Dict{String,Any}("va"=>0.0,"vm"=>1),"1"=>Dict{String,Any}("va"=>0.0577824,"vm"=>1),"10"=>Dict{String,Any}("va"=>0.0719928,"vm"=>1),"2"=>Dict{String,Any}("va"=>-0.0107996,"vm"=>1),"3"=>Dict{String,Any}("va"=>-0.00443448,"vm"=>1)),"per_unit"=>true),"data"=>Dict{String,Any}("name"=>"case5","bus_count"=>5,"branch_count"=>7),"machine"=>Dict("cpu"=>"Intel(R) Xeon(R) CPU E5-1650 v3 @ 3.50GHz","memory"=>"31.338275909423828 Gb"),"objective_lb"=>-Inf)
+Dict{String,Any}("solve_time"=>1.65767,"status"=>:LocalOptimal,"objective"=>17613.2,"solver"=>"IpoptSolver","solution"=>Dict{String,Any}("baseMVA"=>100.0,"gen"=>Dict{String,Any}("4"=>Dict{String,Any}("qg"=>NaN,"pg"=>0.0),"1"=>Dict{String,Any}("qg"=>NaN,"pg"=>0.4),"5"=>Dict{String,Any}("qg"=>NaN,"pg"=>4.59839),"2"=>Dict{String,Any}("qg"=>NaN,"pg"=>1.7),"3"=>Dict{String,Any}("qg"=>NaN,"pg"=>3.30161)),"bus"=>Dict{String,Any}("4"=>Dict{String,Any}("va"=>0.0,"vm"=>1),"1"=>Dict{String,Any}("va"=>0.0577824,"vm"=>1),"10"=>Dict{String,Any}("va"=>0.0719928,"vm"=>1),"2"=>Dict{String,Any}("va"=>-0.0107996,"vm"=>1),"3"=>Dict{String,Any}("va"=>-0.00443448,"vm"=>1)),"per_unit"=>true),"data"=>Dict{String,Any}("name"=>"case5","bus_count"=>5,"branch_count"=>7),"machine"=>Dict("cpu"=>"Intel(R) Xeon(R) Gold 6154 CPU @ 3.00GHz","memory"=>"92.80330657958984 Gb"),"objective_lb"=>-Inf)
 4	Dict{String,Any}("va"=>0.0,"vm"=>1)
 1	Dict{String,Any}("va"=>0.0577824,"vm"=>1)
 10	Dict{String,Any}("va"=>0.0719928,"vm"=>1)
@@ -167,12 +176,12 @@ Number of inequality constraint evaluations          = 24
 Number of equality constraint Jacobian evaluations   = 24
 Number of inequality constraint Jacobian evaluations = 24
 Number of Lagrangian Hessian evaluations             = 23
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.170
-Total CPU secs in NLP function evaluations           =      0.031
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.147
+Total CPU secs in NLP function evaluations           =      0.026
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
-Dict{String,Any}("solve_time"=>4.01912,"status"=>:LocalOptimal,"objective"=>18269.1,"solver"=>"IpoptSolver","solution"=>Dict{String,Any}("baseMVA"=>100.0,"gen"=>Dict{String,Any}("4"=>Dict{String,Any}("qg"=>-0.12663,"pg"=>0.0),"1"=>Dict{String,Any}("qg"=>0.3,"pg"=>0.4),"5"=>Dict{String,Any}("qg"=>-1.37743,"pg"=>4.38349),"2"=>Dict{String,Any}("qg"=>1.275,"pg"=>1.7),"3"=>Dict{String,Any}("qg"=>3.9,"pg"=>3.59187)),"bus"=>Dict{String,Any}("4"=>Dict{String,Any}("va"=>0.0,"vm"=>0.9),"1"=>Dict{String,Any}("va"=>0.0712169,"vm"=>0.912979),"10"=>Dict{String,Any}("va"=>0.0876477,"vm"=>0.904588),"2"=>Dict{String,Any}("va"=>-0.00103676,"vm"=>0.911321),"3"=>Dict{String,Any}("va"=>0.00874518,"vm"=>0.926759)),"per_unit"=>true),"data"=>Dict{String,Any}("name"=>"case5","bus_count"=>5,"branch_count"=>7),"machine"=>Dict("cpu"=>"Intel(R) Xeon(R) CPU E5-1650 v3 @ 3.50GHz","memory"=>"31.338275909423828 Gb"),"objective_lb"=>-Inf)
+Dict{String,Any}("solve_time"=>3.15028,"status"=>:LocalOptimal,"objective"=>18269.1,"solver"=>"IpoptSolver","solution"=>Dict{String,Any}("baseMVA"=>100.0,"gen"=>Dict{String,Any}("4"=>Dict{String,Any}("qg"=>-0.12663,"pg"=>0.0),"1"=>Dict{String,Any}("qg"=>0.3,"pg"=>0.4),"5"=>Dict{String,Any}("qg"=>-1.37743,"pg"=>4.38349),"2"=>Dict{String,Any}("qg"=>1.275,"pg"=>1.7),"3"=>Dict{String,Any}("qg"=>3.9,"pg"=>3.59187)),"bus"=>Dict{String,Any}("4"=>Dict{String,Any}("va"=>0.0,"vm"=>0.9),"1"=>Dict{String,Any}("va"=>0.0712169,"vm"=>0.912979),"10"=>Dict{String,Any}("va"=>0.0876477,"vm"=>0.904588),"2"=>Dict{String,Any}("va"=>-0.00103676,"vm"=>0.911321),"3"=>Dict{String,Any}("va"=>0.00874518,"vm"=>0.926759)),"per_unit"=>true),"data"=>Dict{String,Any}("name"=>"case5","bus_count"=>5,"branch_count"=>7),"machine"=>Dict("cpu"=>"Intel(R) Xeon(R) Gold 6154 CPU @ 3.00GHz","memory"=>"92.80330657958984 Gb"),"objective_lb"=>-Inf)
 4	Dict{String,Any}("va"=>0.0,"vm"=>0.9)
 1	Dict{String,Any}("va"=>0.0712169,"vm"=>0.912979)
 10	Dict{String,Any}("va"=>0.0876477,"vm"=>0.904588)
@@ -183,24 +192,24 @@ Dict{String,Any}("solve_time"=>4.01912,"status"=>:LocalOptimal,"objective"=>1826
 5	Dict{String,Any}("qg"=>-1.37743,"pg"=>4.38349)
 2	Dict{String,Any}("qg"=>1.275,"pg"=>1.7)
 3	Dict{String,Any}("qg"=>3.9,"pg"=>3.59187)
-	Command being timed: "julia --color=no example-powermodels.jl"
-	User time (seconds): 70.02
-	System time (seconds): 0.91
-	Percent of CPU this job got: 100%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:10.35
+	Command being timed: "julia --color=no --eval NO_INSTANTIATE=1 --load example-powermodels.jl"
+	User time (seconds): 89.20
+	System time (seconds): 7.41
+	Percent of CPU this job got: 107%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:29.95
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 463700
+	Maximum resident set size (kbytes): 436164
 	Average resident set size (kbytes): 0
-	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 211803
-	Voluntary context switches: 37
-	Involuntary context switches: 239043
+	Major (requiring I/O) page faults: 15
+	Minor (reclaiming a frame) page faults: 810706
+	Voluntary context switches: 5240
+	Involuntary context switches: 235210
 	Swaps: 0
-	File system inputs: 0
-	File system outputs: 8
+	File system inputs: 300792
+	File system outputs: 11488
 	Socket messages sent: 0
 	Socket messages received: 0
 	Signals delivered: 0

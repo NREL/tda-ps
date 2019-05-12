@@ -13,32 +13,38 @@
   [e690365d] PowerSimulations v0.1.0 #54b40c0 (https://github.com/nrel/powersimulations.jl)
   [bcd98974] PowerSystems v0.3.0 #fc479d1 (https://github.com/NREL/PowerSystems.jl.git)
   [9e3dc215] TimeSeries v0.14.1
-┌ Warning: The call to compilecache failed to create a usable precompiled cache file for Tables [bd369af6-aec1-5ad0-b16a-f7cc5008161c]
-│   exception = Invalid input in module list: expected Sockets.
-└ @ Base loading.jl:969
-┌ Warning: Module Tables with build ID 16523232425510821 is missing from the cache.
+┌ Warning: Module TableTraits with build ID 407461015999139 is missing from the cache.
+│ This may mean TableTraits [3783bdb8-4a98-5b6b-af9a-565f29a5fe9c] does not support precompilation but is imported by a module that does.
+└ @ Base loading.jl:947
+┌ Warning: Module TableTraits with build ID 407461015999139 is missing from the cache.
+│ This may mean TableTraits [3783bdb8-4a98-5b6b-af9a-565f29a5fe9c] does not support precompilation but is imported by a module that does.
+└ @ Base loading.jl:947
+┌ Warning: Module TableTraits with build ID 407461015999139 is missing from the cache.
+│ This may mean TableTraits [3783bdb8-4a98-5b6b-af9a-565f29a5fe9c] does not support precompilation but is imported by a module that does.
+└ @ Base loading.jl:947
+┌ Warning: Module Tables with build ID 407713890251202 is missing from the cache.
 │ This may mean Tables [bd369af6-aec1-5ad0-b16a-f7cc5008161c] does not support precompilation but is imported by a module that does.
 └ @ Base loading.jl:947
-┌ Warning: Module DataFrames with build ID 16523237440281150 is missing from the cache.
+┌ Warning: Module DataFrames with build ID 407718871750566 is missing from the cache.
 │ This may mean DataFrames [a93c6f00-e57d-5684-b7b6-d8193f3e46c0] does not support precompilation but is imported by a module that does.
 └ @ Base loading.jl:947
 [ Info: Loading DataFrames support into Gadfly.jl
-┌ Warning: The call to compilecache failed to create a usable precompiled cache file for InfrastructureModels [2030c09a-7f63-5d83-885d-db604e0e9cc0]
-│   exception = Required dependency JuMP [4076af6c-e467-56ae-b986-b466b2749572] failed to load from a cache file.
-└ @ Base loading.jl:969
-┌ Warning: Module JuMP with build ID 16523256985298798 is missing from the cache.
+┌ Warning: Module JuMP with build ID 407732853843459 is missing from the cache.
 │ This may mean JuMP [4076af6c-e467-56ae-b986-b466b2749572] does not support precompilation but is imported by a module that does.
 └ @ Base loading.jl:947
-┌ Warning: Module JuMP with build ID 16523256985298798 is missing from the cache.
+┌ Warning: Module JuMP with build ID 407732853843459 is missing from the cache.
 │ This may mean JuMP [4076af6c-e467-56ae-b986-b466b2749572] does not support precompilation but is imported by a module that does.
 └ @ Base loading.jl:947
-┌ Warning: Module DataFrames with build ID 16523237440281150 is missing from the cache.
+┌ Warning: Module JuMP with build ID 407732853843459 is missing from the cache.
+│ This may mean JuMP [4076af6c-e467-56ae-b986-b466b2749572] does not support precompilation but is imported by a module that does.
+└ @ Base loading.jl:947
+┌ Warning: Module DataFrames with build ID 407718871750566 is missing from the cache.
 │ This may mean DataFrames [a93c6f00-e57d-5684-b7b6-d8193f3e46c0] does not support precompilation but is imported by a module that does.
 └ @ Base loading.jl:947
-┌ Warning: Module JuMP with build ID 16523256985298798 is missing from the cache.
+┌ Warning: Module JuMP with build ID 407732853843459 is missing from the cache.
 │ This may mean JuMP [4076af6c-e467-56ae-b986-b466b2749572] does not support precompilation but is imported by a module that does.
 └ @ Base loading.jl:947
-┌ Warning: Module JuMP with build ID 16523256985298798 is missing from the cache.
+┌ Warning: Module JuMP with build ID 407732853843459 is missing from the cache.
 │ This may mean JuMP [4076af6c-e467-56ae-b986-b466b2749572] does not support precompilation but is imported by a module that does.
 └ @ Base loading.jl:947
 [ Info: reversing the orientation of branch 6 (4, 3) to be consistent with other parallel branches
@@ -113,24 +119,24 @@ PowerSimulations.OpertationModelResults(Dict(:Pth=>25×5 DataFrame
 │ 23  │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
 │ 24  │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │
 │ 25  │ -0.0    │ 0.4     │ 4.6     │ 1.7     │ 3.3     │), Dict(:ED=>4.4033e5), Dict{Symbol,Any}(:dual_status=>FEASIBLE_POINT,:primal_status=>FEASIBLE_POINT,:termination_status=>LOCALLY_SOLVED))
-	Command being timed: "julia --color=no example-powersimulations.jl"
-	User time (seconds): 131.30
-	System time (seconds): 5.83
-	Percent of CPU this job got: 104%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:11.58
+	Command being timed: "julia --color=no --eval NO_INSTANTIATE=1 --load example-powersimulations.jl"
+	User time (seconds): 98.14
+	System time (seconds): 7.94
+	Percent of CPU this job got: 107%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:38.39
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 452100
+	Maximum resident set size (kbytes): 425504
 	Average resident set size (kbytes): 0
-	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 767897
-	Voluntary context switches: 410
-	Involuntary context switches: 1196005
+	Major (requiring I/O) page faults: 14
+	Minor (reclaiming a frame) page faults: 769773
+	Voluntary context switches: 4264
+	Involuntary context switches: 55970
 	Swaps: 0
-	File system inputs: 0
-	File system outputs: 8880
+	File system inputs: 14872
+	File system outputs: 2912
 	Socket messages sent: 0
 	Socket messages received: 0
 	Signals delivered: 0
