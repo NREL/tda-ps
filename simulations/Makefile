@@ -17,7 +17,7 @@ clean:
 %.log: %.jl $(deps)
 	$(TIME) julia --color=no $< 2>&1 | tee $@
 #	sed -i '1s/^\(\xef\xbb\xbf\)\?/\xef\xbb\xbf/' $@
-	git diff --stat $@
+	-git diff --stat $@
 
 
 .PHONY: all clean
