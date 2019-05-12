@@ -5,10 +5,13 @@
 
 using Pkg
 
-Pkg.activate(joinpath("environments", THE_ENV))
-Pkg.instantiate()
-Pkg.build()
-Pkg.status()
+if isdefined(Main, :THE_ENV)
+    Pkg.activate(joinpath("environments", THE_ENV))
+    if !isdefined(Main, :NO_INSTANTIATE)
+        Pkg.instantiate()
+    end
+    Pkg.status()
+end
 
 
 # Use common packages.
