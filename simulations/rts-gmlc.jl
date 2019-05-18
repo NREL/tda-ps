@@ -3,8 +3,8 @@
 
 # Set working directory.
 
-if isdefined(Main, :SIIP_TDAPS_DIR)
-    cd(SIIP_TDAPS_DIR)
+if isdefined(Main, :TDAPS_DIR)
+    cd(TDAPS_DIR)
 end
 
 

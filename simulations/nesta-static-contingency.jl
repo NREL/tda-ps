@@ -3,8 +3,8 @@
 
 # Set working directory.
 
-if isdefined(Main, :SIIP_TDAPS_DIR)
-    cd(SIIP_TDAPS_DIR)
+if isdefined(Main, :TDAPS_DIR)
+    cd(TDAPS_DIR)
 end
 
 
@@ -26,6 +26,10 @@ algs = [
 
 alg = algs[3]
 
+function run_opf_custom(case_data)
+    run_opf(case_data, alg, the_solver, setting=Dict("output" => Dict("branch_flows" => true)))
+end
+
 
 # Read the model.
 
@@ -36,7 +40,7 @@ case_data_backup = PM.parse_file(case_file)
 # Run the base case.
 
 case_data_base = deepcopy(case_data_backup)
-case_soln_base = run_opf(case_data_base, alg, the_solver)
+case_soln_base = run_opf_custom(case_data_base)
 
 
 # Run a contingency case.
@@ -44,7 +48,7 @@ case_soln_base = run_opf(case_data_base, alg, the_solver)
 case_data_ctgy = deepcopy(case_data_backup)
 case_data_ctgy["branch"]["12"]["br_status"] = 0
 
-case_soln_ctgy = run_opf(case_data_ctgy, alg, the_solver)
+case_soln_ctgy = run_opf_custom(case_data_ctgy)
 
 
 # Compare the results.
