@@ -27,4 +27,4 @@ Log files for all of the simulations below are archived in this folder.
 
 ### RTS-GMLC Case
 
-*   [rts-gmlc.jl](rts-gmlc.jl) runs the RTS-GMLC base base using `PowerSimulations.jl`
+*   [rts-gmlc.jl](rts-gmlc.jl) runs the RTS-GMLC base base using `PowerSimulations.jl`.
