@@ -1,0 +1,409 @@
+  Updating registry at `~/.julia/registries/General`
+  Updating git-repo `https://github.com/JuliaRegistries/General.git`
+[?25l[2K[?25h    Status `~/Projects/Active/tda/tda-ps/simulations/environments/powersimulations.env/Project.toml`
+  [336ed68f] CSV v0.5.2
+  [159f3aea] Cairo v0.6.0
+  [a93c6f00] DataFrames v0.18.0
+  [1313f7d8] DataFramesMeta v0.4.1
+  [e2685f51] ECOS v0.9.4
+  [186bb1d3] Fontconfig v0.2.0
+  [60bf3e95] GLPK v0.9.1
+  [c91e804a] Gadfly v1.0.1
+  [2030c09a] InfrastructureModels v0.2.0 #900f4e8 (https://github.com/lanl-ansi/InfrastructureModels.jl.git)
+  [b6b21f68] Ipopt v0.5.4
+  [4076af6c] JuMP v0.19.1+ #94e2cbb (https://github.com/JuliaOpt/JuMP.jl.git)
+  [774612a8] ParameterJuMP v0.0.1 #dfb1e3c (https://github.com/JuliaStochOpt/ParameterJuMP.jl.git)
+  [c36e90e8] PowerModels v0.10.0 #ba38acd (https://github.com/lanl-ansi/PowerModels.jl.git)
+  [e690365d] PowerSimulations v0.1.0 #96c19a6 (https://github.com/bwbush/PowerSimulations.jl)
+  [bcd98974] PowerSystems v0.3.0 #fc479d1 (https://github.com/NREL/PowerSystems.jl.git)
+  [9e3dc215] TimeSeries v0.14.1
+[ Info: Loading DataFrames support into Gadfly.jl
+[ Info: Solving ../models/nesta-mirror/opf/nesta_case118_ieee.m . . .
+[ Info: removing 3 cost terms from generator 32: Float64[]
+[ Info: removing 1 cost terms from generator 29: [86.5713, 0.0]
+[ Info: removing 3 cost terms from generator 1: Float64[]
+[ Info: removing 3 cost terms from generator 54: Float64[]
+[ Info: removing 3 cost terms from generator 2: Float64[]
+[ Info: removing 3 cost terms from generator 41: Float64[]
+[ Info: removing 1 cost terms from generator 51: [120.089, 0.0]
+[ Info: removing 3 cost terms from generator 53: Float64[]
+[ Info: removing 3 cost terms from generator 27: Float64[]
+[ Info: removing 3 cost terms from generator 42: Float64[]
+[ Info: removing 3 cost terms from generator 33: Float64[]
+[ Info: removing 1 cost terms from generator 28: [96.9762, 0.0]
+[ Info: removing 3 cost terms from generator 50: Float64[]
+[ Info: removing 3 cost terms from generator 52: Float64[]
+[ Info: removing 1 cost terms from generator 26: [124.521, 0.0]
+[ Info: removing 3 cost terms from generator 10: Float64[]
+[ Info: removing 3 cost terms from generator 24: Float64[]
+[ Info: removing 1 cost terms from generator 25: [142.621, 0.0]
+[ Info: removing 3 cost terms from generator 23: Float64[]
+[ Info: removing 3 cost terms from generator 49: Float64[]
+[ Info: removing 1 cost terms from generator 5: [146.339, 0.0]
+[ Info: removing 3 cost terms from generator 31: Float64[]
+[ Info: removing 3 cost terms from generator 43: Float64[]
+[ Info: removing 1 cost terms from generator 39: [138.118, 0.0]
+[ Info: removing 3 cost terms from generator 34: Float64[]
+[ Info: removing 3 cost terms from generator 44: Float64[]
+[ Info: removing 3 cost terms from generator 17: Float64[]
+[ Info: removing 1 cost terms from generator 37: [100.664, 0.0]
+[ Info: removing 3 cost terms from generator 47: Float64[]
+[ Info: removing 3 cost terms from generator 9: Float64[]
+[ Info: removing 1 cost terms from generator 12: [111.812, 0.0]
+[ Info: removing 1 cost terms from generator 20: [151.379, 0.0]
+[ Info: removing 1 cost terms from generator 6: [88.9054, 0.0]
+[ Info: removing 1 cost terms from generator 14: [81.4446, 0.0]
+[ Info: removing 3 cost terms from generator 7: Float64[]
+[ Info: removing 3 cost terms from generator 8: Float64[]
+[ Info: removing 3 cost terms from generator 19: Float64[]
+[ Info: removing 3 cost terms from generator 4: Float64[]
+[ Info: removing 1 cost terms from generator 22: [132.471, 0.0]
+[ Info: removing 1 cost terms from generator 11: [92.9688, 0.0]
+[ Info: removing 3 cost terms from generator 35: Float64[]
+[ Info: removing 3 cost terms from generator 13: Float64[]
+[ Info: removing 3 cost terms from generator 15: Float64[]
+[ Info: removing 3 cost terms from generator 16: Float64[]
+[ Info: removing 1 cost terms from generator 40: [79.3496, 0.0]
+[ Info: removing 1 cost terms from generator 21: [107.141, 0.0]
+[ Info: removing 3 cost terms from generator 38: Float64[]
+[ Info: removing 1 cost terms from generator 46: [69.1193, 0.0]
+[ Info: removing 1 cost terms from generator 45: [106.656, 0.0]
+[ Info: removing 3 cost terms from generator 36: Float64[]
+[ Info: Reading bus data
+[ Info: Reading load data
+[ Info: Reading generator data
+[ Info: Reading branch data
+[ Info: There are no Load Zones data in this file
+┌ Warning: key 'loadzone' not found in PowerSystems dictionary, this will result in an empty LoadZones array
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/parsers/dict_to_struct.jl:42
+┌ Warning: key 'services' not found in PowerSystems dictionary, this will result in an empty services array
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/parsers/dict_to_struct.jl:57
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The angle limits provided is larger than 3π/2 radians.
+│  PowerSystems inferred the data provided in degrees and will transform it to radians
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/branchdata_checks.jl:19
+┌ Warning: The generator 32 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 32 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 1 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 1 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 54 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 54 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 2 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 2 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 41 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 41 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 53 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 53 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 27 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 27 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 42 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 42 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 33 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 33 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 50 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 50 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 52 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 52 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 10 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 10 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 24 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 24 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 23 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 23 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 49 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 49 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 31 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 31 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 43 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 43 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 34 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 34 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 44 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 44 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 17 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 17 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 47 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 47 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 9 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 9 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 7 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 7 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 8 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 8 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 19 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 19 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 4 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 4 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 35 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 35 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 13 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 13 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 15 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 15 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 16 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 16 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 38 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 38 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 36 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 36 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 48 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 48 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 18 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 18 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+┌ Warning: The generator 3 has a nonbinding ramp up limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:118
+┌ Warning: The generator 3 has a nonbinding ramp down limit.
+└ @ PowerSystems ~/.julia/packages/PowerSystems/Biewz/src/utils/IO/system_checks.jl:121
+
+******************************************************************************
+This program contains Ipopt, a library for large-scale nonlinear optimization.
+ Ipopt is released as open source code under the Eclipse Public License (EPL).
+         For more information visit http://projects.coin-or.org/Ipopt
+******************************************************************************
+
+[ Info:  . . . StandardACPForm LOCALLY_SOLVED
+[ Info: Load demanded: 4242.0 MW
+[ Info: Load served:   4242.0 MW
+[ Info: Load shed:     0.0 MW
+1×7 DataFrame
+│ Row │ File                                            │ Model              │ Buses │ Branches │ Algorithm       │ Solver │ Status         │
+│     │ String                                          │ String             │ Int64 │ Int64    │ String          │ String │ Symbol         │
+├─────┼─────────────────────────────────────────────────┼────────────────────┼───────┼──────────┼─────────────────┼────────┼────────────────┤
+│ 1   │ ../models/nesta-mirror/opf/nesta_case118_ieee.m │ nesta_case118_ieee │ 118   │ 186      │ StandardACPForm │ Ipopt  │ LOCALLY_SOLVED │
+	Command being timed: "julia --color=no nesta-dynamic-contingency.jl"
+	User time (seconds): 74.55
+	System time (seconds): 0.82
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:15.64
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 466052
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 173707
+	Voluntary context switches: 66
+	Involuntary context switches: 109
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 160
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

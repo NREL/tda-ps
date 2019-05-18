@@ -529,9 +529,9 @@ version = "0.10.0"
 
 [[PowerSimulations]]
 deps = ["AxisArrays", "Compat", "DataFrames", "Dates", "InfrastructureModels", "JuMP", "LinQuadOptInterface", "LinearAlgebra", "MathOptInterface", "ParameterJuMP", "Pkg", "PowerModels", "PowerSystems", "TimeSeries"]
-git-tree-sha1 = "d390c06b2dee3c925d6c2813f159d098457439b9"
-repo-rev = "54b40c0b0e383eceb19cf2630da5769f922c4b1f"
-repo-url = "https://github.com/nrel/powersimulations.jl"
+git-tree-sha1 = "78d8cd05f583171ae50d962cd2eb3b6f5ae5cd12"
+repo-rev = "96c19a636ef07c38976eba55a4b85c6dbcb749a4"
+repo-url = "https://github.com/bwbush/PowerSimulations.jl"
 uuid = "e690365d-45e2-57bb-ac84-44ba829e73c4"
 version = "0.1.0"
 

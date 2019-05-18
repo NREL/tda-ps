@@ -1,31 +1,19 @@
-    Status `~/Projects/Active/SIIP/tda-ps/simulations/environments/powermodels.env/Project.toml`
+  Updating registry at `~/.julia/registries/General`
+  Updating git-repo `https://github.com/JuliaRegistries/General.git`
+[?25l[2K[?25h    Status `~/Projects/Active/tda/tda-ps/simulations/environments/powermodels.env/Project.toml`
   [336ed68f] CSV v0.5.2
+  [159f3aea] Cairo v0.6.0
   [a93c6f00] DataFrames v0.18.2
   [1313f7d8] DataFramesMeta v0.4.1
+  [e2685f51] ECOS v0.9.4
+  [186bb1d3] Fontconfig v0.2.0
+  [60bf3e95] GLPK v0.10.0
   [c91e804a] Gadfly v1.0.1
   [b6b21f68] Ipopt v0.5.4
   [4076af6c] JuMP v0.18.5
   [c36e90e8] PowerModels v0.9.7
   [9e3dc215] TimeSeries v0.14.1
-┌ Warning: The call to compilecache failed to create a usable precompiled cache file for Tables [bd369af6-aec1-5ad0-b16a-f7cc5008161c]
-│   exception = ArgumentError: Invalid checksum in cache file /home/bbush/.julia/compiled/v1.1/Tables/Z804B.ji.
-└ @ Base loading.jl:969
-┌ Warning: Module Tables with build ID 407712093305669 is missing from the cache.
-│ This may mean Tables [bd369af6-aec1-5ad0-b16a-f7cc5008161c] does not support precompilation but is imported by a module that does.
-└ @ Base loading.jl:947
-┌ Warning: Module DataFrames with build ID 407716094427410 is missing from the cache.
-│ This may mean DataFrames [a93c6f00-e57d-5684-b7b6-d8193f3e46c0] does not support precompilation but is imported by a module that does.
-└ @ Base loading.jl:947
 [ Info: Loading DataFrames support into Gadfly.jl
-┌ Warning: Module JuMP with build ID 407732197559145 is missing from the cache.
-│ This may mean JuMP [4076af6c-e467-56ae-b986-b466b2749572] does not support precompilation but is imported by a module that does.
-└ @ Base loading.jl:947
-┌ Warning: Module JuMP with build ID 407732197559145 is missing from the cache.
-│ This may mean JuMP [4076af6c-e467-56ae-b986-b466b2749572] does not support precompilation but is imported by a module that does.
-└ @ Base loading.jl:947
-┌ Warning: Module JuMP with build ID 407732197559145 is missing from the cache.
-│ This may mean JuMP [4076af6c-e467-56ae-b986-b466b2749572] does not support precompilation but is imported by a module that does.
-└ @ Base loading.jl:947
 DataType[GenericPowerModel{StandardACPForm}, GenericPowerModel{NFAForm}, GenericPowerModel{DCPlosslessForm}]
 [ Info: Solving ../models/nesta-mirror/opf/nesta_case118_ieee.m . . .
 [info | PowerModels]: removing 3 cost terms from generator 32: Float64[]
@@ -157,8 +145,8 @@ Number of inequality constraint evaluations          = 30
 Number of equality constraint Jacobian evaluations   = 30
 Number of inequality constraint Jacobian evaluations = 30
 Number of Lagrangian Hessian evaluations             = 29
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.269
-Total CPU secs in NLP function evaluations           =      0.131
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.288
+Total CPU secs in NLP function evaluations           =      0.147
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -276,8 +264,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 21
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 20
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.103
-Total CPU secs in NLP function evaluations           =      0.085
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.111
+Total CPU secs in NLP function evaluations           =      0.091
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -379,7 +367,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 19
 
                                    (scaled)                 (unscaled)
-Objective...............:   2.3418947134158720e+03    3.5451414820112395e+03
+Objective...............:   2.3418947134158725e+03    3.5451414820112400e+03
 Dual infeasibility......:   2.5059036063649481e-14    3.7934168320864070e-14
 Constraint violation....:   1.0325074129013956e-14    1.0325074129013956e-14
 Complementarity.........:   2.5288555806094791e-09    3.8281613470819845e-09
@@ -393,7 +381,7 @@ Number of inequality constraint evaluations          = 20
 Number of equality constraint Jacobian evaluations   = 20
 Number of inequality constraint Jacobian evaluations = 20
 Number of Lagrangian Hessian evaluations             = 19
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.034
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.036
 Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
@@ -723,7 +711,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 37
 
                                    (scaled)                 (unscaled)
-Objective...............:   7.4069354546971095e+04    7.4069354546971095e+04
+Objective...............:   7.4069354546971124e+04    7.4069354546971124e+04
 Dual infeasibility......:   3.2626539192403680e-09    3.2626539192403680e-09
 Constraint violation....:   6.6738730855019878e-11    6.8151165591966156e-11
 Complementarity.........:   4.4434643071462875e-09    4.4434643071462875e-09
@@ -737,8 +725,8 @@ Number of inequality constraint evaluations          = 40
 Number of equality constraint Jacobian evaluations   = 38
 Number of inequality constraint Jacobian evaluations = 38
 Number of Lagrangian Hessian evaluations             = 37
-Total CPU secs in IPOPT (w/o function evaluations)   =      4.452
-Total CPU secs in NLP function evaluations           =      4.610
+Total CPU secs in IPOPT (w/o function evaluations)   =      3.990
+Total CPU secs in NLP function evaluations           =      6.920
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -1053,7 +1041,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 13
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 12
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.073
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.081
 Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
@@ -1369,7 +1357,7 @@ Number of inequality constraint evaluations          = 13
 Number of equality constraint Jacobian evaluations   = 13
 Number of inequality constraint Jacobian evaluations = 13
 Number of Lagrangian Hessian evaluations             = 12
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.221
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.252
 Total CPU secs in NLP function evaluations           =      0.002
 
 EXIT: Optimal Solution Found.
@@ -1853,8 +1841,8 @@ Number of inequality constraint evaluations          = 32
 Number of equality constraint Jacobian evaluations   = 32
 Number of inequality constraint Jacobian evaluations = 32
 Number of Lagrangian Hessian evaluations             = 31
-Total CPU secs in IPOPT (w/o function evaluations)   =      3.658
-Total CPU secs in NLP function evaluations           =      3.655
+Total CPU secs in IPOPT (w/o function evaluations)   =      3.861
+Total CPU secs in NLP function evaluations           =      4.618
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -2310,7 +2298,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 20
 
                                    (scaled)                 (unscaled)
-Objective...............:   1.7606101782817794e+02    1.3161048771675685e+03
+Objective...............:   1.7606101782817797e+02    1.3161048771675687e+03
 Dual infeasibility......:   1.6265107818003340e-14    1.2158618637444055e-13
 Constraint violation....:   7.7715611723760958e-16    7.7715611723760958e-16
 Complementarity.........:   3.9091224509673958e-09    2.9221773147900200e-08
@@ -2324,7 +2312,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 21
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 20
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.099
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.107
 Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
@@ -2795,7 +2783,7 @@ Number of inequality constraint evaluations          = 21
 Number of equality constraint Jacobian evaluations   = 21
 Number of inequality constraint Jacobian evaluations = 21
 Number of Lagrangian Hessian evaluations             = 20
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.309
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.348
 Total CPU secs in NLP function evaluations           =      0.003
 
 EXIT: Optimal Solution Found.
@@ -3266,7 +3254,7 @@ In iteration 32, 1 Slack too small, adjusting variable bound
 Number of Iterations....: 36
 
                                    (scaled)                 (unscaled)
-Objective...............:   5.0580813893419401e+02    3.8889852880733633e+03
+Objective...............:   5.0580813893419406e+02    3.8889852880733638e+03
 Dual infeasibility......:   7.7074515727615471e-09    5.9259951487074077e-08
 Constraint violation....:   1.1954627043264643e-09    1.1954627043264643e-09
 Complementarity.........:   5.3496576189983741e-09    4.1131682499915185e-08
@@ -3280,8 +3268,8 @@ Number of inequality constraint evaluations          = 37
 Number of equality constraint Jacobian evaluations   = 37
 Number of inequality constraint Jacobian evaluations = 37
 Number of Lagrangian Hessian evaluations             = 36
-Total CPU secs in IPOPT (w/o function evaluations)   =      4.471
-Total CPU secs in NLP function evaluations           =      4.117
+Total CPU secs in IPOPT (w/o function evaluations)   =      4.665
+Total CPU secs in NLP function evaluations           =      5.282
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -3736,7 +3724,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 24
 
                                    (scaled)                 (unscaled)
-Objective...............:   4.9074860556678772e+02    3.7731977014313215e+03
+Objective...............:   4.9074860556678766e+02    3.7731977014313211e+03
 Dual infeasibility......:   1.8061101739857142e-14    1.3886561631986480e-13
 Constraint violation....:   1.1102230246251565e-15    1.1102230246251565e-15
 Complementarity.........:   2.6151411949892870e-09    2.0106923654842748e-08
@@ -3750,7 +3738,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 25
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 24
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.142
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.156
 Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
@@ -4220,7 +4208,7 @@ Number of inequality constraint evaluations          = 25
 Number of equality constraint Jacobian evaluations   = 25
 Number of inequality constraint Jacobian evaluations = 25
 Number of Lagrangian Hessian evaluations             = 24
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.370
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.403
 Total CPU secs in NLP function evaluations           =      0.003
 
 EXIT: Optimal Solution Found.
@@ -4705,7 +4693,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 32
 
                                    (scaled)                 (unscaled)
-Objective...............:   5.9740171086319867e+02    4.6401785945312649e+03
+Objective...............:   5.9740171086319879e+02    4.6401785945312658e+03
 Dual infeasibility......:   2.3280090412399421e-09    1.8082267801724641e-08
 Constraint violation....:   3.5082733744972923e-10    3.5082733744972923e-10
 Complementarity.........:   3.4543532571921030e-09    2.6830884060930736e-08
@@ -4719,8 +4707,8 @@ Number of inequality constraint evaluations          = 33
 Number of equality constraint Jacobian evaluations   = 33
 Number of inequality constraint Jacobian evaluations = 33
 Number of Lagrangian Hessian evaluations             = 32
-Total CPU secs in IPOPT (w/o function evaluations)   =      3.875
-Total CPU secs in NLP function evaluations           =      3.832
+Total CPU secs in IPOPT (w/o function evaluations)   =      3.396
+Total CPU secs in NLP function evaluations           =      5.984
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -5194,7 +5182,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 24
 
                                    (scaled)                 (unscaled)
-Objective...............:   5.7525820645869567e+02    4.4681840835058138e+03
+Objective...............:   5.7525820645869555e+02    4.4681840835058129e+03
 Dual infeasibility......:   1.6467864635686443e-14    1.2791030154523433e-13
 Constraint violation....:   1.2212453270876722e-15    1.2212453270876722e-15
 Complementarity.........:   2.7657958915135906e-09    2.1482675156889094e-08
@@ -5209,7 +5197,7 @@ Number of equality constraint Jacobian evaluations   = 25
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 24
 Total CPU secs in IPOPT (w/o function evaluations)   =      0.178
-Total CPU secs in NLP function evaluations           =      0.002
+Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -5697,7 +5685,7 @@ Number of inequality constraint evaluations          = 25
 Number of equality constraint Jacobian evaluations   = 25
 Number of inequality constraint Jacobian evaluations = 25
 Number of Lagrangian Hessian evaluations             = 24
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.389
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.426
 Total CPU secs in NLP function evaluations           =      0.004
 
 EXIT: Optimal Solution Found.
@@ -5759,7 +5747,7 @@ Number of inequality constraint evaluations          = 13
 Number of equality constraint Jacobian evaluations   = 13
 Number of inequality constraint Jacobian evaluations = 13
 Number of Lagrangian Hessian evaluations             = 12
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.010
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.011
 Total CPU secs in NLP function evaluations           =      0.004
 
 EXIT: Optimal Solution Found.
@@ -5871,7 +5859,7 @@ Number of inequality constraint evaluations          = 9
 Number of equality constraint Jacobian evaluations   = 9
 Number of inequality constraint Jacobian evaluations = 9
 Number of Lagrangian Hessian evaluations             = 8
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.003
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.004
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -5958,8 +5946,8 @@ Number of inequality constraint evaluations          = 37
 Number of equality constraint Jacobian evaluations   = 30
 Number of inequality constraint Jacobian evaluations = 30
 Number of Lagrangian Hessian evaluations             = 29
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.226
-Total CPU secs in NLP function evaluations           =      0.195
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.257
+Total CPU secs in NLP function evaluations           =      0.179
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -6042,7 +6030,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 28
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 27
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.026
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.020
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -6128,7 +6116,7 @@ Number of inequality constraint evaluations          = 30
 Number of equality constraint Jacobian evaluations   = 30
 Number of inequality constraint Jacobian evaluations = 30
 Number of Lagrangian Hessian evaluations             = 29
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.079
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.083
 Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
@@ -6246,8 +6234,8 @@ Number of inequality constraint evaluations          = 41
 Number of equality constraint Jacobian evaluations   = 36
 Number of inequality constraint Jacobian evaluations = 36
 Number of Lagrangian Hessian evaluations             = 35
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.187
-Total CPU secs in NLP function evaluations           =      0.160
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.201
+Total CPU secs in NLP function evaluations           =      0.145
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -6334,7 +6322,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 21
 
                                    (scaled)                 (unscaled)
-Objective...............:   6.5096121142919071e+02    7.8394933211811713e+02
+Objective...............:   6.5096121142919083e+02    7.8394933211811735e+02
 Dual infeasibility......:   1.4210854715202004e-14    1.7114061279244196e-14
 Constraint violation....:   4.4408920985006262e-16    4.4408920985006262e-16
 Complementarity.........:   2.5561923681369296e-09    3.0784096879854632e-09
@@ -6348,7 +6336,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 22
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 21
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.016
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.018
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -6450,7 +6438,7 @@ Number of inequality constraint evaluations          = 22
 Number of equality constraint Jacobian evaluations   = 22
 Number of inequality constraint Jacobian evaluations = 22
 Number of Lagrangian Hessian evaluations             = 21
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.044
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.047
 Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
@@ -6949,8 +6937,8 @@ Number of inequality constraint evaluations          = 81
 Number of equality constraint Jacobian evaluations   = 54
 Number of inequality constraint Jacobian evaluations = 54
 Number of Lagrangian Hessian evaluations             = 53
-Total CPU secs in IPOPT (w/o function evaluations)   =      7.722
-Total CPU secs in NLP function evaluations           =     11.698
+Total CPU secs in IPOPT (w/o function evaluations)   =      7.268
+Total CPU secs in NLP function evaluations           =     15.606
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -7420,8 +7408,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 30
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 29
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.235
-Total CPU secs in NLP function evaluations           =      0.014
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.260
+Total CPU secs in NLP function evaluations           =      0.002
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -7897,8 +7885,8 @@ Number of inequality constraint evaluations          = 35
 Number of equality constraint Jacobian evaluations   = 35
 Number of inequality constraint Jacobian evaluations = 35
 Number of Lagrangian Hessian evaluations             = 34
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.898
-Total CPU secs in NLP function evaluations           =      0.007
+Total CPU secs in IPOPT (w/o function evaluations)   =      1.010
+Total CPU secs in NLP function evaluations           =      0.008
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -8336,8 +8324,8 @@ Number of inequality constraint evaluations          = 61
 Number of equality constraint Jacobian evaluations   = 61
 Number of inequality constraint Jacobian evaluations = 61
 Number of Lagrangian Hessian evaluations             = 60
-Total CPU secs in IPOPT (w/o function evaluations)   =      7.753
-Total CPU secs in NLP function evaluations           =     10.126
+Total CPU secs in IPOPT (w/o function evaluations)   =      7.235
+Total CPU secs in NLP function evaluations           =     12.803
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -8758,7 +8746,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 47
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 46
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.369
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.429
 Total CPU secs in NLP function evaluations           =      0.003
 
 EXIT: Optimal Solution Found.
@@ -9177,7 +9165,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 56
 
                                    (scaled)                 (unscaled)
-Objective...............:   1.0566301588135462e+04    1.8040903331582488e+06
+Objective...............:   1.0566301588135464e+04    1.8040903331582490e+06
 Dual infeasibility......:   4.5382436153021421e-13    7.7485971487668779e-11
 Constraint violation....:   1.9949596790236820e-14    1.4975798379168739e-12
 Complementarity.........:   2.9459779885234219e-09    5.0299628176048910e-07
@@ -9191,8 +9179,8 @@ Number of inequality constraint evaluations          = 57
 Number of equality constraint Jacobian evaluations   = 57
 Number of inequality constraint Jacobian evaluations = 57
 Number of Lagrangian Hessian evaluations             = 56
-Total CPU secs in IPOPT (w/o function evaluations)   =      1.425
-Total CPU secs in NLP function evaluations           =      0.028
+Total CPU secs in IPOPT (w/o function evaluations)   =      1.594
+Total CPU secs in NLP function evaluations           =      0.013
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -9267,8 +9255,8 @@ Number of inequality constraint evaluations          = 21
 Number of equality constraint Jacobian evaluations   = 20
 Number of inequality constraint Jacobian evaluations = 20
 Number of Lagrangian Hessian evaluations             = 19
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.026
-Total CPU secs in NLP function evaluations           =      0.012
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.023
+Total CPU secs in NLP function evaluations           =      0.009
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -9411,7 +9399,7 @@ Number of inequality constraint evaluations          = 17
 Number of equality constraint Jacobian evaluations   = 17
 Number of inequality constraint Jacobian evaluations = 17
 Number of Lagrangian Hessian evaluations             = 16
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.009
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.010
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -9955,7 +9943,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 43
 
                                    (scaled)                 (unscaled)
-Objective...............:   1.1273882619601569e+04    1.3078831226999781e+06
+Objective...............:   1.1273882619601571e+04    1.3078831226999783e+06
 Dual infeasibility......:   1.4185159292692935e-09    1.6456203295453074e-07
 Constraint violation....:   1.9076962232134065e-12    9.6695706996996478e-12
 Complementarity.........:   1.7322595410032158e-09    2.0095942935178307e-07
@@ -9969,8 +9957,8 @@ Number of inequality constraint evaluations          = 44
 Number of equality constraint Jacobian evaluations   = 44
 Number of inequality constraint Jacobian evaluations = 44
 Number of Lagrangian Hessian evaluations             = 43
-Total CPU secs in IPOPT (w/o function evaluations)   =      5.372
-Total CPU secs in NLP function evaluations           =      9.670
+Total CPU secs in IPOPT (w/o function evaluations)   =      5.375
+Total CPU secs in NLP function evaluations           =     10.504
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -10498,7 +10486,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 19
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 18
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.172
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.204
 Total CPU secs in NLP function evaluations           =      0.002
 
 EXIT: Optimal Solution Found.
@@ -11027,8 +11015,8 @@ Number of inequality constraint evaluations          = 21
 Number of equality constraint Jacobian evaluations   = 19
 Number of inequality constraint Jacobian evaluations = 19
 Number of Lagrangian Hessian evaluations             = 18
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.602
-Total CPU secs in NLP function evaluations           =      0.004
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.669
+Total CPU secs in NLP function evaluations           =      0.005
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -11513,8 +11501,8 @@ Number of inequality constraint evaluations          = 34
 Number of equality constraint Jacobian evaluations   = 34
 Number of inequality constraint Jacobian evaluations = 34
 Number of Lagrangian Hessian evaluations             = 33
-Total CPU secs in IPOPT (w/o function evaluations)   =      3.975
-Total CPU secs in NLP function evaluations           =      7.600
+Total CPU secs in IPOPT (w/o function evaluations)   =      3.977
+Total CPU secs in NLP function evaluations           =      8.471
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -11974,7 +11962,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 12
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 11
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.112
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.124
 Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
@@ -12424,7 +12412,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 14
 
                                    (scaled)                 (unscaled)
-Objective...............:   6.5857132059660835e+03    7.6400858902412537e+05
+Objective...............:   6.5857132059660844e+03    7.6400858902412548e+05
 Dual infeasibility......:   2.5059035602082700e-14    2.9070987201976140e-12
 Constraint violation....:   1.1049425263642832e-14    1.4654943925052064e-12
 Complementarity.........:   4.1753416663097111e-09    4.8438138670858954e-07
@@ -12438,8 +12426,8 @@ Number of inequality constraint evaluations          = 15
 Number of equality constraint Jacobian evaluations   = 15
 Number of inequality constraint Jacobian evaluations = 15
 Number of Lagrangian Hessian evaluations             = 14
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.506
-Total CPU secs in NLP function evaluations           =      0.003
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.547
+Total CPU secs in NLP function evaluations           =      0.004
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -13064,8 +13052,8 @@ Number of inequality constraint evaluations          = 36
 Number of equality constraint Jacobian evaluations   = 36
 Number of inequality constraint Jacobian evaluations = 36
 Number of Lagrangian Hessian evaluations             = 35
-Total CPU secs in IPOPT (w/o function evaluations)   =      4.664
-Total CPU secs in NLP function evaluations           =      6.697
+Total CPU secs in IPOPT (w/o function evaluations)   =      4.092
+Total CPU secs in NLP function evaluations           =      9.148
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -13663,7 +13651,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 12
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 11
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.110
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.126
 Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
@@ -14248,7 +14236,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 11
 
                                    (scaled)                 (unscaled)
-Objective...............:   1.0155710541270531e+04    1.1781639798927943e+06
+Objective...............:   1.0155710541270528e+04    1.1781639798927940e+06
 Dual infeasibility......:   2.5059035640133008e-14    2.9070987246118302e-12
 Constraint violation....:   1.4397570092660810e-14    1.9770851622524788e-12
 Complementarity.........:   2.6138959981685206e-09    3.0323807474753009e-07
@@ -14262,7 +14250,7 @@ Number of inequality constraint evaluations          = 12
 Number of equality constraint Jacobian evaluations   = 12
 Number of inequality constraint Jacobian evaluations = 12
 Number of Lagrangian Hessian evaluations             = 11
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.429
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.460
 Total CPU secs in NLP function evaluations           =      0.003
 
 EXIT: Optimal Solution Found.
@@ -14896,8 +14884,8 @@ Number of inequality constraint evaluations          = 42
 Number of equality constraint Jacobian evaluations   = 42
 Number of inequality constraint Jacobian evaluations = 42
 Number of Lagrangian Hessian evaluations             = 41
-Total CPU secs in IPOPT (w/o function evaluations)   =      5.352
-Total CPU secs in NLP function evaluations           =      7.651
+Total CPU secs in IPOPT (w/o function evaluations)   =      4.951
+Total CPU secs in NLP function evaluations           =      9.853
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -15503,8 +15491,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 19
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 18
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.170
-Total CPU secs in NLP function evaluations           =      0.001
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.191
+Total CPU secs in NLP function evaluations           =      0.002
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -16110,8 +16098,8 @@ Number of inequality constraint evaluations          = 19
 Number of equality constraint Jacobian evaluations   = 19
 Number of inequality constraint Jacobian evaluations = 19
 Number of Lagrangian Hessian evaluations             = 18
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.596
-Total CPU secs in NLP function evaluations           =      0.004
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.667
+Total CPU secs in NLP function evaluations           =      0.005
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -16707,8 +16695,8 @@ Number of inequality constraint evaluations          = 40
 Number of equality constraint Jacobian evaluations   = 39
 Number of inequality constraint Jacobian evaluations = 39
 Number of Lagrangian Hessian evaluations             = 38
-Total CPU secs in IPOPT (w/o function evaluations)   =      5.713
-Total CPU secs in NLP function evaluations           =      9.498
+Total CPU secs in IPOPT (w/o function evaluations)   =      6.002
+Total CPU secs in NLP function evaluations           =     11.329
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -17275,7 +17263,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 13
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 12
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.157
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.192
 Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
@@ -17831,7 +17819,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 14
 
                                    (scaled)                 (unscaled)
-Objective...............:   1.3244724708200002e+05    1.3244724708200002e+05
+Objective...............:   1.3244724708199999e+05    1.3244724708199999e+05
 Dual infeasibility......:   2.5059035640133008e-14    2.5059035640133008e-14
 Constraint violation....:   2.2330597850185634e-14    3.8746783559417963e-13
 Complementarity.........:   2.8567269484317303e-09    2.8567269484317303e-09
@@ -17845,8 +17833,8 @@ Number of inequality constraint evaluations          = 15
 Number of equality constraint Jacobian evaluations   = 15
 Number of inequality constraint Jacobian evaluations = 15
 Number of Lagrangian Hessian evaluations             = 14
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.702
-Total CPU secs in NLP function evaluations           =      0.004
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.795
+Total CPU secs in NLP function evaluations           =      0.005
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -17993,7 +17981,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 47
 
                                    (scaled)                 (unscaled)
-Objective...............:   4.1401644927520447e+03    2.9895494356995121e+04
+Objective...............:   4.1401644927520456e+03    2.9895494356995128e+04
 Dual infeasibility......:   2.2189542079932747e-11    1.6022728835925613e-10
 Constraint violation....:   2.1395235625648930e-11    2.5167382067259325e-11
 Complementarity.........:   2.7421017112222663e-09    1.9800296915174167e-08
@@ -18007,8 +17995,8 @@ Number of inequality constraint evaluations          = 56
 Number of equality constraint Jacobian evaluations   = 48
 Number of inequality constraint Jacobian evaluations = 48
 Number of Lagrangian Hessian evaluations             = 47
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.099
-Total CPU secs in NLP function evaluations           =      0.081
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.111
+Total CPU secs in NLP function evaluations           =      0.069
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -18133,7 +18121,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 28
 
                                    (scaled)                 (unscaled)
-Objective...............:   4.1086019590190153e+03    2.9667586129976578e+04
+Objective...............:   4.1086019590190162e+03    2.9667586129976586e+04
 Dual infeasibility......:   1.3398939753940867e-14    9.6751693925424652e-14
 Constraint violation....:   2.8421709430404007e-14    2.8421709430404007e-14
 Complementarity.........:   2.8288438288413146e-09    2.0426648474957319e-08
@@ -18147,7 +18135,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 29
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 28
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.013
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.015
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -18287,8 +18275,8 @@ Number of inequality constraint evaluations          = 29
 Number of equality constraint Jacobian evaluations   = 29
 Number of inequality constraint Jacobian evaluations = 29
 Number of Lagrangian Hessian evaluations             = 28
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.023
-Total CPU secs in NLP function evaluations           =      0.000
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.021
+Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -18437,8 +18425,8 @@ Number of inequality constraint evaluations          = 39
 Number of equality constraint Jacobian evaluations   = 35
 Number of inequality constraint Jacobian evaluations = 35
 Number of Lagrangian Hessian evaluations             = 34
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.357
-Total CPU secs in NLP function evaluations           =      0.249
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.394
+Total CPU secs in NLP function evaluations           =      0.356
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -18574,8 +18562,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 24
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 23
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.031
-Total CPU secs in NLP function evaluations           =      0.000
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.039
+Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -18712,7 +18700,7 @@ Number of inequality constraint evaluations          = 25
 Number of equality constraint Jacobian evaluations   = 25
 Number of inequality constraint Jacobian evaluations = 25
 Number of Lagrangian Hessian evaluations             = 24
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.088
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.097
 Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
@@ -19376,8 +19364,8 @@ Number of inequality constraint evaluations          = 63
 Number of equality constraint Jacobian evaluations   = 63
 Number of inequality constraint Jacobian evaluations = 63
 Number of Lagrangian Hessian evaluations             = 62
-Total CPU secs in IPOPT (w/o function evaluations)   =      7.329
-Total CPU secs in NLP function evaluations           =     16.187
+Total CPU secs in IPOPT (w/o function evaluations)   =      7.580
+Total CPU secs in NLP function evaluations           =     16.052
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -20012,7 +20000,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 39
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 38
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.376
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.437
 Total CPU secs in NLP function evaluations           =      0.003
 
 EXIT: Optimal Solution Found.
@@ -20645,7 +20633,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 48
 
                                    (scaled)                 (unscaled)
-Objective...............:   1.5377552207993898e+04    2.5090014182562847e+06
+Objective...............:   1.5377552207993902e+04    2.5090014182562851e+06
 Dual infeasibility......:   9.3222788834161341e-13    1.5210230226181765e-10
 Constraint violation....:   2.0569063670503635e-14    1.5862311464331924e-12
 Complementarity.........:   2.5059245694028966e-09    4.0886665274377663e-07
@@ -20659,8 +20647,8 @@ Number of inequality constraint evaluations          = 49
 Number of equality constraint Jacobian evaluations   = 49
 Number of inequality constraint Jacobian evaluations = 49
 Number of Lagrangian Hessian evaluations             = 48
-Total CPU secs in IPOPT (w/o function evaluations)   =      1.547
-Total CPU secs in NLP function evaluations           =      0.011
+Total CPU secs in IPOPT (w/o function evaluations)   =      1.740
+Total CPU secs in NLP function evaluations           =      0.014
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -20722,8 +20710,8 @@ Number of inequality constraint evaluations          = 12
 Number of equality constraint Jacobian evaluations   = 12
 Number of inequality constraint Jacobian evaluations = 12
 Number of Lagrangian Hessian evaluations             = 11
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.017
-Total CPU secs in NLP function evaluations           =      0.007
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.018
+Total CPU secs in NLP function evaluations           =      0.008
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -20783,7 +20771,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 11
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 10
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.003
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.005
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -20844,7 +20832,7 @@ Number of inequality constraint evaluations          = 12
 Number of equality constraint Jacobian evaluations   = 11
 Number of inequality constraint Jacobian evaluations = 11
 Number of Lagrangian Hessian evaluations             = 10
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.007
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.005
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -20903,8 +20891,8 @@ Number of inequality constraint evaluations          = 14
 Number of equality constraint Jacobian evaluations   = 14
 Number of inequality constraint Jacobian evaluations = 14
 Number of Lagrangian Hessian evaluations             = 13
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.017
-Total CPU secs in NLP function evaluations           =      0.009
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.019
+Total CPU secs in NLP function evaluations           =      0.008
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -21003,7 +20991,7 @@ Number of inequality constraint evaluations          = 7
 Number of equality constraint Jacobian evaluations   = 7
 Number of inequality constraint Jacobian evaluations = 7
 Number of Lagrangian Hessian evaluations             = 6
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.004
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.005
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -21072,8 +21060,8 @@ Number of inequality constraint evaluations          = 20
 Number of equality constraint Jacobian evaluations   = 19
 Number of inequality constraint Jacobian evaluations = 19
 Number of Lagrangian Hessian evaluations             = 18
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.024
-Total CPU secs in NLP function evaluations           =      0.010
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.028
+Total CPU secs in NLP function evaluations           =      0.014
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -21885,7 +21873,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 54
 
                                    (scaled)                 (unscaled)
-Objective...............:   1.3151136287908948e+04    2.1457393967352239e+06
+Objective...............:   1.3151136287908950e+04    2.1457393967352244e+06
 Dual infeasibility......:   9.0954988537130425e-10    1.4840215929718199e-07
 Constraint violation....:   5.4232976740406106e-13    2.5593090147157938e-11
 Complementarity.........:   3.0853832362709163e-09    5.0341112882996274e-07
@@ -21899,8 +21887,8 @@ Number of inequality constraint evaluations          = 55
 Number of equality constraint Jacobian evaluations   = 55
 Number of inequality constraint Jacobian evaluations = 55
 Number of Lagrangian Hessian evaluations             = 54
-Total CPU secs in IPOPT (w/o function evaluations)   =      6.775
-Total CPU secs in NLP function evaluations           =     13.522
+Total CPU secs in IPOPT (w/o function evaluations)   =      7.040
+Total CPU secs in NLP function evaluations           =     14.741
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -22585,8 +22573,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 34
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 33
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.335
-Total CPU secs in NLP function evaluations           =      0.002
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.404
+Total CPU secs in NLP function evaluations           =      0.003
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -23276,8 +23264,8 @@ Number of inequality constraint evaluations          = 39
 Number of equality constraint Jacobian evaluations   = 39
 Number of inequality constraint Jacobian evaluations = 39
 Number of Lagrangian Hessian evaluations             = 38
-Total CPU secs in IPOPT (w/o function evaluations)   =      1.294
-Total CPU secs in NLP function evaluations           =      0.010
+Total CPU secs in IPOPT (w/o function evaluations)   =      1.578
+Total CPU secs in NLP function evaluations           =      0.024
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -24022,7 +24010,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 63
 
                                    (scaled)                 (unscaled)
-Objective...............:   3.0948545234320387e+04    7.4356974779978152e+06
+Objective...............:   3.0948545234320391e+04    7.4356974779978162e+06
 Dual infeasibility......:   8.0752431281944107e-10    1.9401579139799891e-07
 Constraint violation....:   1.0155756638810955e-13    9.2261753792399743e-12
 Complementarity.........:   2.6589174314603391e-09    6.3883150208266105e-07
@@ -24036,8 +24024,8 @@ Number of inequality constraint evaluations          = 64
 Number of equality constraint Jacobian evaluations   = 64
 Number of inequality constraint Jacobian evaluations = 64
 Number of Lagrangian Hessian evaluations             = 63
-Total CPU secs in IPOPT (w/o function evaluations)   =      9.527
-Total CPU secs in NLP function evaluations           =     16.584
+Total CPU secs in IPOPT (w/o function evaluations)   =     10.330
+Total CPU secs in NLP function evaluations           =     17.221
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -24764,7 +24752,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 37
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 36
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.401
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.466
 Total CPU secs in NLP function evaluations           =      0.003
 
 EXIT: Optimal Solution Found.
@@ -25504,8 +25492,8 @@ Number of inequality constraint evaluations          = 48
 Number of equality constraint Jacobian evaluations   = 48
 Number of inequality constraint Jacobian evaluations = 48
 Number of Lagrangian Hessian evaluations             = 47
-Total CPU secs in IPOPT (w/o function evaluations)   =      1.878
-Total CPU secs in NLP function evaluations           =      0.015
+Total CPU secs in IPOPT (w/o function evaluations)   =      2.166
+Total CPU secs in NLP function evaluations           =      0.028
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -25551,7 +25539,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 16
 
                                    (scaled)                 (unscaled)
-Objective...............:   6.2788235999960543e+03    9.6505518731939359e+04
+Objective...............:   6.2788235999960561e+03    9.6505518731939388e+04
 Dual infeasibility......:   1.0484446058390911e-09    1.6114593591746830e-08
 Constraint violation....:   2.8010926911292700e-11    2.8010926911292700e-11
 Complementarity.........:   4.1802820499650514e-09    6.4250935107962846e-08
@@ -25565,7 +25553,7 @@ Number of inequality constraint evaluations          = 22
 Number of equality constraint Jacobian evaluations   = 17
 Number of inequality constraint Jacobian evaluations = 17
 Number of Lagrangian Hessian evaluations             = 16
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.025
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.037
 Total CPU secs in NLP function evaluations           =      0.012
 
 EXIT: Optimal Solution Found.
@@ -25621,7 +25609,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 13
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 12
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.004
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.007
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -25677,7 +25665,7 @@ Number of inequality constraint evaluations          = 13
 Number of equality constraint Jacobian evaluations   = 13
 Number of inequality constraint Jacobian evaluations = 13
 Number of Lagrangian Hessian evaluations             = 12
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.007
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.014
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -25737,7 +25725,7 @@ Number of inequality constraint evaluations          = 15
 Number of equality constraint Jacobian evaluations   = 15
 Number of inequality constraint Jacobian evaluations = 15
 Number of Lagrangian Hessian evaluations             = 14
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.004
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.003
 Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
@@ -25951,7 +25939,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 9
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 8
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.001
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.002
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -26072,8 +26060,8 @@ Number of inequality constraint evaluations          = 17
 Number of equality constraint Jacobian evaluations   = 17
 Number of inequality constraint Jacobian evaluations = 17
 Number of Lagrangian Hessian evaluations             = 16
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.036
-Total CPU secs in NLP function evaluations           =      0.020
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.040
+Total CPU secs in NLP function evaluations           =      0.019
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -26136,7 +26124,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 14
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 13
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.005
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.006
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -26259,7 +26247,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 21
 
                                    (scaled)                 (unscaled)
-Objective...............:   4.3879727248486773e+02    1.7551890899394708e+04
+Objective...............:   4.3879727248486762e+02    1.7551890899394704e+04
 Dual infeasibility......:   9.7653100344926586e-13    3.9061240137970634e-11
 Constraint violation....:   2.5261215341743080e-14    3.9079850466805510e-14
 Complementarity.........:   2.5059076126915704e-09    1.0023630450766281e-07
@@ -26273,8 +26261,8 @@ Number of inequality constraint evaluations          = 28
 Number of equality constraint Jacobian evaluations   = 22
 Number of inequality constraint Jacobian evaluations = 22
 Number of Lagrangian Hessian evaluations             = 21
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.008
-Total CPU secs in NLP function evaluations           =      0.002
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.009
+Total CPU secs in NLP function evaluations           =      0.003
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -26403,7 +26391,7 @@ Number of inequality constraint evaluations          = 17
 Number of equality constraint Jacobian evaluations   = 17
 Number of inequality constraint Jacobian evaluations = 17
 Number of Lagrangian Hessian evaluations             = 16
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.004
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.005
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -26463,7 +26451,7 @@ Number of inequality constraint evaluations          = 14
 Number of equality constraint Jacobian evaluations   = 14
 Number of inequality constraint Jacobian evaluations = 14
 Number of Lagrangian Hessian evaluations             = 13
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.006
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.005
 Total CPU secs in NLP function evaluations           =      0.001
 
 EXIT: Optimal Solution Found.
@@ -26502,7 +26490,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 8
 
                                    (scaled)                 (unscaled)
-Objective...............:   2.2770864973015097e+01    2.2770864973015097e+01
+Objective...............:   2.2770864973015101e+01    2.2770864973015101e+01
 Dual infeasibility......:   2.0360266478423178e-15    2.0360266478423178e-15
 Constraint violation....:   2.7755575615628914e-17    2.7755575615628914e-17
 Complementarity.........:   2.5608776552370703e-09    2.5608776552370703e-09
@@ -26516,7 +26504,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 9
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 8
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.002
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.001
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -26672,7 +26660,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 9
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 8
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.001
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.002
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -26723,7 +26711,7 @@ Number of inequality constraint evaluations          = 9
 Number of equality constraint Jacobian evaluations   = 9
 Number of inequality constraint Jacobian evaluations = 9
 Number of Lagrangian Hessian evaluations             = 8
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.002
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.003
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -26827,8 +26815,8 @@ Number of inequality constraint evaluations          = 25
 Number of equality constraint Jacobian evaluations   = 25
 Number of inequality constraint Jacobian evaluations = 25
 Number of Lagrangian Hessian evaluations             = 24
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.079
-Total CPU secs in NLP function evaluations           =      0.043
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.088
+Total CPU secs in NLP function evaluations           =      0.053
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -26908,7 +26896,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 17
 
                                    (scaled)                 (unscaled)
-Objective...............:   1.1605312093163507e+03    1.5086905721112559e+05
+Objective...............:   1.1605312093163504e+03    1.5086905721112556e+05
 Dual infeasibility......:   9.7622808749027283e-15    1.2690965137373547e-12
 Constraint violation....:   1.3322676295501878e-15    1.3322676295501878e-15
 Complementarity.........:   3.0917841351619406e-09    4.0193193757105223e-07
@@ -26922,7 +26910,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 18
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 17
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.011
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.012
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -27003,7 +26991,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 17
 
                                    (scaled)                 (unscaled)
-Objective...............:   1.1605312093163564e+03    1.5086905721112632e+05
+Objective...............:   1.1605312093163561e+03    1.5086905721112629e+05
 Dual infeasibility......:   2.5059035640133008e-14    3.2576746332172910e-12
 Constraint violation....:   3.6970426720017710e-15    4.1078251911130792e-15
 Complementarity.........:   3.3838138706678600e-09    4.3989580318682178e-07
@@ -27017,7 +27005,7 @@ Number of inequality constraint evaluations          = 18
 Number of equality constraint Jacobian evaluations   = 18
 Number of inequality constraint Jacobian evaluations = 18
 Number of Lagrangian Hessian evaluations             = 17
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.024
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.025
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -27097,8 +27085,8 @@ Number of inequality constraint evaluations          = 28
 Number of equality constraint Jacobian evaluations   = 23
 Number of inequality constraint Jacobian evaluations = 23
 Number of Lagrangian Hessian evaluations             = 22
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.120
-Total CPU secs in NLP function evaluations           =      0.084
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.136
+Total CPU secs in NLP function evaluations           =      0.103
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -27147,7 +27135,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 9
 
                                    (scaled)                 (unscaled)
-Objective...............:   5.7333708699999997e+03    5.7333708699999997e+03
+Objective...............:   5.7333708699999988e+03    5.7333708699999988e+03
 Dual infeasibility......:   1.3690044649121436e-14    1.3690044649121436e-14
 Constraint violation....:   4.3146909656233134e-15    4.3146909656233134e-15
 Complementarity.........:   2.9237759401172174e-09    2.9237759401172174e-09
@@ -27161,7 +27149,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 10
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 9
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.008
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.004
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -27228,7 +27216,7 @@ Number of inequality constraint evaluations          = 12
 Number of equality constraint Jacobian evaluations   = 12
 Number of inequality constraint Jacobian evaluations = 12
 Number of Lagrangian Hessian evaluations             = 11
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.025
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.026
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -28837,8 +28825,8 @@ Number of inequality constraint evaluations          = 87
 Number of equality constraint Jacobian evaluations   = 87
 Number of inequality constraint Jacobian evaluations = 87
 Number of Lagrangian Hessian evaluations             = 86
-Total CPU secs in IPOPT (w/o function evaluations)   =    103.131
-Total CPU secs in NLP function evaluations           =     54.935
+Total CPU secs in IPOPT (w/o function evaluations)   =    109.789
+Total CPU secs in NLP function evaluations           =     53.174
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -30350,7 +30338,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 13
 
                                    (scaled)                 (unscaled)
-Objective...............:   3.1241097767299996e+05    3.1241097767299996e+05
+Objective...............:   3.1241097767300002e+05    3.1241097767300002e+05
 Dual infeasibility......:   1.4198003157440625e-14    1.4198003157440625e-14
 Constraint violation....:   7.9936057773011271e-15    7.9936057773011271e-15
 Complementarity.........:   3.5894653284029559e-09    3.5894653284029559e-09
@@ -30364,8 +30352,8 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 14
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 13
-Total CPU secs in IPOPT (w/o function evaluations)   =      1.409
-Total CPU secs in NLP function evaluations           =      0.015
+Total CPU secs in IPOPT (w/o function evaluations)   =      2.056
+Total CPU secs in NLP function evaluations           =      0.018
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -31879,7 +31867,7 @@ iter    objective    inf_pr   inf_du lg(mu)  ||d||  lg(rg) alpha_du alpha_pr  ls
 Number of Iterations....: 15
 
                                    (scaled)                 (unscaled)
-Objective...............:   3.1241097767299996e+05    3.1241097767299996e+05
+Objective...............:   3.1241097767300002e+05    3.1241097767300002e+05
 Dual infeasibility......:   8.9522295265466727e-10    8.9522295265466727e-10
 Constraint violation....:   2.2324994581385877e-14    7.8925754820602378e-13
 Complementarity.........:   2.5320718081050677e-09    2.5320718081050677e-09
@@ -31893,8 +31881,8 @@ Number of inequality constraint evaluations          = 16
 Number of equality constraint Jacobian evaluations   = 16
 Number of inequality constraint Jacobian evaluations = 16
 Number of Lagrangian Hessian evaluations             = 15
-Total CPU secs in IPOPT (w/o function evaluations)   =      5.274
-Total CPU secs in NLP function evaluations           =      0.048
+Total CPU secs in IPOPT (w/o function evaluations)   =      6.155
+Total CPU secs in NLP function evaluations           =      0.070
 
 EXIT: Optimal Solution Found.
 [warn | PowerModels]: there was an issue with getsolvetime() on the solver, falling back on @timed.  This is not a rigorous timing value.
@@ -32002,7 +31990,7 @@ Number of inequality constraint evaluations          = 0
 Number of equality constraint Jacobian evaluations   = 7
 Number of inequality constraint Jacobian evaluations = 0
 Number of Lagrangian Hessian evaluations             = 6
-Total CPU secs in IPOPT (w/o function evaluations)   =      0.001
+Total CPU secs in IPOPT (w/o function evaluations)   =      0.002
 Total CPU secs in NLP function evaluations           =      0.000
 
 EXIT: Optimal Solution Found.
@@ -32167,24 +32155,24 @@ EXIT: Optimal Solution Found.
 │ 103 │ ../models/nesta-mirror/opf/nesta_case9_wscc.m       │ nesta_case9_wscc       │ 9     │ 9        │ GenericPowerModel{StandardACPForm} │ IpoptSolver │ LocalOptimal │
 │ 104 │ ../models/nesta-mirror/opf/nesta_case9_wscc.m       │ nesta_case9_wscc       │ 9     │ 9        │ GenericPowerModel{NFAForm}         │ IpoptSolver │ LocalOptimal │
 │ 105 │ ../models/nesta-mirror/opf/nesta_case9_wscc.m       │ nesta_case9_wscc       │ 9     │ 9        │ GenericPowerModel{DCPlosslessForm} │ IpoptSolver │ LocalOptimal │
-	Command being timed: "julia --color=no --eval NO_INSTANTIATE=1 --load nesta-static.jl"
-	User time (seconds): 568.90
-	System time (seconds): 393.79
-	Percent of CPU this job got: 198%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 8:03.93
+	Command being timed: "julia --color=no nesta-static.jl"
+	User time (seconds): 581.53
+	System time (seconds): 299.90
+	Percent of CPU this job got: 186%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 7:53.60
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 1429868
+	Maximum resident set size (kbytes): 1503596
 	Average resident set size (kbytes): 0
-	Major (requiring I/O) page faults: 18
-	Minor (reclaiming a frame) page faults: 1991547
-	Voluntary context switches: 11447
-	Involuntary context switches: 201791
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 4345371
+	Voluntary context switches: 5434
+	Involuntary context switches: 27658
 	Swaps: 0
-	File system inputs: 109728
-	File system outputs: 7256
+	File system inputs: 0
+	File system outputs: 152
 	Socket messages sent: 0
 	Socket messages received: 0
 	Signals delivered: 0
