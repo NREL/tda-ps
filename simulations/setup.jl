@@ -19,9 +19,13 @@ end
 using CSV
 using DataFrames
 using DataFramesMeta
+using Distributions
 using Gadfly
 using Ipopt
 using JuMP
+using MathOptInterface
+using Setfield
+using StatsBase
 using TimeSeries
 
 
