@@ -6,12 +6,16 @@ TIME=`which time` --verbose
 
 deps=$(shell ls -1 setup*.jl environments/*/*.toml)
 logs=$(shell ls -1 *.jl | sed -e '/setup.*/d' -e 's/\.jl$$/.log/')
+maps=$(shell find ../contingency-datasets -name \*.dot | sed -e 's/.dot$$/.svg/')
 
 
-all: $(logs)
+all: logs maps
 
 clean:
-	-rm $(logs)
+	-rm $(logs) $(maps)
+
+
+logs: $(logs)
 
 
 %.log: %.jl $(deps)
@@ -20,6 +24,12 @@ clean:
 	-git diff --stat $@
 
 
-.PHONY: all clean
+maps: $(maps)
+
+%.svg: %.dot
+	-sfdp -T svg -o $@ $<
+
+
+.PHONY: all clean logs maps
 
 .SUFFIXES:
