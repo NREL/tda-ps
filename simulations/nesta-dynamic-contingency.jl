@@ -178,6 +178,10 @@ end
 
 # Run the cases.
 
+if !isdefined(Main, :NESTA_CONTINGENCIES)
+    NESTA_CONTINGENCIES = 1
+end
+
 for case_data in NESTA_MODELS#[1:1]
 
     prefix = joinpath("..", "contingency-datasets", "shedding", basename(case_data)[1:(end-2)])
@@ -214,7 +218,7 @@ for case_data in NESTA_MODELS#[1:1]
             Shed_MWh=Float64[],
         )
 
-        for contingency in 0:1
+        for contingency in 0:NESTA_CONTINGENCIES
 
             case_sys = deepcopy(case_sys_backup)
             buscontingencies       = makecontingent!(case_sys.buses             , lambda=0                       , contingency=contingency)
