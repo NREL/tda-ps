@@ -1,4 +1,4 @@
-# Satus of Contingency Models
+# Status of Contingency Models
 
 | Model                     | Status              |
 |---------------------------|---------------------|
