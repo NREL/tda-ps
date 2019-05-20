@@ -5,7 +5,7 @@
 | [nesta\_case30\_ieee](nesta_case30_ieee_summary.tsv)          | LOCALLY\_SOLVED     |
 | [nesta\_case73\_ieee\_rts](nesta_case73_ieee_rts_summary.tsv) | LOCALLY\_SOLVED     |
 | [nesta\_case118\_ieee](nesta_case118_ieee_summary.tsv)        | LOCALLY\_SOLVED     |
-| [nesta\_case3120sp\_mp](nesta_case3120sp_mp.tsv)              | LOCALLY\_SOLVED     |
+| [nesta\_case3120sp\_mp](nesta_case3120sp_mp_summary.tsv)      | LOCALLY\_SOLVED     |
 | nesta\_case3\_lmbd                                            | LOCALLY\_SOLVED     |
 | nesta\_case4\_gs                                              | LOCALLY\_SOLVED     |
 | nesta\_case5\_pjm                                             | LOCALLY\_SOLVED     |
