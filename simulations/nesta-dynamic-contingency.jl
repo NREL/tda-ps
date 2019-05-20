@@ -194,8 +194,8 @@ for case_data in NESTA_MODELS
     prefix = joinpath("..", "contingency-datasets", "shedding", basename(case_data)[1:(end-2)])
 
     lastcontingency = -1
-    if isfile(string(prefix, "_summary.tsv"))
-        lastcontingency = maximum(CSV.read(string(prefix, "_summary.tsv"), delim="\t").Contingency)
+    if isfile(string(prefix, "_load.tsv"))
+        lastcontingency = maximum(CSV.read(string(prefix, "_load.tsv"), delim="\t").Contingency)
     end
 
     @info string("Solving ", case_data, " . . .")
