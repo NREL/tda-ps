@@ -179,12 +179,24 @@ end
 # Run the cases.
 
 if !isdefined(Main, :NESTA_CONTINGENCIES)
-    NESTA_CONTINGENCIES = 1
+    NESTA_CONTINGENCIES = 5
 end
 
-for case_data in NESTA_MODELS#[1:1]
+NESTA_MODELS = [
+    "../models/nesta-mirror/opf/nesta_case118_ieee.m"   ,
+    "../models/nesta-mirror/opf/nesta_case30_ieee.m"    ,
+    "../models/nesta-mirror/opf/nesta_case3120sp_mp.m"  ,
+    "../models/nesta-mirror/opf/nesta_case73_ieee_rts.m",
+]
+
+for case_data in NESTA_MODELS
 
     prefix = joinpath("..", "contingency-datasets", "shedding", basename(case_data)[1:(end-2)])
+
+    lastcontingency = -1
+    if isfile(string(prefix, "_load.tsv"))
+        lastcontingency = maximum(CSV.read(string(prefix, "_load.tsv"), delim="\t").Contingency)
+    end
 
     @info string("Solving ", case_data, " . . .")
 
@@ -218,11 +230,11 @@ for case_data in NESTA_MODELS#[1:1]
             Shed_MWh=Float64[],
         )
 
-        for contingency in 0:NESTA_CONTINGENCIES
+        for contingency in lastcontingency .+ (1:NESTA_CONTINGENCIES)
 
             case_sys = deepcopy(case_sys_backup)
             buscontingencies       = makecontingent!(case_sys.buses             , lambda=0                       , contingency=contingency)
-            branchcontingencies    = makecontingent!(case_sys.branches          , lambda=contingency == 0 ? 0 : 3, contingency=contingency)
+            branchcontingencies    = makecontingent!(case_sys.branches          , lambda=contingency == 0 ? 0 : 2, contingency=contingency)
             generatorcontingencies = makecontingent!(case_sys.generators.thermal, lambda=0                       , contingency=contingency)
 
             if true
@@ -269,8 +281,10 @@ for case_data in NESTA_MODELS#[1:1]
 
         end
 
-        writegraph(joinpath("..", "contingency-datasets", string(basename(case_data)[1:(end-2)], ".dot")), case_sys_backup)
-        CSV.write(string(prefix, "_summary.tsv"), nesta_summary, delim="\t")
+        CSV.write(string(prefix, "_summary.tsv"), nesta_summary, delim="\t", append=lastcontingency>0)
+        if !isfile(joinpath("..", "contingency-datasets", string(basename(case_data)[1:(end-2)], ".dot")))
+            writegraph(joinpath("..", "contingency-datasets", string(basename(case_data)[1:(end-2)], ".dot")), case_sys_backup)
+        end
 
     end
 

@@ -10,3 +10,14 @@ This repository uses submodules for the power-system models. Initialize the subm
 git submodule init
 git submodule update
 ```
+
+Contingency Datasets
+--------------------
+
+A variety of contingency datasets are available in [contingency-datasets/](contingency-datasets/ReadMe.md). Load-shedding cases for contingencies are in [contingency-datasets/shedding/](contingency-datasets/shedding/ReadMe.md).
+
+
+Simulation Scripts
+------------------
+
+See [simulations/](simulations/ReadMe.md).
