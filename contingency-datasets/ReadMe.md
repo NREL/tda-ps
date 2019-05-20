@@ -4,6 +4,7 @@ Contingency Cases
 
 This folder contains maps of the networks used for contingency screening in graphviz `.dot` format and `.svg` format.
 
+See [shedding/](shedding/ReadMe.md) for load-shedding contingency results.
 
 Maps
 ----
