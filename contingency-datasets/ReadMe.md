@@ -8,7 +8,9 @@ This folder contains maps of the networks used for contingency screening in grap
 Maps
 ----
 
-| [Graphviz](https://www.graphviz.org/) `.dot` File        | Map                                                   |
+Note that the [Graphviz](https://www.graphviz.org/) `.dot` files can be opened by [Gephi](https://gephi.org/) for further visualization and analysis.
+
+|  Graphviz `.dot` File                                    | Map                                                   |
 |----------------------------------------------------------|-------------------------------------------------------|
 | [nesta_case118_ieee.dot](nesta_case118_ieee.dot)         | ![nesta_case118_ieee](nesta_case118_ieee.svg)         |
 | [nesta_case1354_pegase.dot](nesta_case1354_pegase.dot)   | ![nesta_case1354_pegase](nesta_case1354_pegase.svg)   |
