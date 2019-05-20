@@ -18,7 +18,7 @@ date -u
 for f in example-*.jl nesta-*.jl rts-gmlc.jl
 do
   l=${f%%.jl}.log
-  srun --ntasks 1 $TIME julia --color=no --eval 'NO_INSTANTIATE=1 ; NESTA_CONTINGENCIES=1000' --load $f &> $l &
+  srun --ntasks 1 $TIME julia --color=no --eval 'NO_INSTANTIATE=1' --load $f &> $l &
 done
 
 wait
