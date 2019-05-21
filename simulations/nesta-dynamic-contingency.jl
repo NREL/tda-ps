@@ -183,10 +183,10 @@ if !isdefined(Main, :NESTA_CONTINGENCIES)
 end
 
 NESTA_MODELS = [
-    "../models/nesta-mirror/opf/nesta_case118_ieee.m"   ,
     "../models/nesta-mirror/opf/nesta_case30_ieee.m"    ,
-    "../models/nesta-mirror/opf/nesta_case3120sp_mp.m"  ,
     "../models/nesta-mirror/opf/nesta_case73_ieee_rts.m",
+    "../models/nesta-mirror/opf/nesta_case118_ieee.m"   ,
+    "../models/nesta-mirror/opf/nesta_case3120sp_mp.m"  ,
 ]
 
 for case_data in NESTA_MODELS
