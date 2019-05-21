@@ -17,7 +17,8 @@ date -u
 
 while true
 do
-  srun --ntasks 1 $TIME julia --color=no --eval 'NO_INSTANTIATE=1 ; NESTA_CONTINGENCIES=100' --load nesta-dynamic-contingency.jl
+  srun --ntasks 1 $TIME julia --color=no --eval 'NO_INSTANTIATE=1 ; NESTA_CONTINGENCIES=50' --load nesta-dynamic-contingency.jl
+  rm core.[[:digit:]]*
 done
 
 date -u
