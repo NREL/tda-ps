@@ -1,3 +1,3 @@
-*   B. W. Bush, C. R. Files, and D. R. Thompson, "[Empirical Characterization of Infrastructure Networks](6C Los Alamos Infra Simulation.pdf)," Los Alamos National Laboratory, Report LA-UR-01-5784, 22 October 2001.
-*   M. P. Blue and B. W. Bush, "[Critical Energy Infrastructure Contingency Screening Heuristics Status Report](Critical Energy Infrastructure Contingency Screening Heuristics.pdf)," Los Alamos National Laboratory, Report LA-UR-04-7649, 26 May 2004.
-*   M. Blue, B. Bush, and M. Quirk, "[Robustness Metrics for Interdependent Infrastructures](Robustness Metrics for Interdependent Infrastructures.pdf), Los Alamos National Laboratory, 16 March 2004.
+*   B. W. Bush, C. R. Files, and D. R. Thompson, "[Empirical Characterization of Infrastructure Networks](6C%20Los%20Alamos%20Infra%20Simulation.pdf)," Los Alamos National Laboratory, Report LA-UR-01-5784, 22 October 2001.
+*   M. P. Blue and B. W. Bush, "[Critical Energy Infrastructure Contingency Screening Heuristics Status Report](Critical%20Energy%20Infrastructure%20Contingency%20Screening%20Heuristics.pdf)," Los Alamos National Laboratory, Report LA-UR-04-7649, 26 May 2004.
+*   M. Blue, B. Bush, and M. Quirk, "[Robustness Metrics for Interdependent Infrastructures](Robustness%20Metrics%20for%20Interdependent%20Infrastructures.pdf), Los Alamos National Laboratory, 16 March 2004.
