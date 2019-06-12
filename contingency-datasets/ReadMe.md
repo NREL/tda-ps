@@ -6,6 +6,9 @@ This folder contains maps of the networks used for contingency screening in grap
 
 See [shedding/](shedding/ReadMe.md) for load-shedding contingency results.
 
+The NESTA test cases are documented in <https://arxiv.org/abs/1411.0359>.
+
+
 Maps
 ----
 
