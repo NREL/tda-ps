@@ -1,5 +1,7 @@
 # Status of Contingency Models
 
+The `_summary.tsv` files describe each contingency case, the `_branch.tsv` files list which branches are taken out of service in those contingencies, and the `_load.tsv` files list how much load is served and shed in in contingency case.
+
 | Model                                                         | Status              |
 |---------------------------------------------------------------|---------------------|
 | [nesta\_case30\_ieee](nesta_case30_ieee_summary.tsv)          | LOCALLY\_SOLVED     |

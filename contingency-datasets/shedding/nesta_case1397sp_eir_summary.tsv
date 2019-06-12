@@ -1,0 +1,2 @@
+File	Model	Algorithm	Solver	Status	Buses	Branches	Generators	Contingency	BusContingencies	BranchContingencies	GeneratorContingencies	Demanded_MWh	Served_MWh	Shed_MWh
+../models/nesta-mirror/opf/nesta_case1397sp_eir.m	nesta_case1397sp_eir	StandardACPForm	Ipopt.Optimizer	INVALID_MODEL	1418	1919	334	0	0	0	0	53.501110000000004	0	53.501110000000004

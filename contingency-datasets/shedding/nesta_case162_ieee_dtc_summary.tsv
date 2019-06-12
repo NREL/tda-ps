@@ -1,0 +1,2 @@
+File	Model	Algorithm	Solver	Status	Buses	Branches	Generators	Contingency	BusContingencies	BranchContingencies	GeneratorContingencies	Demanded_MWh	Served_MWh	Shed_MWh
+../models/nesta-mirror/opf/nesta_case162_ieee_dtc.m	nesta_case162_ieee_dtc	StandardACPForm	Ipopt.Optimizer	INVALID_MODEL	162	284	12	0	0	0	0	72.39059999999998	0	72.39059999999998
