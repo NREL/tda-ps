@@ -1,0 +1,2 @@
+File	Model	Algorithm	Solver	Status	Buses	Branches	Generators	Contingency	BusContingencies	BranchContingencies	GeneratorContingencies	Demanded_MWh	Served_MWh	Shed_MWh
+../models/nesta-mirror/opf/nesta_case3375wp_mp.m	nesta_case3375wp_mp	StandardACPForm	Ipopt.Optimizer	LOCALLY_INFEASIBLE	3375	4161	596	0	0	0	0	483.63	421.21000000000004	62.41999999999996

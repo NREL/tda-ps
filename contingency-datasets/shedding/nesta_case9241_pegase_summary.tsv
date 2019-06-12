@@ -1,0 +1,2 @@
+File	Model	Algorithm	Solver	Status	Buses	Branches	Generators	Contingency	BusContingencies	BranchContingencies	GeneratorContingencies	Demanded_MWh	Served_MWh	Shed_MWh
+../models/nesta-mirror/opf/nesta_case9241_pegase.m	nesta_case9241_pegase	StandardACPForm	Ipopt.Optimizer	LOCALLY_INFEASIBLE	9241	16049	1445	0	0	0	0	3123.5411999999997	1435.9599999999998	1687.5811999999999
