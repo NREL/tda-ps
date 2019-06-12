@@ -11,6 +11,6 @@
 ## Power-system restoration modeling
 
 *   George STERGIOPOULOS, Efstratios VASILELLIS1, Georgia LYKOU, Panos KOTZANIKOLAOU2, and Dimitris GRITZALIS, "[CRITICAL INFRASTRUCTURE PROTECTION TOOLS: CLASSIFICATION AND COMPARISON](restoration/42e8eb054e67e1ee483936f239dcc801f5c6.pdf)."
-*   [Power Outage Incident Annex to the Response and Recovery Federal Interagency Operational Plans Managing the Cascading Impacts from a Long-Term Power Outage](restoration/POIA_Final_7-2017v2_%28Compliant_pda%29_508.pdf]."
+*   [Power Outage Incident Annex to the Response and Recovery Federal Interagency Operational Plans: Managing the Cascading Impacts from a Long-Term Power Outage](restoration/POIA_Final_7-2017v2_%28Compliant_pda%29_508.pdf)."
 *   Darrin B. Visarraga, "[Understanding Complex Systems: Infrastructure Impacts](restoration/complexsystemsVisarraga.pdf)."
 *   K. L. Stamber, T. J. Brown, D. J. Pless, and A. Berscheid, "[Modeling and Simulation for Homeland Security](restoration/stamber.pdf)."
