@@ -1,10 +1,8 @@
-Contingency Cases
-=================
+Maps of Power Systems
+=====================
 
 
 This folder contains maps of the networks used for contingency screening in graphviz `.dot` format and `.svg` format.
-
-See [shedding/](shedding/ReadMe.md) for load-shedding contingency results.
 
 The NESTA test cases are documented in <https://arxiv.org/abs/1411.0359>.
 
