@@ -16,6 +16,7 @@ end
 
 # Use common packages.
 
+using Combinatorics
 using CSV
 using DataFrames
 using DataFramesMeta
