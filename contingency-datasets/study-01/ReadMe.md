@@ -18,7 +18,7 @@ Files
 | branches.tsv     | line/transformer connectivity  |
 | loads.tsv        | load connectivity              |
 | generators.tsv   | generator connectivity         |
-| results-*n*.tsv  | results of contigency case *n* |
+| results-*i*.tsv  | results of contigency case *i* |
 
 
 Fields in results files
@@ -33,6 +33,6 @@ The row with `Sequence = -1` and `Status = "LIMITS"` shows the maximum allowed v
 | b\_*i*   | Whehter bus *i* is in service              |
 | f\_*i*   | Whether line/transformer *i* is in service |
 | g\_*i*   | Whether load *i* is in service             |
-| F\_*i*   | Per-unit flow in branch *i*                |
+| F\_*i*   | Per-unit flow in line/transformer *i*      |
 | G\_*i*   | Per-unit generation at generator *i*       |
 | L\_*i*   | Per-unit consumption at load *i*           |
