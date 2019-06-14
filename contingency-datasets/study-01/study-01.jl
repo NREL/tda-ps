@@ -25,42 +25,80 @@ the_algorithm = PM.DCPlosslessForm
 
 function writegraph(filename, case_sys)
     open(filename, "w") do f
-        write(f, "graph {\n")
+        write(f, "digraph {\n")
         write(f, "  overlap=false\n")
         for bus in case_sys.buses
             write(f, "  bus", string(bus.number), " [ label=\"", bus.name, "\" ]\n")
         end
         for branch in case_sys.branches
-            write(f, "  bus", string(branch.connectionpoints.from.number), " -- bus", string(branch.connectionpoints.to.number), " [ label=\"", branch.name, "\" ]\n")
+            write(f, "  bus", string(branch.connectionpoints.from.number), " -> bus", string(branch.connectionpoints.to.number), " [ label=\"", branch.name, "\" ]\n")
         end
         for i in 1:length(case_sys.loads)
             load = case_sys.loads[i]
             write(f, "  load", string(i), " [ shape=box color=maroon label=\"", load.name, "\" ]\n")
-            write(f, "  load", string(i), " -- bus", string(load.bus.number), " [ style=dotted color=maroon ]\n")
+            write(f, "  bus", string(load.bus.number), " -> load", string(i), " [ style=dotted color=maroon ]\n")
         end
         if (!isnothing(case_sys.generators.thermal))
             for i in 1:length(case_sys.generators.thermal)
                 generator = case_sys.generators.thermal[i]
                 write(f, "  thermal", string(i), " [ shape=diamond color=peru label=\"", generator.name, "\" ]\n")
-                write(f, "  thermal", string(i), " -- bus", string(generator.bus.number), " [ style=dashed color=peru ]\n")
+                write(f, "  thermal", string(i), " -> bus", string(generator.bus.number), " [ style=dashed color=peru ]\n")
             end
         end
         if (!isnothing(case_sys.generators.renewable))
             for i in 1:length(case_sys.generators.renewable)
                 generator = case_sys.generators.renewable[i]
                 write(f, "  renewable", string(i), " [ shape=triangle color=green label=\"", generator.name, "\" ]\n")
-                write(f, "  renewable", string(i), " -- bus", string(generator.bus.number), " [ style=dashed color=green ]\n")
+                write(f, "  renewable", string(i), " -> bus", string(generator.bus.number), " [ style=dashed color=green ]\n")
             end
         end
         if (!isnothing(case_sys.generators.hydro))
             for i in 1:length(case_sys.generators.hydro)
                 generator = case_sys.generators.hydro[i]
                 write(f, "  hydro", string(i), " [ shape=invtriangle color=turquoise label=\"", generator.name, "\" ]\n")
-                write(f, "  hydro", string(i), " -- bus", string(generator.bus.number), " [ style=dashed color=turquoise ]\n")
+                write(f, "  hydro", string(i), " -> bus", string(generator.bus.number), " [ style=dashed color=turquoise ]\n")
             end
         end
         write(f, "}\n")
     end
+end
+
+
+# Write the system information.
+
+function writesystem(prefix, case_sys)
+    CSV.write(
+        joinpath(prefix, "branches.tsv"),
+        sort(
+            DataFrame(
+                Branch  =parse.(Int64, map(x -> x.name                      , case_sys.branches)),
+                From_Bus=parse.(Int64, map(x -> x.connectionpoints.from.name, case_sys.branches)),
+                To_Bus  =parse.(Int64, map(x -> x.connectionpoints.to.name  , case_sys.branches)),
+            )
+        ),
+        delim="\t"
+    )
+    CSV.write(
+        joinpath(prefix, "loads.tsv"),
+        sort(
+            DataFrame(
+                Load  =parse.(Int64, map(x -> x.name    , case_sys.loads)),
+                At_Bus=parse.(Int64, map(x -> x.bus.name, case_sys.loads)),
+            )
+        ),
+        delim="\t"
+    )
+    CSV.write(
+        joinpath(prefix, "generators.tsv"),
+        sort(
+            DataFrame(
+                Generator=parse.(Int64, map(x -> x.name    , case_sys.generators.thermal)),
+                At_Bus   =parse.(Int64, map(x -> x.bus.name, case_sys.generators.thermal)),
+                Type     ="Thermal",
+            )
+        ),
+        delim="\t"
+    )
 end
 
 
@@ -142,6 +180,8 @@ function bus_contingencies!(case_sys, buses)
 end
 
 
+# Extract status of devices.
+
 function available_devices(case_sys)
     Dict{String,Any}(
         vcat(
@@ -158,6 +198,8 @@ function available_devices(case_sys)
 end
 
 
+# Extract limits of devices.
+
 function device_limits(case_sys)
     Dict{String,Any}(
         vcat(
@@ -169,6 +211,8 @@ function device_limits(case_sys)
 end
 
 
+# Extract results.
+
 function device_results(case_sys, model :: JuMP.Model)
     function rename(v)
         s = string(v)
@@ -177,9 +221,8 @@ function device_results(case_sys, model :: JuMP.Model)
         elseif occursin(r"^Pth", s)
             replace(s, r"^Pth_{(.*),1}$" => s"G_\1")
         elseif occursin(r"^1_1_p", s)
-            replace(s, r"^1_1_p\[\((.*), .*, .*\)\]$" => s"F_\1")
-      # elseif occursin(r"1_1_va", s)
-      #     replace(s, r"^1_1_va\[(.*)\]$" => s"A_\1")
+            i = parse(Int64, replace(s, r"^1_1_p\[\((.*), .*, .*\)\]$" => s"\1"))
+            string("F_", case_sys.branches[i].name)
         else
             nothing
         end
@@ -194,12 +237,14 @@ function device_results(case_sys, model :: JuMP.Model)
     for v in JuMP.all_variables(model)
         vr = rename(v)
         if !isnothing(vr)
-            result[vr] = value(v)
+            result[vr] = round(value(v), digits=5)
         end
     end
     result
 end
 
+
+# Sort results columns.
 
 function sort_results(z)
     function compare(x, y)
@@ -218,6 +263,8 @@ function sort_results(z)
 end
 
 
+# Extract the device limits.
+
 function collect_limits(case_sys)
     hcat(
         DataFrame(Sequence=-1, Status="LIMITS"),
@@ -231,6 +278,8 @@ function collect_limits(case_sys)
     )
 end
 
+
+# Run a bus contingency case.
 
 function run_contingency(label, case_sys, buses)
     contingencies = bus_contingencies!(case_sys, buses)
@@ -253,39 +302,49 @@ function run_contingency(label, case_sys, buses)
 end
 
 
-# Set up the model.
+# Iterate over models
 
-case_data = NESTA_MODELS[22]
+case_number_max = 100
 
-case_model = PSY.parse_file(case_data)
-case_dict = PSY.pm2ps_dict(case_model)
-for (k, l) in case_dict["load"]
-    # Set to one time step.
-    l["scalingfactor"] = l["scalingfactor"][1]
-end
-case_bus, case_gen, case_stor, case_branch, case_load, case_lz, case_shunts, case_service = ps_dict2ps_struct(case_dict)
-case_sys_backup = PSY.System(case_bus, case_gen, case_load, case_branch, case_stor, 100.0)
-makeinterruptible!(case_sys_backup)
+for case_data in NESTA_MODELS[[22, 1]]
 
-prefix = joinpath("..", "contingency-datasets", "study-01", "result-")
-
-case_number_max = 5
-case_number = 0
-for bus_sequence in permutations(bus_degrees(case_sys_backup))
-
-    if case_number < case_number_max
-        global case_number += 1
-    else
-        break
+    # Set output folder.
+    prefix = joinpath("..", "contingency-datasets", "study-01", replace(basename(case_data), r"\..*$" => s""))
+    if !isdir(prefix)
+        mkdir(prefix)
     end
 
-    @info string("Case ", case_number)
+    # Read and create the system model.
+    case_model = PSY.parse_file(case_data)
+    case_dict = PSY.pm2ps_dict(case_model)
+    for (k, l) in case_dict["load"]
+        # Set to one time step.
+        l["scalingfactor"] = l["scalingfactor"][1]
+    end
+    case_bus, case_gen, case_stor, case_branch, case_load, case_lz, case_shunts, case_service = ps_dict2ps_struct(case_dict)
+    case_sys_backup = PSY.System(case_bus, case_gen, case_load, case_branch, case_stor, 100.0)
+    makeinterruptible!(case_sys_backup)
 
-    result = collect_limits(case_sys_backup)
+    # Write a description of the model.
+    writesystem(prefix, case_sys_backup)
+    writegraph(joinpath(prefix, "graph.dot"), case_sys_backup)
 
-    for step_number in 0:length(bus_sequence)
-        result =
-            vcat(
+    # Run contingencies.
+    case_number = 0
+    for bus_sequence in permutations(bus_degrees(case_sys_backup))
+        if case_number < case_number_max
+            case_number += 1
+        else
+            break
+        end
+        @info string("Case ", case_number)
+
+        # Collect device limits.
+        result = collect_limits(case_sys_backup)
+
+        # Iterate over sequence of contingencies.
+        for step_number in 0:length(bus_sequence)
+            result = vcat(
                 result,
                 run_contingency(
                     step_number,
@@ -293,8 +352,11 @@ for bus_sequence in permutations(bus_degrees(case_sys_backup))
                     step_number == 0 ? [] : map(x -> x[1], bus_sequence[1:step_number])
                 )
             )
-    end
+        end
 
-    CSV.write(string(prefix, case_number, ".tsv"), result, delim="\t")
+        # Write the results.
+        CSV.write(joinpath(prefix, string("result-", case_number, ".tsv")), result, delim="\t")
+
+    end
 
 end
