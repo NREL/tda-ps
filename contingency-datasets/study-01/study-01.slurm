@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#SBATCH --job-name tda-ps-01
+#SBATCH --job-name=tda-ps-01
 #SBATCH --output=study-01.log
 #SBATCH --account siip
 #SBATCH --time=48:00:00
@@ -15,7 +15,9 @@ TIME="`which time` --verbose"
 
 date -u
 
-srun --ntasks 1 $TIME julia --color=no --eval 'FIRST_CASE = 1 ; LAST_CASE = 10000' --load study-01.jl
+srun --ntasks 1 $TIME julia --eval 'TDAPS_DIR = "../../simulations" ; NO_INSTANTIATE = true ; FIRST_CASE = 1 ; LAST_CASE = 10000' \
+                            --load study-01.jl                                                                                    \
+                            --color no
 rm core.[[:digit:]]*
 
 date -u
