@@ -28,6 +28,9 @@ for case_data in NESTA_MODELS[[22, 1]]
         end
 
         i = parse(Int64, replace(f, r"^result-(.*)\.tsv" => s"\1"))
+        if i > 100
+            continue
+        end
         z = CSV.read(joinpath(prefix, f))
         okay_rows = z.Status .== "LOCALLY_SOLVED"
         load_cols = filter(x -> occursin(r"^L_", string(x)), names(z))
@@ -40,6 +43,12 @@ for case_data in NESTA_MODELS[[22, 1]]
 
     CSV.write(joinpath(prefix, "summary.tsv"), result, delim="\t")
 
-    plot(result, x=:Sequence, y=:Load, group=:Case, Geom.line) |> PNG(joinpath(prefix, "summary.png"))
+    plot(
+        result,
+        x=:Sequence,
+        y=:Load,
+        Coord.cartesian(xmin=0, xmax=maximum(result.Sequence)),
+        Geom.boxplot
+    ) |> PNG(joinpath(prefix, "summary.png"))
 
 end
