@@ -316,7 +316,6 @@ case_number_start  = isdefined(Main, :FIRST_CASE) ? FIRST_CASE : 1
 case_number_finish = isdefined(Main, :LAST_CASE ) ? LAST_CASE  : 5
 
 for case_data in NESTA_MODELS[[22, 1]]
-#or case_data in NESTA_MODELS[[22]]
 
     # Set output folder.
     prefix = joinpath("..", "contingency-datasets", "study-02", replace(basename(case_data), r"\..*$" => s""))

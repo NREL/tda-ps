@@ -11,7 +11,7 @@ end
 # Set-up packages and paths.
 
 THE_ENV = "powersimulations.env"
-include("setup-powersimulations.jl")
+include("../../simulations/setup-powersimulations.jl")
 
 
 for case_data in NESTA_MODELS[[22, 1]]
