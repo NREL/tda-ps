@@ -304,9 +304,11 @@ end
 
 # Iterate over models
 
-case_number_max = 100
+case_number_start  = isdefined(Main, :FIRST_CASE) ? FIRST_CASE : 1
+case_number_finish = isdefined(Main, :LAST_CASE ) ? LAST_CASE  : 5
 
-for case_data in NESTA_MODELS[[22, 1]]
+#or case_data in NESTA_MODELS[[22, 1]]
+for case_data in NESTA_MODELS[[1]]
 
     # Set output folder.
     prefix = joinpath("..", "contingency-datasets", "study-01", replace(basename(case_data), r"\..*$" => s""))
@@ -332,8 +334,11 @@ for case_data in NESTA_MODELS[[22, 1]]
     # Run contingencies.
     case_number = 0
     for bus_sequence in permutations(bus_degrees(case_sys_backup))
-        if case_number < case_number_max
+        if case_number < case_number_finish
             case_number += 1
+            if case_number < case_number_start
+                continue
+            end
         else
             break
         end
