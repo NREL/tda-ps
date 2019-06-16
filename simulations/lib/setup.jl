@@ -6,7 +6,7 @@
 using Pkg
 
 if isdefined(Main, :THE_ENV)
-    Pkg.activate(joinpath("environments", THE_ENV))
+    Pkg.activate(joinpath(@__DIR__, "../environments", THE_ENV))
     if !isdefined(Main, :NO_INSTANTIATE)
         Pkg.instantiate()
     end
@@ -34,12 +34,11 @@ using Fontconfig
 using Gadfly
 
 
-# NESTA models.
+# Metadata for models.
 
-NESTA_DIR = "../models/nesta-mirror/opf/"
-NESTA_MODELS = map(x -> joinpath(NESTA_DIR, x), filter(x -> endswith(x, ".m"), readdir(NESTA_DIR)))
+include("util.jl"    )
+include("nesta.jl"   )
+include("rts-gmlc.jl")
 
 
-# The RTS-GMLC model.
-
-RTS_GMLC_DIR = "../models/RTS-GMLC/RTS_Data/SourceData"
+nothing
