@@ -3,15 +3,12 @@
 
 # Set working directory.
 
-if isdefined(Main, :TDAPS_DIR)
-    cd(TDAPS_DIR)
-end
+cd(@__DIR__)
 
 
 # Set-up packages and paths.
 
-THE_ENV = "powersimulations.env"
-include("setup-powersimulations.jl")
+include("lib/powersimulations/setup.jl")
 
 
 # Select the optimizer.
