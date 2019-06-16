@@ -3,21 +3,12 @@
 
 # Set working directory.
 
-if isdefined(Main, :TDAPS_DIR)
-    cd(TDAPS_DIR)
-end
+cd(@__DIR__)
 
 
 # Set-up packages and paths.
 
-THE_ENV = "powermodels.env"
-include("setup-powermodels.jl")
-
-
-# Select the optimizer.
-
-using JuMP
-using Ipopt
+include("lib/powermodels/setup.jl")
 
 
 # Create and solve the model using PowerModels.

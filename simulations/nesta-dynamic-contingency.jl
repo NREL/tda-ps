@@ -3,15 +3,12 @@
 
 # Set working directory.
 
-if isdefined(Main, :TDAPS_DIR)
-    cd(TDAPS_DIR)
-end
+cd(@__DIR__)
 
 
 # Set-up packages and paths.
 
-THE_ENV = "powersimulations.env"
-include("setup-powersimulations.jl")
+include("lib/powersimulations/setup.jl")
 
 
 # Select the solver amd algorithms.
@@ -23,87 +20,6 @@ algs = [
     PM.DCPlosslessForm,
     PM.StandardACPForm,
 ]
-
-
-# Represent the network as a graph.
-
-function writegraph(filename, case_sys)
-    open(filename, "w") do f
-        write(f, "graph {\n")
-        write(f, "  overlap=false\n")
-        for bus in case_sys.buses
-            write(f, "  bus", string(bus.number), " [ label=\"", bus.name, "\" ]\n")
-        end
-        for branch in case_sys.branches
-            write(f, "  bus", string(branch.connectionpoints.from.number), " -- bus", string(branch.connectionpoints.to.number), " [ label=\"", branch.name, "\" ]\n")
-        end
-        for i in 1:length(case_sys.loads)
-            load = case_sys.loads[i]
-            write(f, "  load", string(i), " [ shape=box color=maroon label=\"", load.name, "\" ]\n")
-            write(f, "  load", string(i), " -- bus", string(load.bus.number), " [ style=dotted color=maroon ]\n")
-        end
-        if (!isnothing(case_sys.generators.thermal))
-            for i in 1:length(case_sys.generators.thermal)
-                generator = case_sys.generators.thermal[i]
-                write(f, "  thermal", string(i), " [ shape=diamond color=peru label=\"", generator.name, "\" ]\n")
-                write(f, "  thermal", string(i), " -- bus", string(generator.bus.number), " [ style=dashed color=peru ]\n")
-            end
-        end
-        if (!isnothing(case_sys.generators.renewable))
-            for i in 1:length(case_sys.generators.renewable)
-                generator = case_sys.generators.renewable[i]
-                write(f, "  renewable", string(i), " [ shape=triangle color=green label=\"", generator.name, "\" ]\n")
-                write(f, "  renewable", string(i), " -- bus", string(generator.bus.number), " [ style=dashed color=green ]\n")
-            end
-        end
-        if (!isnothing(case_sys.generators.hydro))
-            for i in 1:length(case_sys.generators.hydro)
-                generator = case_sys.generators.hydro[i]
-                write(f, "  hydro", string(i), " [ shape=invtriangle color=turquoise label=\"", generator.name, "\" ]\n")
-                write(f, "  hydro", string(i), " -- bus", string(generator.bus.number), " [ style=dashed color=turquoise ]\n")
-            end
-        end
-        write(f, "}\n")
-    end
-end
-
-
-# Make all of the loads interruptible.
-
-function makeinterruptible!(case_sys, sheddingcost=999)
-    for i in 1:length(case_sys.loads)
-        load = case_sys.loads[i]
-        case_sys.loads[i] = PSY.InterruptibleLoad(
-            load.name,
-            load.available,
-            load.bus,
-            "0", # FIXME: What is this for?
-            load.maxactivepower,
-            load.maxreactivepower,
-            sheddingcost, # FIXME: Is this large enough?
-            load.scalingfactor
-        )
-    end
-    Nothing
-end
-
-
-# Solve optimal power flow with an interruptible device model for loads.
-
-function SheddingOptimalPowerFlow(system::PSY.System, transmission::Type{S}; optimizer::Union{Nothing,JuMP.OptimizerFactory}=nothing, kwargs...) where {S <: PM.AbstractPowerFormulation}
-    devices = Dict{Symbol, PSI.DeviceModel}(:ThermalGenerators => PSI.DeviceModel(PSY.ThermalGen, PSI.ThermalDispatch),
-                                            :RenewableGenerators => PSI.DeviceModel(PSY.RenewableGen, PSI.RenewableConstantPowerFactor),
-                                            :Loads => PSI.DeviceModel(PSY.PowerLoad, PSI.InterruptiblePowerLoad))
-    branches = Dict{Symbol, PSI.DeviceModel}(:Lines => PSI.DeviceModel(PSY.Branch, PSI.SeriesLine))
-    services = Dict{Symbol, PSI.ServiceModel}(:Reserves => PSI.ServiceModel(PSY.Reserve, PSI.AbstractReservesForm))
-    return PSI.PowerOperationModel(OptimalPowerFlow ,
-                                   transmission,
-                                    devices,
-                                    branches,
-                                    services,
-                                    system,
-                                    optimizer = optimizer; kwargs...)
-end
 
 
 # Create contingencies.
@@ -191,7 +107,7 @@ NESTA_MODELS = [
 
 for case_data in NESTA_MODELS
 
-    prefix = joinpath("..", "contingency-datasets", "shedding", basename(case_data)[1:(end-2)])
+    prefix = joinpath("..", "contingency-datasets", "study-00", basename(case_data)[1:(end-2)])
 
     lastcontingency = -1
     if isfile(string(prefix, "_load.tsv"))
