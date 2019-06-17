@@ -53,7 +53,6 @@ for case_data in NESTA_MODELS[[22, 1, 23]]
         y=:Load,
         Coord.cartesian(xmin=0, xmax=maximum(result.Sequence)),
         Geom.boxplot
-#       Geom.line, color=:Case, Scale.color_discrete
     ) |> PNG(joinpath(prefix, "summary.png"))
 
 end
