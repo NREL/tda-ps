@@ -7,7 +7,7 @@
 |-------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
 |  20,000 cases                                                                                               | 20,000 cases                                                                                                 |
 |  [all results](https://nrel-demos.s3-us-west-2.amazonaws.com/tda-ps/study-02/nesta_case30_ieee/results.zip) |  [all results](https://nrel-demos.s3-us-west-2.amazonaws.com/tda-ps/study-02/nesta_case118_ieee/results.zip) |
-|  [summary of results](nesta_case30_ieee/summary.tsv)                                                        |  [nesta_case118_ieee/summary.tsv](nesta_case118_ieee/summary.tsv)                                            |
+|  [summary of results](nesta_case30_ieee/summary.tsv)                                                        |  [nesta_case118_ieee/summary.tsv](nesta_case118_ieee/summary.zip)                                            |
 | ![nesta_case30_ieee/summary.png](nesta_case30_ieee/summary.png)                                             | ![nesta_case118_ieee/summary.png](nesta_case118_ieee/summary.png)                                            |
 
 
@@ -15,8 +15,8 @@
 
 | NESTA 30 IEEE                                               | NESTA 118 IEEE                                                |
 |-------------------------------------------------------------|---------------------------------------------------------------|
-| ![nesta_case30_ieee/graph.svg](nesta_case30_ieee/graph.svg) | ![nesta_case118_ieee/graph.svg](nesta_case118_ieee/graph.svg) |
 |  [nesta_case30_ieee/graph.dot](nesta_case30_ieee/graph.dot) |  [nesta_case118_ieee/graph.dot](nesta_case118_ieee/graph.dot) |
+| ![nesta_case30_ieee/graph.svg](nesta_case30_ieee/graph.svg) | ![nesta_case118_ieee/graph.svg](nesta_case118_ieee/graph.svg) |
 
 
 ## Key to Directories and Files

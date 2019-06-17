@@ -15,8 +15,8 @@
 
 | NESTA 30 IEEE                                               | NESTA 118 IEEE                                                | NESTA 3120 SP MP                                                |
 |-------------------------------------------------------------|---------------------------------------------------------------|-----------------------------------------------------------------|
-| ![nesta_case30_ieee/graph.svg](nesta_case30_ieee/graph.svg) | ![nesta_case118_ieee/graph.svg](nesta_case118_ieee/graph.svg) | ![nesta_case3120sp_mp/graph.svg](nesta_case3120sp_mp/graph.svg) |
 |  [nesta_case30_ieee/graph.dot](nesta_case30_ieee/graph.dot) |  [nesta_case118_ieee/graph.dot](nesta_case118_ieee/graph.dot) |  [nesta_case3120sp_mp/graph.dot](nesta_case3120sp_mp/graph.dot) |
+| ![nesta_case30_ieee/graph.svg](nesta_case30_ieee/graph.svg) | ![nesta_case118_ieee/graph.svg](nesta_case118_ieee/graph.svg) | ![nesta_case3120sp_mp/graph.svg](nesta_case3120sp_mp/graph.svg) |
 
 
 ## Key to Directories and Files

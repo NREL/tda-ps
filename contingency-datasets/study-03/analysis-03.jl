@@ -3,20 +3,12 @@
 
 # Set working directory.
 
-if isdefined(Main, :TDAPS_DIR)
-    cd(TDAPS_DIR)
-end
+cd(@__DIR__)
 
 
 # Set-up packages and paths.
 
-THE_ENV = "powersimulations.env"
-include("../../simulations/setup-powersimulations.jl")
-
-
-# Include functions.
-
-include("../common.jl")
+include("../../simulations/lib/powersimulations/setup.jl")
 
 
 # Generate summary table and plots.
@@ -25,7 +17,7 @@ for case_data in NESTA_MODELS[[22, 1, 23]]
     @info string("Processing ", case_data, " . . .")
 
     # Set output folder.
-    prefix = joinpath("..", "contingency-datasets", "study-03", replace(basename(case_data), r"\..*$" => s""))
+    prefix = joinpath(replace(basename(case_data), r"\..*$" => s""))
 
     result = DataFrame(Case=Int64[], Sequence=Int64[], Load=Float64[])
 
@@ -47,12 +39,23 @@ for case_data in NESTA_MODELS[[22, 1, 23]]
 
     CSV.write(joinpath(prefix, "summary.tsv"), result, delim="\t")
 
-    plot(
-        result,
-        x=:Sequence,
-        y=:Load,
-        Coord.cartesian(xmin=0, xmax=maximum(result.Sequence)),
-        Geom.boxplot
-    ) |> PNG(joinpath(prefix, "summary.png"))
+    if maximum(result.Case) < 100
+        plot(
+            result,
+            x=:Sequence,
+            y=:Load,
+            color=:Case,
+            Geom.line
+            Coord.cartesian(xmin=0, xmax=maximum(result.Sequence)),
+        ) |> PNG(joinpath(prefix, "summary.png"))
+    else
+        plot(
+            result,
+            x=:Sequence,
+            y=:Load,
+            Geom.boxplot
+            Coord.cartesian(xmin=0, xmax=maximum(result.Sequence)),
+        ) |> PNG(joinpath(prefix, "summary.png"))
+    end
 
 end

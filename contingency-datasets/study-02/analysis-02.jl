@@ -3,22 +3,19 @@
 
 # Set working directory.
 
-if isdefined(Main, :TDAPS_DIR)
-    cd(TDAPS_DIR)
-end
+cd(@__DIR__)
 
 
 # Set-up packages and paths.
 
-THE_ENV = "powersimulations.env"
-include("../../simulations/setup-powersimulations.jl")
+include("../../simulations/lib/powersimulations/setup.jl")
 
 
 for case_data in NESTA_MODELS[[22, 1]]
     @info string("Processing ", case_data, " . . .")
 
     # Set output folder.
-    prefix = joinpath("..", "contingency-datasets", "study-02", replace(basename(case_data), r"\..*$" => s""))
+    prefix = joinpath(replace(basename(case_data), r"\..*$" => s""))
 
     result = DataFrame(Case=Int64[], Sequence=Int64[], Load=Float64[])
 
