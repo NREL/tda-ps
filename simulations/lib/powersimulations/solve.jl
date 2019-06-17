@@ -133,7 +133,14 @@ function run_multiple_contingencies(
     case_number_start  = isdefined(Main, :FIRST_CASE) ? FIRST_CASE : 1          ,
     case_number_finish = isdefined(Main, :LAST_CASE ) ? LAST_CASE  : 3          ,
     step_number_finish = isdefined(Main, :MAX_STEPS ) ? MAX_STEPS  : 5          ,
-    statuses           = ["LOCALLY_SOLVED", "LOCALLY_INFEASIBLE"]               ,
+    statuses           = [
+                           "ALMOST_LOCALLY_SOLVED",
+                           "ITERATION_LIMIT"      ,
+                           "LIMITS"               ,
+                           "LOCALLY_INFEASIBLE"   ,
+                           "LOCALLY_SOLVED"       ,
+                           "NUMERICAL_ERROR"      ,
+                         ]
 )
     for case_data in NESTA_MODELS[model_indices]
 
