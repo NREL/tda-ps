@@ -1,15 +1,31 @@
-Key to Directories and Files
-============================
+# Sequential Permutations of Bus Contingencies
 
 
-Directories
------------
+## Results
+
+| NESTA 30 IEEE                                                                                               | NESTA 118 IEEE                                                                                               |
+|-------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+|  10,000 cases                                                                                               | 10,000 cases                                                                                                 |
+|  [all results](https://nrel-demos.s3-us-west-2.amazonaws.com/tda-ps/study-01/nesta_case30_ieee/results.zip) |  [all results](https://nrel-demos.s3-us-west-2.amazonaws.com/tda-ps/study-01/nesta_case118_ieee/results.zip) |
+
+
+## Networks
+
+| NESTA 30 IEEE                                               | NESTA 118 IEEE                                                |
+|-------------------------------------------------------------|---------------------------------------------------------------|
+|  [nesta_case30_ieee/graph.dot](nesta_case30_ieee/graph.dot) |  [nesta_case118_ieee/graph.dot](nesta_case118_ieee/graph.dot) |
+| ![nesta_case30_ieee/graph.svg](nesta_case30_ieee/graph.svg) | ![nesta_case118_ieee/graph.svg](nesta_case118_ieee/graph.svg) |
+
+
+## Key to Directories and Files
+
+
+### Directories
 
 Each directory contains contingency cases for a different network.
 
 
-Files
------
+### Files
 
 | File             | Description                    |
 |------------------|--------------------------------|
@@ -21,8 +37,7 @@ Files
 | results-*i*.tsv  | results of contigency case *i* |
 
 
-Fields in results files
------------------------
+### Fields in results files
 
 The row with `Sequence = -1` and `Status = "LIMITS"` shows the maximum allowed values fro the flows, generation, and consumption.
 
