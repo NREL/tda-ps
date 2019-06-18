@@ -1,7 +1,7 @@
 Contingency Studies
 ===================
 
-Maps of the test networks in are [maps/](maps/).
+Maps of the test networks are in [maps/](maps/).  Matpower models for the test networks are in [models/](models/).
 
 | Folder                          | Description                                                                                          |
 |---------------------------------|------------------------------------------------------------------------------------------------------|
