@@ -14,7 +14,7 @@ git submodule update
 Contingency Datasets
 --------------------
 
-A variety of contingency datasets are available in [contingency-datasets/](contingency-datasets/ReadMe.md). Load-shedding cases for contingencies are in [contingency-datasets/shedding/](contingency-datasets/shedding/ReadMe.md).
+A variety of contingency datasets and load-shedding simulations are available in [contingency-datasets/](contingency-datasets/ReadMe.md).
 
 
 Simulation Scripts
