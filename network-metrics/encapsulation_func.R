@@ -172,7 +172,7 @@ output_graph_under_attack_f = function(case_118_network = input_graph, initial_s
   rownames(df_with_edge_changed_with_F_signotzero) = c(1:dim(df_with_edge_changed_with_F_signotzero)[1]) #
   
   # 12, remove direction changed edges from initial_graph_edgelist_with_Branch_f - generate edgelist_change_stage1 #
-  edgelist_change_stage1_label = (!duplicated(rbind(initial_graph_edgelist_with_Branch_f, as.matrix(df_with_edge_changed_with_F_signotzero)), fromLast = T))[1:dim(initial_edgelist_and_Branck_f)[1]]
+  edgelist_change_stage1_label = (!duplicated(rbind(initial_graph_edgelist_with_Branch_f, as.matrix(df_with_edge_changed_with_F_signotzero)), fromLast = T))[1:dim(initial_graph_edgelist_with_Branch_f)[1]]
   edgelist_change_stage1 = initial_graph_edgelist_with_Branch_f[edgelist_change_stage1_label,]
   
   # 13, combine delted verion above i.e., stage 1, with comb_seq0_seq_under_attack_stage5 # 
