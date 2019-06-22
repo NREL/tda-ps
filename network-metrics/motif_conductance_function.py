@@ -244,13 +244,13 @@ for ii in motif_type:
         # complete #
         evals_all, evecs_all = eigh(laplacian_numpy_form)
         # Z = evecs_all[:, 1] * (-1)
-        # find eigenvector corresponding to the second smallest eigenvalue; there are two ways to find the eigenvectors and eigenvalues
-        output1 = eigsh(laplacian+diag_mat_sp, 3, which='SM') # k=3 rather 2
+        # find eigenvector with the second smallest eigenvalue; there are two ways to find the eigenvectors and eigenvalues: eigh and eigsh #
+        output1 = eigsh(laplacian+diag_mat_sp, 3, which='SM') # k=3 rather than 2 #
         Z = output1[1][:, 2]
         f_M = np.dot(d_mat_inv_sqrt.toarray(), Z)
         # print(np.sort(np.dot(d_mat_inv_sqrt.toarray(),Z)))
         M_target = Motif_Adj_f(A,ii)
-        order = np.argsort(f_M)  # [3,4,0,2,1,6,5,8,7,9]
+        order = np.argsort(f_M)  # [3,4,0,2,1,6,5,8,7,9]: this is the order case for food web dataset #
         C = np.zeros((len(order), len(order)), dtype=int)
         for i in order:
             for j in order:
