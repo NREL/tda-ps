@@ -3,36 +3,6 @@ library(igraph)
 library(RCurl)
 library(sna)
 
-combine_dataset = read.csv("combine_result_copy_case.csv",sep = ',', header = TRUE)
-combine_dataset = as.data.frame(combine_dataset)
-combine_dataset = combine_dataset[,-c(1,2,3)]
-which(combine_dataset[,1]=="b_1")
-combine_dataset = combine_dataset[-which(combine_dataset[,1]=="b_1"),]
-# scale for 118 cases study #
-which(colnames(combine_dataset) == "g_54")
-
-column_names = colnames(combine_dataset)
-
-# small case part and large case part#
-combine_dataset_smallcase = combine_dataset[,1:which(colnames(combine_dataset) == "g_54")]
-combine_dataset_largecase = combine_dataset[,(which(colnames(combine_dataset) == "g_54")+1):dim(combine_dataset)[2]]
-
-for (i in 1:dim(combine_dataset_smallcase)[2]) {
-  combine_dataset_smallcase[,i] = as.logical(as.character(combine_dataset_smallcase[,i]))
-}
-
-for (i in 1:dim(combine_dataset_largecase)[2]) {
-  combine_dataset_largecase[,i] = as.numeric(as.character(combine_dataset_largecase[,i]))
-}
-
-combine_dataset = cbind(combine_dataset_smallcase, combine_dataset_largecase)
-
-# initial values #
-initial_values = combine_dataset[1,]
-
-# unique combine dataset #
-combine_dataset = combine_dataset[!duplicated(combine_dataset),] # consistent with python (588, 697)
-
 # read .dot file #
 # first step is put the .dot file into Gephi and export the corresponding .csv file - here is graph_118_case #
 case_118_graph = read.csv("graph_118_case.csv",sep = ";", header = TRUE, row.names = 1)
