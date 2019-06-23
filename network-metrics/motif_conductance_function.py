@@ -216,6 +216,7 @@ def Motif_Adj_f(A,motif_type):
         return(W)
 
 
+# scenario 1: when calcualte the Laplacian matrix, we use motif adjacency #
 
 G = pd.read_csv("A.csv",index_col=0) # here A.csv is the adjacency matrix of case118_ieee graph (without parallel edges)
 A = np.array(G)
@@ -275,4 +276,63 @@ for ii in motif_type:
 
 
 
+# scenario 2: when calculate the Laplacian matrix, we use (motif adjacency matrix).(weight matrix)
 
+G = pd.read_csv("A.csv",index_col=0)
+weight_mat = pd.read_csv("weight_matrix.csv", index_col=0) # *
+weight_mat = np.array(weight_mat) # *
+A = np.array(G)
+conductances_sum_mat = np.zeros((13,A.shape[0]))
+min_value_sum_mat = np.zeros((13,))
+motif_type = np.array(["m1","m2","m3","m4","m5","m6","m7","m8","m9","m10","m11","m12","m13"])
+for ii in motif_type:
+    if np.sum(Motif_Adj_f(A,ii))!=0:
+        col_sum = np.sum(A, axis=0)  # column sum
+        diagonal_mat = np.diag(col_sum)
+        identity_mat = np.diag(np.ones((A.shape[0],), dtype=int))
+        # normalize_adj #
+        #adj = sp.coo_matrix(Motif_Adj_f(A,ii))
+        adj = sp.coo_matrix(np.multiply(weight_mat,Motif_Adj_f(A,ii))) # *
+        rowsum = np.array(adj.sum(1))
+        d_inv_sqrt = np.power(rowsum, -0.5).flatten()
+        d_inv_sqrt[np.isinf(d_inv_sqrt)] = 0.
+        d_mat_inv_sqrt = sp.diags(d_inv_sqrt)
+        adj_normalized = adj.dot(d_mat_inv_sqrt).transpose().dot(
+            d_mat_inv_sqrt).tocoo()  # <class 'scipy.sparse.coo.coo_matrix'>
+        laplacian = sp.eye(adj.shape[0]) - adj_normalized
+        laplacian_numpy_form = laplacian.toarray()
+        # add a diagnoal matrix to normalized laplacian matrix #
+        diag = np.ones((A.shape[0],))
+        diag_mat = np.diag(diag)
+        diag_mat_sp = sp.csc_matrix(diag_mat)
+        # complete #
+        evals_all, evecs_all = eigh(laplacian_numpy_form)
+        # Z = evecs_all[:, 1] * (-1)
+        # find eigenvector corresponding to the second smallest eigenvalue; there are two ways to find the eigenvectors and eigenvalues
+        output1 = eigsh(laplacian+diag_mat_sp, 3, which='SM') # k=3 rather 2
+        Z = output1[1][:, 2]
+        f_M = np.dot(d_mat_inv_sqrt.toarray(), Z)
+        # print(np.sort(np.dot(d_mat_inv_sqrt.toarray(),Z)))
+        M_target = Motif_Adj_f(A,ii) #np.multiply(weight_mat,Motif_Adj_f(A,ii))
+        order = np.argsort(f_M)  # [3,4,0,2,1,6,5,8,7,9]
+        C = np.zeros((len(order), len(order)), dtype=int)
+        for i in order:
+            for j in order:
+                C[i, j] = M_target[order[i], order[j]]
+
+        C_sums = np.sum(C, axis=1)
+        volumes = np.cumsum(C_sums)
+        volumes_other = np.sum(M_target) * np.ones((A.shape[0],), dtype=int) - volumes
+        conductances = np.divide(np.cumsum(C_sums - 2 * np.sum(np.tril(C), axis=1)), np.minimum(volumes, volumes_other))
+        # make nan equals to 1 #
+        if sum(np.isnan(conductances)) > 0:
+            conductances[np.isnan(conductances)] = 1
+
+        # print(conductances)
+        min_value_for_M_target = min(conductances)
+
+        conductances_sum_mat[int("".join(filter(str.isdigit, ii)))-1, :] = conductances
+        min_value_sum_mat[int("".join(filter(str.isdigit, ii)))-1] = min_value_for_M_target
+    else:
+        conductances_sum_mat[int("".join(filter(str.isdigit, ii)))-1, :] = np.zeros((A.shape[0],))
+        min_value_sum_mat[int("".join(filter(str.isdigit, ii)))-1] = 'nan'
