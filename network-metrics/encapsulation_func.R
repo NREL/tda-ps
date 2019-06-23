@@ -310,3 +310,8 @@ weight_matrix = as.matrix(weight_matrix)
 write.csv(weight_matrix,"weight_matrix.csv")
 '''
 
+'''
+# clique_num calculates the size of the largest clique(s) - only work for undirected graph #
+undirected_seq_zero_case118_ieee_network = as.undirected(simplify(seq_zero_case118_ieee_network))
+num_max_clique = clique_num(undirected_seq_zero_case118_ieee_network)
+'''
