@@ -315,3 +315,20 @@ write.csv(weight_matrix,"weight_matrix.csv")
 undirected_seq_zero_case118_ieee_network = as.undirected(simplify(seq_zero_case118_ieee_network))
 num_max_clique = clique_num(undirected_seq_zero_case118_ieee_network)
 '''
+
+'''
+# below is about calculating the fraction of load served #
+# here is the formula: sum(L_i)/sum(L^max_i); 1- sum(L_i)/sum(L^max_i) = blackout #
+seq_minus_1_L = new_case118_result1[1,which(colnames(new_case118_result1) == "L_1"):which(colnames(new_case118_result1) == "L_118")]
+sum_L_max = sum(seq_minus_1_L)
+
+# sequence row we focus on is from 2 to 102 #
+fraction_load_served = vector(length = 101)
+start_label = which(colnames(new_case118_result1) == "L_1")
+end_label = which(colnames(new_case118_result1) == "L_118")
+
+for (i in c(2:102)) {
+  numerator = sum(new_case118_result1[i,start_label:end_label])
+  fraction_load_served[i-1] = numerator/sum_L_max
+}
+'''
