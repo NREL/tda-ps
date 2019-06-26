@@ -5,7 +5,7 @@ import numpy as np
 from sklearn.kernel_approximation import RBFSampler
 from sklearn_tda import *
 from gudhi import bottleneck_distance
-
+# /.../NREL_works/sklearn_tda_package/example # (where the .csv stored)
 
 #target_matrix = pd.read_csv('test_full_distance_matrix.csv',header=None) #should use gudhi's load data function
 target_matrix = gudhi.read_lower_triangular_matrix_from_csv_file('test_full_distance_matrix.csv') #input distance matrix csv format and with comma
