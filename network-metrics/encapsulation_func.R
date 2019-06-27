@@ -274,6 +274,22 @@ output_graph_under_attack_f = function(case_118_network = input_graph, initial_s
     edge_attr(final_version_graph_after_delete_false_nodes)$weight[mm] = abs(as.numeric(sequnce_under_attack_Flow_info[tmp_weight_label]))
   }
   
+  len_Branch_F = length(edge_attr(final_version_graph_after_delete_false_nodes)$Branch_F)
+  
+  start_ratio_label = which(colnames(new_case118_result1)=="F_1")
+  end_ratio_label = which(colnames(new_case118_result1)=="F_186")
+  flow_ratio_vector = vector(length = len_Branch_F)
+  
+  for (i in c(1:len_Branch_F)) {
+    Flow_part = new_case118_result1[1, which(colnames(new_case118_result1)=="F_1"):which(colnames(new_case118_result1)=="F_186")]
+    tmp_ratio_label = colnames(new_case118_result1)[c(start_ratio_label:end_ratio_label)] %in% edge_attr(final_version_graph_after_delete_false_nodes)$Branch_F[i]
+    if(sum(tmp_ratio_label)>0){
+      flow_ratio_vector[i] = edge_attr(final_version_graph_after_delete_false_nodes)$weight[i]/as.numeric(Flow_part[tmp_ratio_label])
+    }
+  }
+  
+  edge_attr(final_version_graph_after_delete_false_nodes)$ratio_weight = flow_ratio_vector
+  
   return(final_version_graph_after_delete_false_nodes) # the output graph with parallel edges
 }
 
@@ -310,13 +326,6 @@ weight_matrix = as.matrix(weight_matrix)
 write.csv(weight_matrix,"weight_matrix.csv")
 '''
 
-'''
-# clique_num calculates the size of the largest clique(s) - only work for undirected graph #
-undirected_seq_zero_case118_ieee_network = as.undirected(simplify(seq_zero_case118_ieee_network))
-num_max_clique = clique_num(undirected_seq_zero_case118_ieee_network)
-'''
-
-'''
 # below is about calculating the fraction of load served #
 # here is the formula: sum(L_i)/sum(L^max_i); 1- sum(L_i)/sum(L^max_i) = blackout #
 seq_minus_1_L = new_case118_result1[1,which(colnames(new_case118_result1) == "L_1"):which(colnames(new_case118_result1) == "L_118")]
@@ -331,4 +340,55 @@ for (i in c(2:102)) {
   numerator = sum(new_case118_result1[i,start_label:end_label])
   fraction_load_served[i-1] = numerator/sum_L_max
 }
-'''
+
+load_entropy = rep(0,101)
+for (i in c(2:102)) {
+  for (j in c(start_label:end_label)) {
+    if(new_case118_result1[i,j]==0){
+      load_entropy[i-1] = load_entropy[i-1]+0
+    }else{
+      load_entropy[i-1] = load_entropy[i-1] + (-new_case118_result1[i,j]*log(new_case118_result1[i,j]))
+    }
+  }
+}
+
+
+minmax_scale = function(x) {  
+  (x - min(x))/(max(x) - min(x))}
+
+minmax_load_entropy = minmax_scale(load_entropy)
+
+
+# sequence row we focus on is from 2 to 102 #
+fraction_generator_operating = vector(length = 101)
+start_label_g = which(colnames(new_case118_result1) == "G_1")
+end_label_g = which(colnames(new_case118_result1) == "G_54")
+
+for (i in c(2:102)) {
+  numerator = sum(new_case118_result1[i,start_label_g:end_label_g])
+  fraction_generator_operating[i-1] = numerator/sum_L_max
+}
+
+minmax_fraction_generator_operating = minmax_scale(fraction_generator_operating)
+
+generator_entropy = rep(0,101)
+for (i in c(2:102)) {
+  for (j in c(start_label_g:end_label_g)) {
+    if(new_case118_result1[i,j]==0){
+      generator_entropy[i-1] = generator_entropy[i-1]+0
+    }else{
+      generator_entropy[i-1] = generator_entropy[i-1] + (-new_case118_result1[i,j]*log(new_case118_result1[i,j]))
+    }
+  }
+}
+
+# alpha graphs #
+case_0 = new_case118_result1[2,which(colnames(new_case118_result1)=="F_1"):which(colnames(new_case118_result1)=="F_186")]
+case_1 = abs(as.numeric(new_case118_result1[3,which(colnames(new_case118_result1)=="F_1"):which(colnames(new_case118_result1)=="F_186")]))
+
+
+
+
+
+
+
