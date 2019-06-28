@@ -341,13 +341,15 @@ for (i in c(2:102)) {
   fraction_load_served[i-1] = numerator/sum_L_max
 }
 
+# load entropy calculation #
 load_entropy = rep(0,101)
 for (i in c(2:102)) {
   for (j in c(start_label:end_label)) {
     if(new_case118_result1[i,j]==0){
       load_entropy[i-1] = load_entropy[i-1]+0
     }else{
-      load_entropy[i-1] = load_entropy[i-1] + (-new_case118_result1[i,j]*log(new_case118_result1[i,j]))
+      l_i = abs(new_case118_result1[i,j])/sum(abs(new_case118_result1[i,c(start_label:end_label)]))
+      load_entropy[i-1] = load_entropy[i-1] + (-l_i*log(l_i))
     }
   }
 }
@@ -364,6 +366,7 @@ fraction_generator_operating = vector(length = 101)
 start_label_g = which(colnames(new_case118_result1) == "G_1")
 end_label_g = which(colnames(new_case118_result1) == "G_54")
 
+# fraction of generator operating #
 for (i in c(2:102)) {
   numerator = sum(new_case118_result1[i,start_label_g:end_label_g])
   fraction_generator_operating[i-1] = numerator/sum_L_max
@@ -371,23 +374,19 @@ for (i in c(2:102)) {
 
 minmax_fraction_generator_operating = minmax_scale(fraction_generator_operating)
 
+# generator entropy calculation #
 generator_entropy = rep(0,101)
 for (i in c(2:102)) {
   for (j in c(start_label_g:end_label_g)) {
     if(new_case118_result1[i,j]==0){
       generator_entropy[i-1] = generator_entropy[i-1]+0
     }else{
-      generator_entropy[i-1] = generator_entropy[i-1] + (-new_case118_result1[i,j]*log(new_case118_result1[i,j]))
+      g_i = abs(new_case118_result1[i,j])/sum(abs(new_case118_result1[i,c(start_label:end_label)]))
+      generator_entropy[i-1] = generator_entropy[i-1] + (-g_i*log(g_i))
     }
   }
 }
-
-# alpha graphs #
-case_0 = new_case118_result1[2,which(colnames(new_case118_result1)=="F_1"):which(colnames(new_case118_result1)=="F_186")]
-case_1 = abs(as.numeric(new_case118_result1[3,which(colnames(new_case118_result1)=="F_1"):which(colnames(new_case118_result1)=="F_186")]))
-
-
-
+# over #
 
 
 
