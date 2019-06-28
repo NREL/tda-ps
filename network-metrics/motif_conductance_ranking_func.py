@@ -315,7 +315,6 @@ min_value_sum_mat_df.to_csv('min_value_sum_mat_case118.csv',index=False)
 for (kk in c(2:102)) {
   tmp_graph = output_graph_under_attack_f(case_118_network = input_graph, initial_status_row = 2, sequence_row = kk)
   tmp_graph = igraph::simplify(tmp_graph)
-  #write.table(tmp_weight_matrix,file=paste("weight_matrix_",kk-2,".csv",sep=""),sep = ";",col.names=FALSE, row.names = FALSE)
   write_graph(tmp_graph,file=paste("graph_sequence_",kk-2,".gml",sep=""),format = "gml")
 }
 '''
