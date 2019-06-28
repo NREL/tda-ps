@@ -5,11 +5,16 @@ import numpy as np
 from sklearn.kernel_approximation import RBFSampler
 from sklearn_tda import *
 from gudhi import bottleneck_distance
+import igraph
+from igraph import *
 # /.../NREL_works/sklearn_tda_package/example # (where the .csv stored)
 
 for uu in range(101):
-    weight_filename = "weight_matrix_" + str(uu) + ".csv"
-    target_matrix = gudhi.read_lower_triangular_matrix_from_csv_file('weight_matrix_0.csv')
+    #@1: weight_filename = "weight_matrix_" + str(uu) + ".csv"
+    #@1: target_matrix = gudhi.read_lower_triangular_matrix_from_csv_file('weight_matrix_0.csv')
+    filename = "graph_sequence_" + str(uu) +".gml"
+    tmp_graph = igraph.read(filename)
+    target_matrix = np.array(tmp_graph.get_adjacency("weight").data)
     rips_complex = gudhi.RipsComplex(distance_matrix=target_matrix, max_edge_length=0.1)
     simplex_tree = rips_complex.create_simplex_tree(max_dimension=1)
     diag = simplex_tree.persistence(homology_coeff_field=2, min_persistence=0)
