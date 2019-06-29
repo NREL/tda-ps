@@ -165,6 +165,7 @@ def M13(A):
     return(W)
 
 #--------#
+# Bifan is uncorrect #
 def Bifan(A):
     NA = np.logical_and(np.logical_not(A)*1,np.transpose(np.logical_not(A)*1))*1
     W = np.zeros(np.shape(DirectionalBreakup(A)['G']))

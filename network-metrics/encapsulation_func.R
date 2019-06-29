@@ -2,7 +2,7 @@
 #write_graph(case_118_network,"118_graph.gml", format = "gml")
 #new_case118_result1 = read.csv("result-1.csv")[,-2]
 
-input_graph = read.graph("118_graph.gml",format=c("gml"))
+input_graph = read.graph("118_graph.gml",format=c("gml")) # 118_graph.gml is built based on graph.dot/graph.svg #
 
 output_graph_under_attack_f = function(case_118_network = input_graph, initial_status_row = 2, sequence_row){
   
@@ -133,18 +133,24 @@ output_graph_under_attack_f = function(case_118_network = input_graph, initial_s
   
   comb_seq0_seq_under_attack_stage1 = cbind(initial_from_to_bus, F_sign_seq_under_attack_mapping)
   
-  # Firstly, find the edges with F_ = 0 when sequence = 17 - stage 1#
+  # Firstly, find the edges with F_ = 0 when sequence = 17(under attack) - stage 1#
   edges_with_zero_flow_label = comb_seq0_seq_under_attack_stage1[which(comb_seq0_seq_under_attack_stage1$F_sign_seq_under_attack_mapping == 0),"Branch_f"] 
   
-  # Secondly, remove the rows with F_ = 0 when sequence = 17 - generage comb_seq0_seq_under_attack_stage2 #
+  # Secondly, remove the rows with F_ = 0 when sequence = 17 - generate comb_seq0_seq_under_attack_stage2 #
   comb_seq0_seq_under_attack_stage2 = comb_seq0_seq_under_attack_stage1[-which(comb_seq0_seq_under_attack_stage1$F_sign_seq_under_attack_mapping == 0),]
   rownames(comb_seq0_seq_under_attack_stage2) = c(1:dim(comb_seq0_seq_under_attack_stage2)[1])
   
-  # Thirdly, calcualte the difference between seq17 and initial to find the which edges change the direction - generage comb_seq0_seq_under_attack_stage3 #
+  # Thirdly, calcualte the difference between seq17 and initial which try to find the which edges change the direction - generage comb_seq0_seq_under_attack_stage3 #
   comb_seq0_seq_under_attack_stage3 = comb_seq0_seq_under_attack_stage2
   comb_seq0_seq_under_attack_stage3$diff = comb_seq0_seq_under_attack_stage3$F_sign_seq_under_attack_mapping - comb_seq0_seq_under_attack_stage3$F_Sig_zero
   
   # Fourthly, find out the edges with direction changed - generate comb_seq0_seq_under_attack_stage4 #
+  #-------------fixed already-----------------------------------#
+  # Debug for comb_seq0_seq_under_attack_stage4 - 06/21 08:33am #
+  # if there is not edge direction changed i.e., all diff =0 #
+  # add condition - whether all difference equal to 0 i.e., not edge direction changed#
+  if(!all(comb_seq0_seq_under_attack_stage3$diff == 0)){
+  
   comb_seq0_seq_under_attack_stage4 = comb_seq0_seq_under_attack_stage3[-which(comb_seq0_seq_under_attack_stage3$diff==0),]
   rownames(comb_seq0_seq_under_attack_stage4) = c(1:dim(comb_seq0_seq_under_attack_stage4)[1])
   
@@ -183,7 +189,66 @@ output_graph_under_attack_f = function(case_118_network = input_graph, initial_s
   
   # 15, create igraph graphs from data frames #
   final_verion_graph = graph_from_data_frame(as.data.frame(final_verion_edgelist_with_Branch_f[,c(1:3)]), directed=TRUE, vertices=V(seq_zero_case118_ieee_network)$name)
+}else if(all(comb_seq0_seq_under_attack_stage3$diff == 0)){
+  seq_zero_case118_ieee_network = graph_from_edgelist(as.matrix(initial_from_to_bus[,c(1:2)]))
+  seq_zero_case118_ieee_network = seq_zero_case118_ieee_network %>% set_edge_attr("name", value = initial_from_to_bus[,3])
   
+  #------#
+  # repeat 6, assign name, label, color, feature in case_118_network to seq_zero_case118_ieee_network (another version)
+  four_attrs_case_118_network = data.frame(name = vertex_attr(case_118_network)$name,
+                                           label = vertex_attr(case_118_network)$label,
+                                           color = vertex_attr(case_118_network)$color,
+                                           feature = vertex_attr(case_118_network)$feature)
+  
+  
+  four_attrs_seq_zero_case118_ieee_network = data.frame(name = rep(0,length(vertex_attr(seq_zero_case118_ieee_network)$name)),
+                                                        label = vertex_attr(seq_zero_case118_ieee_network)$name,
+                                                        color = rep(0,length(vertex_attr(seq_zero_case118_ieee_network)$name)),
+                                                        feature = rep(0,length(vertex_attr(seq_zero_case118_ieee_network)$name)))
+  
+  for (kk in 1:dim(four_attrs_seq_zero_case118_ieee_network)[1]) {
+    tmp_label = which(vertex_attr(case_118_network)$label == vertex_attr(seq_zero_case118_ieee_network)$name[kk])
+    four_attrs_seq_zero_case118_ieee_network[kk,1] = vertex_attr(case_118_network)$name[tmp_label]
+    four_attrs_seq_zero_case118_ieee_network[kk,3] = vertex_attr(case_118_network)$color[tmp_label]
+    four_attrs_seq_zero_case118_ieee_network[kk,4] = vertex_attr(case_118_network)$feature[tmp_label]
+  }
+  
+  four_attrs_seq_zero_case118_ieee_network$name = four_attrs_seq_zero_case118_ieee_network$name #paste("bus",four_attrs_seq_zero_case118_ieee_network$name,sep = "")
+  four_attrs_seq_zero_case118_ieee_network_dataframe = four_attrs_seq_zero_case118_ieee_network
+  four_attrs_seq_zero_case118_ieee_network_mat = as.matrix(four_attrs_seq_zero_case118_ieee_network_dataframe)
+  all.equal(four_attrs_seq_zero_case118_ieee_network_mat[,2],vertex_attr(seq_zero_case118_ieee_network)$name) #TRUE
+  
+  V(seq_zero_case118_ieee_network)$feature = as.numeric(four_attrs_seq_zero_case118_ieee_network_mat[,4])
+  V(seq_zero_case118_ieee_network)$name = four_attrs_seq_zero_case118_ieee_network_mat[,1]
+  V(seq_zero_case118_ieee_network)$label = four_attrs_seq_zero_case118_ieee_network_mat[,2]
+  V(seq_zero_case118_ieee_network)$color = four_attrs_seq_zero_case118_ieee_network_mat[,3]
+  # IGRAPH dc75189 DN-- 118 186 -- #
+  #------#
+  
+  # rename edges' names for seq_zero_case118_ieee_network use f_ not F_#
+  length(edge_attr(seq_zero_case118_ieee_network)$name)
+  edge_label_num = as.numeric(gsub("F_", "", edge_attr(seq_zero_case118_ieee_network)$name)) # extract the number in edge_attr(seq_zero_case118_iee_network)$name; since i want to rebuild the f_ for edges' names
+  E(seq_zero_case118_ieee_network)$name = paste("f_",edge_label_num, sep="")
+  # rename complete #
+  
+  # change the name and label for seq_zero_case118_ieee_network #
+  tmp_label_store = V(seq_zero_case118_ieee_network)$label
+  V(seq_zero_case118_ieee_network)$label = V(seq_zero_case118_ieee_network)$name
+  V(seq_zero_case118_ieee_network)$name = tmp_label_store
+  # change complete #
+  
+  initial_graph_edgelist_with_Branch_f_case2 = cbind(get.edgelist(seq_zero_case118_ieee_network), edge_attr(seq_zero_case118_ieee_network)$name)
+  final_verion_edgelist_with_Branch_f = initial_graph_edgelist_with_Branch_f_case2[(!initial_graph_edgelist_with_Branch_f_case2[,3] %in% edges_with_zero_flow_label),]
+  
+  # fixed (already) for colnames can not work for dataframe with only one row - 06/23 #
+  if(!is.null(dim(final_verion_edgelist_with_Branch_f))){
+  colnames(final_verion_edgelist_with_Branch_f) = c("From_Bus", "To_Bus","Branch_f")}
+  else{
+    final_verion_edgelist_with_Branch_f = data.frame(t(unlist(final_verion_edgelist_with_Branch_f)))
+    colnames(final_verion_edgelist_with_Branch_f) = c("From_Bus", "To_Bus","Branch_f")
+  }
+  final_verion_graph = graph_from_data_frame(as.data.frame(final_verion_edgelist_with_Branch_f[,c(1:3)]), directed=TRUE, vertices=V(seq_zero_case118_ieee_network)$name)
+}
   # 16, delete the nodes with b_ = false #
   final_version_graph_after_delete_false_nodes = delete_vertices(final_verion_graph, removed_nodes_label)
   
@@ -209,8 +274,120 @@ output_graph_under_attack_f = function(case_118_network = input_graph, initial_s
     edge_attr(final_version_graph_after_delete_false_nodes)$weight[mm] = abs(as.numeric(sequnce_under_attack_Flow_info[tmp_weight_label]))
   }
   
-  return(final_version_graph_after_delete_false_nodes) # with parallel edges
+  len_Branch_F = length(edge_attr(final_version_graph_after_delete_false_nodes)$Branch_F)
+  
+  start_ratio_label = which(colnames(new_case118_result1)=="F_1")
+  end_ratio_label = which(colnames(new_case118_result1)=="F_186")
+  flow_ratio_vector = vector(length = len_Branch_F)
+  
+  for (i in c(1:len_Branch_F)) {
+    Flow_part = new_case118_result1[1, which(colnames(new_case118_result1)=="F_1"):which(colnames(new_case118_result1)=="F_186")]
+    tmp_ratio_label = colnames(new_case118_result1)[c(start_ratio_label:end_ratio_label)] %in% edge_attr(final_version_graph_after_delete_false_nodes)$Branch_F[i]
+    if(sum(tmp_ratio_label)>0){
+      flow_ratio_vector[i] = edge_attr(final_version_graph_after_delete_false_nodes)$weight[i]/as.numeric(Flow_part[tmp_ratio_label])
+    }
+  }
+  
+  edge_attr(final_version_graph_after_delete_false_nodes)$ratio_weight = flow_ratio_vector
+  
+  return(final_version_graph_after_delete_false_nodes) # the output graph with parallel edges
 }
 
 # through using simplify function, we can not only remove the duplicated edges but merge the weights #
-graph_structure_under_sequence_row_attack = simplify(output_graph_under_attack_f(case_118_network = input_graph, initial_status_row = 2, sequence_row))
+# here is directed verion #
+graph_structure_under_sequence_row_attack = simplify(output_graph_under_attack_f(case_118_network = input_graph, initial_status_row = 2, sequence_row = 95))
+graph_structure_under_sequence_row_attack_directed = graph_structure_under_sequence_row_attack
+# here is undirected version #
+graph_structure_under_sequence_row_attack_undirected = as.undirected(graph_structure_under_sequence_row_attack)
+
+
+
+
+'''
+# extract weight matrix from target graph #
+# weight matrix for the graph when sequence = 0 #
+# seq_zero_case118_ieee_network generated from encapsulation_fun.R does not include the weight attribute #
+# now we need to assign for it #
+edge_num_with_name = as.numeric(gsub("f_", "", edge_attr(seq_zero_case118_ieee_network)$name))
+edge_attr(seq_zero_case118_ieee_network)$Branch_F = paste("F_",edge_num_with_name, sep="")
+Flow_values_seq0 = new_case118_result1_seq0[which(colnames(new_case118_result1)=="F_1"):which(colnames(new_case118_result1)=="F_186")]
+weight_vector = vector(length = length(edge_attr(seq_zero_case118_ieee_network)$Branch_F))
+
+for (qq in 1:length(edge_attr(seq_zero_case118_ieee_network)$Branch_F)) {
+  
+  tmp_F_label = which((edge_attr(seq_zero_case118_ieee_network)$Branch_F %in% names(Flow_values_seq0)[qq])*1 == 1)
+  weight_vector[tmp_F_label] = abs(as.numeric(Flow_values_seq0[qq]))
+  
+}
+edge_attr(seq_zero_case118_ieee_network)$weight = weight_vector
+
+weight_matrix = as_adjacency_matrix(seq_zero_case118_ieee_network,attr = "weight")
+weight_matrix = as.matrix(weight_matrix)
+write.csv(weight_matrix,"weight_matrix.csv")
+'''
+
+# below is about calculating the fraction of load served #
+# here is the formula: sum(L_i)/sum(L^max_i); 1- sum(L_i)/sum(L^max_i) = blackout #
+seq_minus_1_L = new_case118_result1[1,which(colnames(new_case118_result1) == "L_1"):which(colnames(new_case118_result1) == "L_118")]
+sum_L_max = sum(seq_minus_1_L)
+
+# sequence row we focus on is from 2 to 102 #
+fraction_load_served = vector(length = 101)
+start_label = which(colnames(new_case118_result1) == "L_1")
+end_label = which(colnames(new_case118_result1) == "L_118")
+
+for (i in c(2:102)) {
+  numerator = sum(new_case118_result1[i,start_label:end_label])
+  fraction_load_served[i-1] = numerator/sum_L_max
+}
+
+# load entropy calculation #
+load_entropy = rep(0,101)
+for (i in c(2:102)) {
+  for (j in c(start_label:end_label)) {
+    if(new_case118_result1[i,j]==0){
+      load_entropy[i-1] = load_entropy[i-1]+0
+    }else{
+      l_i = abs(new_case118_result1[i,j])/sum(abs(new_case118_result1[i,c(start_label:end_label)]))
+      load_entropy[i-1] = load_entropy[i-1] + (-l_i*log(l_i))
+    }
+  }
+}
+
+
+minmax_scale = function(x) {  
+  (x - min(x))/(max(x) - min(x))}
+
+minmax_load_entropy = minmax_scale(load_entropy)
+
+
+# sequence row we focus on is from 2 to 102 #
+fraction_generator_operating = vector(length = 101)
+start_label_g = which(colnames(new_case118_result1) == "G_1")
+end_label_g = which(colnames(new_case118_result1) == "G_54")
+
+# fraction of generator operating #
+for (i in c(2:102)) {
+  numerator = sum(new_case118_result1[i,start_label_g:end_label_g])
+  fraction_generator_operating[i-1] = numerator/sum_L_max
+}
+
+minmax_fraction_generator_operating = minmax_scale(fraction_generator_operating)
+
+# generator entropy calculation #
+generator_entropy = rep(0,101)
+for (i in c(2:102)) {
+  for (j in c(start_label_g:end_label_g)) {
+    if(new_case118_result1[i,j]==0){
+      generator_entropy[i-1] = generator_entropy[i-1]+0
+    }else{
+      g_i = abs(new_case118_result1[i,j])/sum(abs(new_case118_result1[i,c(start_label:end_label)]))
+      generator_entropy[i-1] = generator_entropy[i-1] + (-g_i*log(g_i))
+    }
+  }
+}
+# over #
+
+
+
+
