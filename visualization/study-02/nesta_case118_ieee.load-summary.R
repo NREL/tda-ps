@@ -1,5 +1,7 @@
 require(data.table)
+require(igraph)
 require(iplot)
+
 
 immersive <- FALSE
 if (immersive && !exists("plotty_initialized")) {
@@ -16,6 +18,51 @@ colors <- rainbow(n)
 invisible(w[, Color:=colors[Case]])
 
 
+br <- fread("../../contingency-datasets/study-02/nesta_case118_ieee/branches.tsv"  )
+lo <- fread("../../contingency-datasets/study-02/nesta_case118_ieee/loads.tsv"     )
+ge <- fread("../../contingency-datasets/study-02/nesta_case118_ieee/generators.tsv")
+wg <- graph_from_edgelist(as.matrix(br[, .(From_Bus, To_Bus)]))
+wl <- layout_nicely(wg, dim=3)
+
+
+display_graph <- function() {
+  iplot(
+    wl[, 1], wl[, 2], wl[, 3],
+    w_size=0.020,
+    col=mapply(
+      function(u) {
+        is_load      = u %in% lo$At_Bus
+        is_generator = u %in% ge$At_Bus
+        if (is_load && is_generator)
+          "red"
+        else if (is_load)
+          "blue"
+        else if (is_generator)
+          "green"
+        else
+          "black"
+      },
+      1:length(wl)
+    ),
+    id=-1
+  )
+  if (immersive)
+    itooltips(mapply(function(u) paste("Bus", u), 1:length(wl)), id=-1)
+  for (i in 1:dim(br)[1]) {
+    ilines(
+      c(wl[br[i, From_Bus], 1], wl[br[i, To_Bus], 1]),
+      c(wl[br[i, From_Bus], 2], wl[br[i, To_Bus], 2]),
+      c(wl[br[i, From_Bus], 3], wl[br[i, To_Bus], 3]),
+      col="orange",
+      w_size=0.005,
+      id=i
+    )
+    if (immersive)
+      itooltips(rep(paste("Branch", i), 2), i)
+  }
+}
+
+
 display_shed <- function(n=1000, eps=0.1) {
   display_cases(
     "Served Load [MW]"        ,
@@ -25,6 +72,7 @@ display_shed <- function(n=1000, eps=0.1) {
   )
 }
 
+
 display_sequence <- function(n=100, eps=0.1) {
   display_cases(
     "Sequence"                ,
@@ -33,6 +81,7 @@ display_sequence <- function(n=100, eps=0.1) {
     n=n, eps=eps
   )
 }
+
 
 display_cases <- function(xcol, ycol, zcol, n=100, eps=0.1)
 {
