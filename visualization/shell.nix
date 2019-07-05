@@ -19,6 +19,7 @@ in
       rPackages.data_table
       rPackages.GGally
       rPackages.ggplot2
+      rPackages.igraph
       rPackages.memo
       rPackages.plotrix
       rPackages.shiny
