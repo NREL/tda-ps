@@ -328,17 +328,91 @@ casestudy_dataset[,c(2:359)] = mat
 # transformation complete #
 
 # ------------------------------------------------------------------------------ #
-# 3-node motifs with directed version #
-casestudy_3_node_motifs_d = matrix(NA, nrow = dim(casestudy_dataset)[1], ncol = 13)
-for (i in c(1:10)) {
-  print(i)
-  # consider the case where there is no edge in the graph #
+
+# 3-node motifs with undirected version and 4-node motifs (undirected) - regular for all nodes ##
+casestudy_3_node_motifs_undirected = matrix(NA, nrow = dim(casestudy_dataset)[1], ncol = 2) # columns from m1 to m2 #
+casestudy_4_node_motifs_undirected = matrix(NA, nrow = dim(casestudy_dataset)[1], ncol = 6) # columns from m1 to m6 #
+casestudy_size_max_clique_undirected = matrix(NA, nrow = dim(casestudy_dataset)[1], ncol = 1)
+for (i in c(1:dim(casestudy_dataset)[1])) {
   if(sum(casestudy_dataset[i,c(which(colnames(casestudy_dataset) == "F_1") : which(colnames(casestudy_dataset) == "F_186"))])!=0){
-    sim_tmp_graph  = simplify(output_graph_under_attack_f(case_118_network = input_graph, initial_status_row = 1, sequence_row = i)) # the output_graph_under_attack_f used here is from ieee118_case_study_encapsulation_func in NREL_works folder
-    casestudy_3_node_motifs_d[i,] = triad_census(sim_tmp_graph)[4:16]}
-  else{
-    casestudy_3_node_motifs_d[i,] = 0
+    sim_tmp_graph  = simplify(output_graph_under_attack_f(case_118_network = input_graph, initial_status_row = 1, sequence_row = i))
+    sim_tmp_graph = as.undirected(sim_tmp_graph)
+    print(i)
+    casestudy_3_node_motifs_undirected[i,] = motifs(sim_tmp_graph, size = 3)[c(3:4)]
+    casestudy_4_node_motifs_undirected[i,] = motifs(sim_tmp_graph, size = 4)[c(5,7,8,9,10,11)]
+    casestudy_size_max_clique_undirected[ii,1] = clique_num(sim_tmp_graph)}else{
+      casestudy_size_max_clique_undirected[ii,1] = 0
+      casestudy_3_node_motifs_undirected[i,]= 0
+      casestudy_4_node_motifs_undirected[i,] = 0
+    }
+}
+write.csv(casestudy_3_node_motifs_undirected, file = "casestudy_3_node_motifs_undirected.csv")
+write.csv(casestudy_4_node_motifs_undirected, file = "casestudy_4_node_motifs_undirected.csv")
+write.csv(casestudy_size_max_clique_undirected, file = "casestudy_size_max_clique_undirected.csv")
+# over #
+
+
+
+# ------------------------------------------------------------------------------ #
+# ------------------------------------------------------------------------------ #
+# ------------------------------------------------------------------------------ #
+# fraction of generator operating, load entropy, generator entropy #
+seq_minus_1_L = new_case118_result1[1,which(colnames(new_case118_result1) == "L_1"):which(colnames(new_case118_result1) == "L_118")]
+sum_L_max = sum(seq_minus_1_L)
+
+# sequence row we focus on is from 2 to 102 #
+fraction_load_served = vector(length = dim(casestudy_dataset)[1])
+start_label = which(colnames(casestudy_dataset) == "L_1")
+end_label = which(colnames(casestudy_dataset) == "L_118")
+
+for (i in c(1:dim(casestudy_dataset)[1])) {
+  numerator = sum(casestudy_dataset[i,start_label:end_label])
+  fraction_load_served[i] = numerator/sum_L_max
+}
+
+load_entropy = rep(0,dim(casestudy_dataset)[1])
+for (i in c(1:dim(casestudy_dataset)[1])) {
+  for (j in c(start_label:end_label)) {
+    if(casestudy_dataset[i,j]==0){
+      load_entropy[i] = load_entropy[i]+0
+    }else{
+      l_i = abs(casestudy_dataset[i,j])/sum(abs(casestudy_dataset[i,c(start_label:end_label)]))
+      load_entropy[i] = load_entropy[i] + (-l_i*log(l_i))
+    }
+  }
+}
+write.csv(fraction_load_served, file = "fraction_load_served.csv")
+write.csv(load_entropy, file = "load_entropy.csv")
+
+
+
+# sequence row we focus on is from 2 to 102 #
+seq_minus_1_G = new_case118_result1[1,which(colnames(new_case118_result1) == "G_1"):which(colnames(new_case118_result1) == "G_54")]
+sum_G_max = sum(seq_minus_1_G)
+fraction_generator_operating = vector(length = dim(casestudy_dataset)[1])
+start_label_g = which(colnames(casestudy_dataset) == "G_1")
+end_label_g = which(colnames(casestudy_dataset) == "G_54")
+
+for (i in c(1:dim(casestudy_dataset)[1])) {
+  numerator = sum(casestudy_dataset[i,start_label_g:end_label_g])
+  fraction_generator_operating[i] = numerator/sum_G_max
+}
+
+
+generator_entropy = rep(0,dim(casestudy_dataset)[1])
+for (i in c(1:dim(casestudy_dataset)[1])) {
+  print(i)
+  for (j in c(start_label_g:end_label_g)) {
+    if(casestudy_dataset[i,j]==0){
+      generator_entropy[i] = generator_entropy[i]+0
+    }else{
+      g_i = abs(casestudy_dataset[i,j])/sum(abs(casestudy_dataset[i,c(start_label_g:end_label_g)]))
+      generator_entropy[i] = generator_entropy[i] + (-g_i*log(g_i))
+    }
   }
 }
 
-write.csv(casestudy_3_node_motifs_d, file = "aws_r_test.csv")
+write.csv(fraction_generator_operating, file = "fraction_generator_operating.csv")
+write.csv(generator_entropy, file = "generator_entropy.csv")
+# over #
+# ------------------------------------------------------------------------------ #
