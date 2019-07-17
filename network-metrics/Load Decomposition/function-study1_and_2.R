@@ -121,7 +121,7 @@ LMAX_Dec2 = function(data_val){
 for(i in 1:100){
   
   
-  setwd("C:/Users/Owner/Box/test_folder/study001/dataset")
+  setwd("C:/Users/Owner/Box/test_folder/study002/dataset")
   
   
   daata = import(paste0("result-",i,".tsv"), format = "csv")
@@ -129,7 +129,7 @@ for(i in 1:100){
   res2_pad = LMAX_Dec2(daata)
   
   
-  setwd("C:/Users/Owner/Box/test_folder/study001/results")
+  setwd("C:/Users/Owner/Box/test_folder/study002/results")
   
   
   write.csv(res2_pad, paste0("L_Decomp-",i,".csv"))
