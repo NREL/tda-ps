@@ -20,7 +20,7 @@ the_algorithm = PM.DCPlosslessForm
 # Iterate over models.
 
 run_multiple_contingencies(
-    (_ -> 1:999999)                                             ,
-    ((_, case_sys) -> random_permutation(bus_degrees(case_sys))),
-    directory=@__DIR__                                          ,
+    (_ -> 1:999999)                                                             ,
+    ((_, case_sys) -> random_permutation(map(x -> x[1], bus_degrees(case_sys)))),
+    directory=@__DIR__                                                          ,
 )

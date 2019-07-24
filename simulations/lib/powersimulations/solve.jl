@@ -77,13 +77,13 @@ end
 """
 Run a bus contingency case.
 """
-function run_contingency(label, case_sys, buses)
+function run_contingency(label, case_sys, buses :: Vector{Bus})
     contingencies = bus_contingencies!(case_sys, buses)
     case_opf = SheddingOptimalPowerFlow(case_sys, the_algorithm; optimizer=the_optimizer, parameters=false)
     case_soln = solve_op_model!(case_opf)
     status = string(case_soln.optimizer_log[:termination_status])
     if status != "LOCALLY_SOLVED"
-        @info string(" . . . ", status)
+        @info string(" . . . ", status, " (sequence ", label, ")")
     end
     hcat(
         DataFrame(Sequence=label, Status=status),
@@ -99,15 +99,15 @@ end
 
 
 """
-Run a bus contingency case.
+Run a branch contingency case.
 """
-function run_contingency(label, case_sys, branches)
+function run_contingency(label, case_sys, branches :: Vector{Branch})
     contingencies = branch_contingencies!(case_sys, branches)
     case_opf = SheddingOptimalPowerFlow(case_sys, the_algorithm; optimizer=the_optimizer, parameters=false)
     case_soln = solve_op_model!(case_opf)
     status = string(case_soln.optimizer_log[:termination_status])
     if status != "LOCALLY_SOLVED"
-        @info string(" . . . ", status)
+        @info string(" . . . ", status, " (sequence ", label, ")")
     end
     hcat(
         DataFrame(Sequence=label, Status=status),
@@ -169,6 +169,7 @@ function run_multiple_contingencies(
         case_number = 0
         for i in iter(case_sys_backup)
             contingency_sequence = next_contingency(i, case_sys_backup)
+            contingency_sequence = convert(Vector{typeof(contingency_sequence[1])}, contingency_sequence)
             if case_number < case_number_finish
                 case_number += 1
                 if case_number < case_number_start
@@ -190,7 +191,7 @@ function run_multiple_contingencies(
                     run_contingency(
                         step_number,
                         deepcopy(case_sys_backup),
-                        step_number == 0 ? [] : contingency_sequence[1:step_number]
+                        contingency_sequence[1:step_number]
                     )
                 )
                 if !(result[end, :Status] in statuses)
