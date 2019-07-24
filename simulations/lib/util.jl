@@ -10,10 +10,10 @@ function random_permutation(xs :: Vector{K}) where K <: Any
     xs[is]
 end
 
-function random_permutation(xs :: Vector{Tuple{K,V}}) where K <: Any where V <: Number
+function random_permutation(xs :: Vector{Pair{K,V}}) where K <: Any where V <: Number
     random_permutation(map(x -> x[1], xs), map(x -> x[2], xs))
 end
 
 function random_permutation(xs, ws)
-    sample(xs, FrequencyWeights(ws), length(xs), replace=false, ordered=true)
+    sample(xs, FrequencyWeights(ws), length(xs), replace=false, ordered=false)
 end

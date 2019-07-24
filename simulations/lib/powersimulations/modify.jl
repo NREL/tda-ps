@@ -25,22 +25,23 @@ end
 """
 Create contingencies at buses.
 """
-function bus_contingencies!(case_sys, buses)
+function make_contingencies!(case_sys, buses :: Vector{Bus})
+    names = map(x -> x.name, buses)
     for i in 1:length(case_sys.generators.thermal)
         generator = case_sys.generators.thermal[i]
-        if generator.bus in buses
+        if generator.bus.name in names
             case_sys.generators.thermal[i] = @set generator.available = false
         end
     end
     for i in 1:length(case_sys.branches)
         branch = case_sys.branches[i]
-        if branch.connectionpoints.from in buses || branch.connectionpoints.to in buses
+        if branch.connectionpoints.from.name in names || branch.connectionpoints.to.name in names
             case_sys.branches[i] = @set branch.available = false
         end
     end
     Dict{String,Any}(
         map(
-            x -> string("b_", x.name) => !(x in buses),
+            x -> string("b_", x.name) => !(x.name in names),
             case_sys.buses
         )
     )
@@ -50,11 +51,32 @@ end
 """
 Create contingencies at branches.
 """
-function branch_contingencies!(case_sys, branches)
+function make_contingencies!(case_sys, branches :: Vector{Branch})
+    names = map(x -> x.name, branches)
     for i in 1:length(case_sys.branches)
         branch = case_sys.branches[i]
-        if branch in branches
+        if branch.name in names
             case_sys.branches[i] = @set branch.available = false
+        end
+    end
+    Dict{String,Any}(
+        map(
+            x -> string("b_", x.name) => true,
+            case_sys.buses
+        )
+    )
+end
+
+
+"""
+Create contingencies at generators.
+"""
+function make_contingencies!(case_sys, generators :: Vector{Generator})
+    names = map(x -> x.name, generators)
+    for i in 1:length(case_sys.generators.thermal)
+        generator = case_sys.generators.thermal[i]
+        if generator.name in names
+            case_sys.generators.thermal[i] = @set generator.available = false
         end
     end
     Dict{String,Any}(

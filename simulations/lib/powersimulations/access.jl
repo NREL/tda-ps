@@ -10,10 +10,29 @@ function bus_degrees(case_sys)
         z[x.connectionpoints.from] = get(z, x.connectionpoints.from, 0) + (x.available ? 1 : 0)
         z[x.connectionpoints.to  ] = get(z, x.connectionpoints.to  , 0) + (x.available ? 1 : 0)
     end
-    sort(
-        collect(z),
-        lt=((x, y) -> x[2] < y[2]),
-        rev=true
+    convert(
+        Vector{Pair{Bus,Int}}, sort(
+            collect(z),
+            lt=((x, y) -> x[2] < y[2]),
+            rev=true
+        )
+    )
+end
+
+
+"""
+Sort the generators by descending degree.
+"""
+function generator_degrees(case_sys)
+    bds = Dict(map(x -> x[1] => x[2], bus_degrees(case_sys)))
+    z = Dict([generator => bds[generator.bus] for generator in case_sys.generators.thermal])
+    convert(
+        Vector{Pair{Generator,Int}},
+        sort(
+            collect(z),
+            lt=((x, y) -> x[2] < y[2]),
+            rev=true
+        )
     )
 end
 
@@ -59,7 +78,7 @@ function collect_limits(case_sys)
         DataFrame(Sequence=-1, Status="LIMITS"),
         sort_results(
             merge(
-                bus_contingencies!(case_sys, []),
+                make_contingencies!(case_sys, Vector{Bus}([])),
                 available_devices(case_sys),
                 device_limits(case_sys)
             )

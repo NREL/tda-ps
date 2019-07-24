@@ -75,34 +75,10 @@ end
 
 
 """
-Run a bus contingency case.
-"""
-function run_contingency(label, case_sys, buses :: Vector{Bus})
-    contingencies = bus_contingencies!(case_sys, buses)
-    case_opf = SheddingOptimalPowerFlow(case_sys, the_algorithm; optimizer=the_optimizer, parameters=false)
-    case_soln = solve_op_model!(case_opf)
-    status = string(case_soln.optimizer_log[:termination_status])
-    if status != "LOCALLY_SOLVED"
-        @info string(" . . . ", status, " (sequence ", label, ")")
-    end
-    hcat(
-        DataFrame(Sequence=label, Status=status),
-        sort_results(
-            merge(
-                contingencies,
-                available_devices(case_sys),
-                device_results(case_sys, case_opf.canonical_model.JuMPmodel)
-            )
-        )
-    )
-end
-
-
-"""
 Run a branch contingency case.
 """
-function run_contingency(label, case_sys, branches :: Vector{Branch})
-    contingencies = branch_contingencies!(case_sys, branches)
+function run_contingency(label, case_sys, devices :: Vector{T}) where T <: Device
+    contingencies = make_contingencies!(case_sys, devices)
     case_opf = SheddingOptimalPowerFlow(case_sys, the_algorithm; optimizer=the_optimizer, parameters=false)
     case_soln = solve_op_model!(case_opf)
     status = string(case_soln.optimizer_log[:termination_status])
@@ -169,7 +145,11 @@ function run_multiple_contingencies(
         case_number = 0
         for i in iter(case_sys_backup)
             contingency_sequence = next_contingency(i, case_sys_backup)
-            contingency_sequence = convert(Vector{typeof(contingency_sequence[1])}, contingency_sequence)
+            the_type = typeof(contingency_sequence[1])
+            while !(the_type in [Bus, Branch, Generator])
+                the_type = supertype(the_type)
+            end
+            contingency_sequence = convert(Vector{the_type}, contingency_sequence)
             if case_number < case_number_finish
                 case_number += 1
                 if case_number < case_number_start
