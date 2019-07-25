@@ -15,8 +15,8 @@ TIME="`which time` --verbose"
 
 date -u
 
-srun --ntasks 1 $TIME julia --eval 'TDAPS_DIR = "../../simulations" ; NO_INSTANTIATE = true ; FIRST_CASE = 3381 ; LAST_CASE = 10000' \
-                            --load study-01.jl                                                                                       \
+srun --ntasks 1 $TIME julia --eval 'TDAPS_DIR = "../../simulations" ; NO_INSTANTIATE = true ; FIRST_CASE = 1 ; LAST_CASE = 10000' \
+                            --load study-01.jl                                                                                    \
                             --color no
 rm core.[[:digit:]]*
 
