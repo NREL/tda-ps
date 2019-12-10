@@ -59,12 +59,14 @@ end
 """
 Extract limits of devices.
 """
-function device_limits(case_sys)
+function device_limits(case_sys; name2sequence = (x -> x))
     Dict{String,Any}(
         vcat(
-            map(x -> string("L_", x.name) => x.maxactivepower            , case_sys.loads             ),
-            map(x -> string("G_", x.name) => x.tech.activepowerlimits.max, case_sys.generators.thermal),
-            map(x -> string("F_", x.name) =>x.rate                       , case_sys.branches          ),
+            map(x -> string("L_", name2sequence(x.name)) => x.maxactivepower            , case_sys.loads               ),
+            map(x -> string("G_", x.name               ) => x.tech.activepowerlimits.max, case_sys.generators.thermal  ),
+            map(x -> string("G_", x.name               ) => x.tech.installedcapacity    , case_sys.generators.renewable),
+            map(x -> string("G_", x.name               ) => x.tech.activepowerlimits.max, case_sys.generators.hydro    ),
+            map(x -> string("F_", x.name               ) => x.rate                      , case_sys.branches            ),
         )
     )
 end
@@ -73,14 +75,14 @@ end
 """
 Extract the device limits.
 """
-function collect_limits(case_sys)
+function collect_limits(case_sys; name2sequence = (x -> x))
     hcat(
         DataFrame(Sequence=-1, Status="LIMITS"),
         sort_results(
             merge(
-                make_contingencies!(case_sys, Vector{Bus}([])),
+                make_contingencies!(case_sys, Vector{Bus}([]), name2sequence=name2sequence),
                 available_devices(case_sys),
-                device_limits(case_sys)
+                device_limits(case_sys, name2sequence=name2sequence)
             )
         )
     )
