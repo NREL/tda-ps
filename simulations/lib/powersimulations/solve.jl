@@ -23,13 +23,17 @@ end
 """
 Extract results.
 """
-function device_results(case_sys, model :: JuMP.Model)
+function device_results(case_sys, model :: JuMP.Model; name2sequence = (x -> x))
     function rename(v)
         s = string(v)
-        if occursin(r"^Pel", s)
-            replace(s, r"^Pel_{(.*),1}$" => s"L_\1")
-        elseif occursin(r"^Pth", s)
+        if occursin(r"^Pel_{.*,1}$", s)
+            string("L_", name2sequence(replace(s, r"^Pel_{(.*),1}$" => s"\1")))
+        elseif occursin(r"^Pth_{.*,1}$", s)
             replace(s, r"^Pth_{(.*),1}$" => s"G_\1")
+        elseif occursin(r"^Pre_{.*,1}$", s)
+            replace(s, r"^Pre_{(.*),1}$" => s"G_\1")
+        elseif occursin(r"^Phy_{.*,1}$", s)
+            replace(s, r"^Phy_{(.*),1}$" => s"G_\1")
         elseif occursin(r"^1_1_p", s)
             i = parse(Int64, replace(s, r"^1_1_p\[\((.*), .*, .*\)\]$" => s"\1"))
             string("F_", case_sys.branches[i].name)
@@ -39,9 +43,11 @@ function device_results(case_sys, model :: JuMP.Model)
     end
     result = Dict{String,Any}(
         vcat(
-            map(x -> string("L_", x.name) => 0.0, case_sys.loads             ),
-            map(x -> string("G_", x.name) => 0.0, case_sys.generators.thermal),
-            map(x -> string("F_", x.name) => 0.0, case_sys.branches          ),
+            map(x -> string("L_", name2sequence(x.name)) => 0.0, case_sys.loads               ),
+            map(x -> string("G_",               x.name ) => 0.0, case_sys.generators.thermal  ),
+            map(x -> string("G_",               x.name ) => 0.0, case_sys.generators.renewable),
+            map(x -> string("G_",               x.name ) => 0.0, case_sys.generators.hydro    ),
+            map(x -> string("F_",               x.name ) => 0.0, case_sys.branches            ),
         )
     )
     for v in JuMP.all_variables(model)
@@ -77,8 +83,8 @@ end
 """
 Run a branch contingency case.
 """
-function run_contingency(label, case_sys, devices :: Vector{T}) where T <: Device
-    contingencies = make_contingencies!(case_sys, devices)
+function run_contingency(label, case_sys, devices :: Vector{T}; name2sequence = (x -> x)) where T <: Device
+    contingencies = make_contingencies!(case_sys, devices, name2sequence=name2sequence)
     case_opf = SheddingOptimalPowerFlow(case_sys, the_algorithm; optimizer=the_optimizer, parameters=false)
     case_soln = solve_op_model!(case_opf)
     status = string(case_soln.optimizer_log[:termination_status])
@@ -91,7 +97,7 @@ function run_contingency(label, case_sys, devices :: Vector{T}) where T <: Devic
             merge(
                 contingencies,
                 available_devices(case_sys),
-                device_results(case_sys, case_opf.canonical_model.JuMPmodel)
+                device_results(case_sys, case_opf.canonical_model.JuMPmodel, name2sequence=name2sequence)
             )
         )
     )

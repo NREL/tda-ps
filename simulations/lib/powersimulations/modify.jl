@@ -25,12 +25,24 @@ end
 """
 Create contingencies at buses.
 """
-function make_contingencies!(case_sys, buses :: Vector{Bus})
+function make_contingencies!(case_sys, buses :: Vector{Bus}; name2sequence = (x -> x))
     names = map(x -> x.name, buses)
     for i in 1:length(case_sys.generators.thermal)
         generator = case_sys.generators.thermal[i]
         if generator.bus.name in names
             case_sys.generators.thermal[i] = @set generator.available = false
+        end
+    end
+    for i in 1:length(case_sys.generators.renewable)
+        generator = case_sys.generators.renewable[i]
+        if generator.bus.name in names
+            case_sys.generators.renewable[i] = @set generator.available = false
+        end
+    end
+    for i in 1:length(case_sys.generators.hydro)
+        generator = case_sys.generators.hydro[i]
+        if generator.bus.name in names
+            case_sys.generators.hydro[i] = @set generator.available = false
         end
     end
     for i in 1:length(case_sys.branches)
@@ -41,7 +53,7 @@ function make_contingencies!(case_sys, buses :: Vector{Bus})
     end
     Dict{String,Any}(
         map(
-            x -> string("b_", x.name) => !(x.name in names),
+            x -> string("b_", name2sequence(x.name)) => !(x.name in names),
             case_sys.buses
         )
     )
