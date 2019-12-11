@@ -69,7 +69,7 @@ for file in filter(x -> endswith(x, ".csv"), sort(vcat(map(d -> map(s -> joinpat
 
     case_sys = deepcopy(case_sys_backup)
 
-    bs = string(names(row)[1])[1] == "V" ? [i - 2 for i in 2:size(z, 2) if !row[i]] : Vector{Int64}([bus_number2sequence[parse(Int64, string(names(row)[i])[3:end])] for i in 2:size(z, 2) if !row[i]])
+    bs = string(names(row)[2])[1] == 'V' ? [i - 2 for i in 2:size(z, 2) if !row[i]] : Vector{Int64}([bus_number2sequence[parse(Int64, string(names(row)[i])[3:end])] for i in 2:size(z, 2) if !row[i]])
     @info bs
 
     local row_result;
