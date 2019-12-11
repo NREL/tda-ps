@@ -15,7 +15,7 @@ include("../../simulations/lib/powersimulations/setup.jl")
 
 the_optimizer = with_optimizer(Ipopt.Optimizer, print_level = 0)
 
-the_algorithm = PM.DCPlosslessForm
+the_algorithm = false ? PSI.CopperPlatePowerModel : PM.DCPlosslessForm
 
 case_data = "Matpower/case_ACTIVSg2000.m"
 
