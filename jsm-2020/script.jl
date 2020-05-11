@@ -134,7 +134,7 @@ verbose = false;
 the_optimizer = optimizer_with_attributes(
     Cbc.Optimizer                  ,
     "logLevel" => (verbose ? 1 : 0),
-    "threads"  => 12               ,
+    "threads"  => 1                ,
     "ratioGap" => 0.5              ,
 );
 
