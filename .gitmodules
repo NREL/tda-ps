@@ -10,3 +10,6 @@
 	path = models/RTS-GMLC
 	url = git@github.com:bwbush/RTS-GMLC.git
 	branch = master
+[submodule "jsm-2020/PowerSystemsTestData"]
+	path = jsm-2020/PowerSystemsTestData
+	url = https://github.com/NREL-SIIP/PowerSystemsTestData.git
