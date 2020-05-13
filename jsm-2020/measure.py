@@ -83,8 +83,9 @@ def analyze_persistence(
   unconnected = adjacency == 0
   limit = np.array(adjacency[~unconnected].min() if reciprocate else adjacency.max())
   if reciprocate:
-    limit     = np.divide(1., limit    )
-    adjacency = np.divide(1., adjacency)
+    with np.errstate(divide='ignore'):
+      limit     = np.divide(1, limit    )
+      adjacency = np.divide(1, adjacency)
   adjacency[unconnected] = 3 * limit
   rips = gudhi.RipsComplex(distance_matrix = adjacency, max_edge_length = 2 * limit)
   simplex = rips.create_simplex_tree(max_dimension = max_dimension)
@@ -200,7 +201,7 @@ totals = read_base()
 for folder in sys.argv[1:]:
   results = read_cases(folder, totals.devices, totals.loads)
   append = False
-  for indices in np.array_split(results.index, int(results.shape[0] / 10)):
+  for indices in np.array_split(results.index, max(int(results.shape[0] / 10), 1)):
     batch = results.loc[indices]
     measure_impacts(analysis, batch, graph)
     with open(os.path.join(folder, "Line-results.tsv"), "a" if append else "w") as file:
