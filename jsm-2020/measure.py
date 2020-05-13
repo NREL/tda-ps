@@ -172,8 +172,8 @@ def measure_impacts(
   results["Base Flow Loss MW"     ] = impacts.apply(lambda i: i.power.loss            )
   results["Base Flow Betti 0"     ] = impacts.apply(lambda i: i.power.betti_0         )
   results["Base Flow Betti 1"     ] = impacts.apply(lambda i: i.power.betti_1         )
-  results["Base FLow Bottleneck 0"] = impacts.apply(lambda i: i.power.bottleneck_0    )
-  results["Base FLow Bottleneck 1"] = impacts.apply(lambda i: i.power.bottleneck_1    )
+  results["Base Flow Bottleneck 0"] = impacts.apply(lambda i: i.power.bottleneck_0    )
+  results["Base Flow Bottleneck 1"] = impacts.apply(lambda i: i.power.bottleneck_1    )
 
 
 def plot_persistences(
