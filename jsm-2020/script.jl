@@ -248,14 +248,15 @@ function sample_radius(adj, count = 1, radius = 0, device_types = [Bus])
   dists = distances(adj, radius)
   vertices = Set(keys(dists))
   edges = reduce((a, v) -> union(a, Set(keys(adj[v]))), vertices, init = Set())
+  candidates = collect(
+    filter(
+      c -> in(typeof(c), device_types),
+      union(vertices, edges)
+    )
+  )
   selections = sample(
-    collect(
-      filter(
-        c -> in(typeof(c), device_types),
-        union(vertices, edges)
-      )
-    ),
-    count,
+    candidates,
+    min(count, length(candidates)),
     replace = false,
   )
   result = Dict()
