@@ -5,21 +5,21 @@ do
     $HOME/local/julia-1.3.1/bin/julia -e 'FIRST_CASE = 1'$d'100000;'                \
                                       -e 'OUTPUT_DIR = "'$d'";'                     \
                                       -e 'DEVICE_TYPES = [:Line];'                  \
-                                      -e 'RADIUS = 50;'                             \
+                                      -e 'RADIUS = 25;'                             \
                                       -e 'SAMPLE_SIZE = 625;'                       \
                                       -L script.jl |& tee $d/Line.log               &
     sleep 150s
     $HOME/local/julia-1.3.1/bin/julia -e 'FIRST_CASE = 1'$d'200000;'                \
                                       -e 'OUTPUT_DIR = "'$d'";'                     \
                                       -e 'DEVICE_TYPES = [:Transformer2W];'         \
-                                      -e 'RADIUS = 50;'                             \
+                                      -e 'RADIUS = 25;'                             \
                                       -e 'SAMPLE_SIZE = 625;'                       \
                                       -L script.jl |& tee $d/Transformer2W.log      &
     sleep 150s
     $HOME/local/julia-1.3.1/bin/julia -e 'FIRST_CASE = 1'$d'300000;'                \
                                       -e 'OUTPUT_DIR = "'$d'";'                     \
                                       -e 'DEVICE_TYPES = [:Line, :Transformer2W];'  \
-                                      -e 'RADIUS = 50;'                             \
+                                      -e 'RADIUS = 25;'                             \
                                       -e 'SAMPLE_SIZE = 625;'                       \
                                       -L script.jl |& tee $d/Line,Transformer2W.log &
     sleep 150s
