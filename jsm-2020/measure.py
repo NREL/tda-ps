@@ -44,8 +44,8 @@ def read_network(filename = "ACTIVSg2000.gml"):
 
 
 def read_base(folder = "00"):
-  devices = pd.read_csv(os.path.join(folder, "Line-devices.tsv"), index_col = "Case", sep = "\t")
-  loads   = pd.read_csv(os.path.join(folder, "Line-loads.tsv"  ), index_col = "Case", sep = "\t")
+  devices = pd.read_csv(os.path.join(folder, "Line,Transformer2W-0-0-devices.tsv"), index_col = "Case", sep = "\t")
+  loads   = pd.read_csv(os.path.join(folder, "Line,Transformer2W-0-0-loads.tsv"  ), index_col = "Case", sep = "\t")
   return Totals(
     devices = sum(1 - devices.iloc[0]),
     loads   = sum(loads.iloc[0])      ,
@@ -53,8 +53,8 @@ def read_base(folder = "00"):
 
 
 def read_cases(folder, total_devices, total_loads):
-  devices = pd.read_csv(os.path.join(folder, "Line-devices.tsv"), index_col = "Case", sep = "\t")
-  loads   = pd.read_csv(os.path.join(folder, "Line-loads.tsv"  ), index_col = "Case", sep = "\t")
+  devices = pd.read_csv(os.path.join(folder, "Line,Transformer2W-2-3-devices.tsv"), index_col = "Case", sep = "\t")
+  loads   = pd.read_csv(os.path.join(folder, "Line,Transformer2W-2-3-loads.tsv"  ), index_col = "Case", sep = "\t")
   outages = pd.DataFrame(
     devices.apply(lambda row: sum(row), axis = 1),
     index = devices.index,
@@ -194,6 +194,9 @@ def plot_persistences(
   return analyses
 
 
+# FIXME: Add unweighted to analysis.
+# FIXME: Add remaining capacity to analysis.
+
 
 graph = read_network()
 analysis = plot_persistences(graph)
@@ -204,7 +207,7 @@ for folder in sys.argv[1:]:
   for indices in np.array_split(results.index, max(int(results.shape[0] / 10), 1)):
     batch = results.loc[indices]
     measure_impacts(analysis, batch, graph)
-    with open(os.path.join(folder, "Line-results.tsv"), "a" if append else "w") as file:
+    with open(os.path.join(folder, "Line,Transformer2W-results.tsv"), "a" if append else "w") as file:
       batch.to_csv(file, header = not(append), sep = "\t")
     append = True
 
