@@ -1,0 +1,9 @@
+#!/usr/bin/env nix-shell
+#!nix-shell -i bash jupyter-local.nix
+#!nix-shell -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/d5291756487d70bc336e33512a9baf9fa1788faf.tar.gz
+
+export HOME=$PWD
+
+jupyter notebook --no-browser --ip 0.0.0.0
+
+rm -rf .ipython .jupyter .local .R
