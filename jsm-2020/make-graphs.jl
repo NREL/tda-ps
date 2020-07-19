@@ -130,30 +130,37 @@ open("ACTIVSg2000.gml", "w") do f
     last_id += 1
     generators = Dict{String, Int64}()
     for (name, generator) in components[ThermalStandard]
+        maxpower = generator.activepowerlimits.max * power_system.basepower
+        power    = variables[:P__ThermalStandard][1, Symbol(name)] * power_system.basepower
         write(f, "  node [\n")
         write(f, "    id       ", string(last_id), "\n")
         write(f, "    label    \"", name, "\"\n")
         write(f, "    device   \"ThermalStandard\"\n")
-        write(f, "    maxpower ", string(generator.activepowerlimits.max * power_system.basepower), "\n")
-        write(f, "    power    ", string(variables[:P__ThermalStandard][1, Symbol(name)] * power_system.basepower), "\n")
+        write(f, "    maxpower ", string(maxpower             ), "\n")
+        write(f, "    power    ", string(power                ), "\n")
+        write(f, "    residue  ", string(maxpower - abs(power)), "\n")
         write(f, "  ]\n")
         generators[name] = last_id
         last_id += 1
     end
     loads = Dict{String, Int64}()
     for (name, load) in components[PowerLoad]
+        maxpower = load.activepower * power_system.basepower
+        power    = variables[:P__InterruptibleLoad][1, Symbol(name)] * power_system.basepower
         write(f, "  node [\n")
         write(f, "    id       ", string(last_id), "\n")
         write(f, "    label    \"", name, "\"\n")
         write(f, "    device   \"PowerLoad\"\n")
-        write(f, "    maxpower ", string(load.activepower * power_system.basepower), "\n")
-        write(f, "    power    ", string(variables[:P__InterruptibleLoad][1, Symbol(name)] * power_system.basepower), "\n")
+        write(f, "    maxpower ", string(maxpower             ), "\n")
+        write(f, "    power    ", string(power                ), "\n")
+        write(f, "    residue  ", string(maxpower - abs(power)), "\n")
         write(f, "  ]\n")
         loads[name] = last_id
         last_id += 1
     end
     for (name, line) in components[Line]
-        power = variables[:Fp__Line][1, Symbol(name)] * power_system.basepower
+        maxpower = line.rate * power_system.basepower
+        power    = variables[:Fp__Line][1, Symbol(name)] * power_system.basepower
         write(f, "  edge [\n")
         write(f, "    source     ", string(power > 0 ? line.arc.from.number : line.arc.to.number  ), "\n")
         write(f, "    target     ", string(power > 0 ? line.arc.to.number   : line.arc.from.number), "\n")
@@ -161,12 +168,15 @@ open("ACTIVSg2000.gml", "w") do f
         write(f, "    device     \"Line\"\n")
         write(f, "    resistance ", string(line.r), "\n")
         write(f, "    reactance  ", string(line.x), "\n")
-        write(f, "    maxpower   ", string(line.rate * power_system.basepower), "\n")
-        write(f, "    power      ", string(power > 0 ? power : - power), "\n")
+        write(f, "    maxpower   ", string(maxpower             ), "\n")
+        write(f, "    power      ", string(           abs(power)), "\n")
+        write(f, "    residue    ", string(maxpower - abs(power)), "\n")
+        write(f, "    count       1\n")
         write(f, "  ]\n")
     end
     for (name, line) in components[Transformer2W]
-        power = variables[:Fp__Transformer2W][1, Symbol(name)] * power_system.basepower
+        maxpower = line.rate * power_system.basepower
+        power    = variables[:Fp__Transformer2W][1, Symbol(name)] * power_system.basepower
         write(f, "  edge [\n")
         write(f, "    source     ", string(power > 0 ? line.arc.from.number : line.arc.to.number  ), "\n")
         write(f, "    target     ", string(power > 0 ? line.arc.to.number   : line.arc.from.number), "\n")
@@ -174,29 +184,39 @@ open("ACTIVSg2000.gml", "w") do f
         write(f, "    device     \"Transformer2W\"\n")
         write(f, "    resistance ", string(line.r), "\n")
         write(f, "    reactance  ", string(line.x), "\n")
-        write(f, "    maxpower   ", string(line.rate * power_system.basepower), "\n")
-        write(f, "    power      ", string(power > 0 ? power : - power), "\n")
+        write(f, "    maxpower   ", string(maxpower             ), "\n")
+        write(f, "    power      ", string(           abs(power)), "\n")
+        write(f, "    residue    ", string(maxpower - abs(power)), "\n")
+        write(f, "    count       1\n")
         write(f, "  ]\n")
     end
     for (name, generator) in components[ThermalStandard]
+        maxpower = generator.activepowerlimits.max * power_system.basepower
+        power    = variables[:P__ThermalStandard][1, Symbol(name)] * power_system.basepower
         write(f, "    power    ", string(variables[:P__ThermalStandard][1, Symbol(name)] * power_system.basepower), "\n")
         write(f, "  edge [\n")
         write(f, "    source   ", string(generators[name]), "\n")
         write(f, "    target   ", string(generator.bus.number), "\n")
         write(f, "    label    \"", name, "\"\n")
         write(f, "    device   \"ThermalStandard\"\n")
-        write(f, "    maxpower ", string(generator.activepowerlimits.max * power_system.basepower), "\n")
-        write(f, "    power    ", string(variables[:P__ThermalStandard][1, Symbol(name)] * power_system.basepower), "\n")
+        write(f, "    maxpower ", string(maxpower             ), "\n")
+        write(f, "    power    ", string(           abs(power)), "\n")
+        write(f, "    residue  ", string(maxpower - abs(power)), "\n")
+        write(f, "    count       1\n")
         write(f, "  ]\n")
     end
     for (name, load) in components[PowerLoad]
+        maxpower = load.activepower * power_system.basepower
+        power    = variables[:P__InterruptibleLoad][1, Symbol(name)] * power_system.basepower
         write(f, "  edge [\n")
         write(f, "    source   ", string(loads[name]), "\n")
         write(f, "    target   ", string(load.bus.number), "\n")
         write(f, "    label    \"", name, "\"\n")
         write(f, "    device   \"PowerLoad\"\n")
-        write(f, "    maxpower ", string(load.activepower * power_system.basepower), "\n")
-        write(f, "    power    ", string(variables[:P__InterruptibleLoad][1, Symbol(name)] * power_system.basepower), "\n")
+        write(f, "    maxpower ", string(maxpower             ), "\n")
+        write(f, "    power    ", string(           abs(power)), "\n")
+        write(f, "    residue  ", string(maxpower - abs(power)), "\n")
+        write(f, "    count       1\n")
         write(f, "  ]\n")
     end
     write(f, "]\n")
