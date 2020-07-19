@@ -289,14 +289,19 @@ device_types = map(eval, DEVICE_TYPES)
 if !isdefined(Main, :RADII)
   RADII = 0:26
 end
+RADII = eval(RADII)
 @info string("RADII = ", RADII)
 
 if !isdefined(Main, :FRACTIONS)
   FRACTIONS = [1, 2, 5, 10, 20, 50, 100]
 end
+FRACTIONS = eval(FRACTIONS)
 @info string("FRACTIONS = ", FRACTIONS)
 
-sample_size   = SAMPLE_SIZE
+if !isdefined(Main, :SAMPLE_SIZE)
+  SAMPLE_SIZE = 10
+end
+sample_size = eval(SAMPLE_SIZE)
 @info string("SAMPLE_SIZE = ", sample_size)
 
 adjacency_matrix = adjacencies(power_system);
