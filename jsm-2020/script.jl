@@ -76,7 +76,7 @@ end
 
 # Simulate contingencies.
 
-function simulate_contingency(case, system_base, adjacencies, device_count, radius, device_types, optimizer)
+function simulate_contingency(case, system_base, adjacencies, fraction, radius, device_types, optimizer)
     system = deepcopy(system_base)
     make_interruptible!(system)
     candidates = [
@@ -84,7 +84,7 @@ function simulate_contingency(case, system_base, adjacencies, device_count, radi
       for device_type in device_types
       for device in get_components(device_type, system)
     ] |> sort
-    selections = sample_radius(adjacencies, device_count, radius, device_types)
+    selections = sample_radius(adjacencies, fraction, radius, device_types)
     for (device_type, names) in selections
       make_contingencies!(system, device_type, names)
     end
@@ -244,7 +244,7 @@ function distances(adj, radius = 0, start = nothing :: Union{String,Nothing})
   dists
 end
 
-function sample_radius(adj, count = 1, radius = 0, device_types = [Bus])
+function sample_radius(adj, fraction = 1, radius = 0, device_types = [Bus])
   dists = distances(adj, radius)
   vertices = Set(keys(dists))
   edges = reduce((a, v) -> union(a, Set(keys(adj[v]))), vertices, init = Set())
@@ -256,7 +256,7 @@ function sample_radius(adj, count = 1, radius = 0, device_types = [Bus])
   )
   selections = sample(
     candidates,
-    min(count, length(candidates)),
+    ceil(Int32, fraction * length(candidates)),
     replace = false,
   )
   result = Dict()
@@ -291,6 +291,11 @@ if !isdefined(Main, :RADIUS)
 end
 @info string("RADIUS = ", RADIUS)
 
+if !isdefined(Main, :FRACTIONS)
+  FRACTIONS = [5, 10, 20, 50, 100]
+end
+@info string("FRACTIONS = ", FRACTIONS)
+
 sample_size   = SAMPLE_SIZE
 @info string("SAMPLE_SIZE = ", sample_size)
 
@@ -304,7 +309,7 @@ begin
 end
 
 for radius in 0:RADIUS
-  for device_count in 1 : radius + 1
+  for fraction in FRACTIONS
     inputs  = true
     outputs = true
     for i in 1:sample_size
@@ -312,7 +317,7 @@ for radius in 0:RADIUS
         case,
         power_system,
         adjacency_matrix,
-        device_count, 
+        fraction / 100, 
         radius,
         device_types,
         the_optimizer,
@@ -323,7 +328,7 @@ for radius in 0:RADIUS
         "-",
         radius,
         "-",
-        device_count,
+        fraction,
       )
       CSV.write(joinpath(OUTPUT_DIR, string(prefix, "-devices.tsv")), result.devices, delim = "\t", append = !inputs)
       inputs = false
