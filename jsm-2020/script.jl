@@ -286,13 +286,13 @@ end
 device_types = map(eval, DEVICE_TYPES)
 @info string("DEVICE_TYPES = ", device_types)
 
-if !isdefined(Main, :RADIUS)
-  RADIUS = 0
+if !isdefined(Main, :RADII)
+  RADII = 0:26
 end
-@info string("RADIUS = ", RADIUS)
+@info string("RADII = ", RADII)
 
 if !isdefined(Main, :FRACTIONS)
-  FRACTIONS = [5, 10, 20, 50, 100]
+  FRACTIONS = [1, 2, 5, 10, 20, 50, 100]
 end
 @info string("FRACTIONS = ", FRACTIONS)
 
@@ -308,7 +308,7 @@ begin
   CSV.write(joinpath(OUTPUT_DIR, string(prefix, "-loads.tsv"  )), result.loads, delim = "\t")
 end
 
-for radius in 0:RADIUS
+for radius in RADII
   for fraction in FRACTIONS
     inputs  = true
     outputs = true
