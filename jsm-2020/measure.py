@@ -204,7 +204,7 @@ def plot_persistences(
   gudhi.plot_persistence_barcode(analyses.reactance.persistence)
   plt.savefig("barcode-reactance.png")
   plt.close()
-  gudhi.plot_persistence_barcode(analyses.reactance.persistence)
+  gudhi.plot_persistence_barcode(analyses.maxpower.persistence)
   plt.savefig("barcode-maxpower.png")
   plt.close()
   gudhi.plot_persistence_barcode(analyses.power.persistence)
